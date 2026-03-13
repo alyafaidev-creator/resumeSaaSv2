@@ -3,1501 +3,346 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Resume Templates — ResumeIQ</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="style.css"/>
+<title>Templates — ResumeIQ</title>
 <link rel="stylesheet" href="Frontend/templates.css"/>
-<script src="Frontend/script.js" defer></script>
-<script src="Frontend/templates.js" defer></script>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <a class="logo" href="index.html">Resume<span>IQ</span></a>
-  <div class="nav-r">
-    <a href="index.html#how">How it works</a>
-    <a href="templates.html" class="nav-active">Templates</a>
-    <a href="index.html#pricing">Pricing</a>
-    <a href="editor.html" class="nav-cta">Build Resume</a>
-  </div>
-</nav>
+<!-- ══ NAV ══ -->
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="nav__logo">Resume<span>IQ</span></a>
+    <div class="nav__links">
+      <a href="dashboard.html" class="nav__link">Dashboard</a>
+      <a href="templates.html" class="nav__link nav__link--active">Templates</a>
+    </div>
+    <div class="nav__spacer"></div>
+    <div class="nav__actions">
+      <a href="dashboard.html" class="btn btn--ghost btn--sm">← Back to Dashboard</a>
+    </div>
+  </nav>
+</header>
 
-<!-- PAGE HERO -->
+<!-- ══ HERO + FILTER ══ -->
 <div class="tpl-hero">
-  <div class="hero-tag">500+ ATS-friendly templates</div>
-  <h1>Find your perfect <em>resume template</em></h1>
-  <p>Browse by industry. Every template is optimized for ATS systems and built by hiring experts.</p>
-
-  <!-- FILTER BAR -->
+  <div class="container" style="text-align:center">
+    <p class="tpl-hero__eyebrow">Template Library</p>
+    <h1 class="tpl-hero__title">Find your perfect resume template</h1>
+    <p class="tpl-hero__sub">500+ ATS-optimized designs across 10+ industries. Every template is tested to pass major ATS systems.</p>
+  </div>
   <div class="filter-bar">
     <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="software">Software Engineering</button>
-    <button class="filter-btn" data-filter="business">Business</button>
+    <button class="filter-btn" data-filter="software-engineering">Software Eng.</button>
     <button class="filter-btn" data-filter="marketing">Marketing</button>
-    <button class="filter-btn" data-filter="healthcare">Healthcare</button>
     <button class="filter-btn" data-filter="finance">Finance</button>
+    <button class="filter-btn" data-filter="business">Business</button>
+    <button class="filter-btn" data-filter="healthcare">Healthcare</button>
     <button class="filter-btn" data-filter="architecture">Architecture</button>
     <button class="filter-btn" data-filter="design">Design</button>
-    <button class="filter-btn" data-filter="admin">Administrative</button>
-    <button class="filter-btn" data-filter="acting">Acting / Creative</button>
     <button class="filter-btn" data-filter="education">Education</button>
   </div>
 </div>
 
-<!-- TEMPLATE LIBRARY -->
-<div class="tpl-library" id="template-library">
+<!-- ══ LIBRARY ══ -->
+<div class="tpl-library">
 
-  <!-- ── SOFTWARE ENGINEERING ── -->
-  <section class="industry-section reveal" data-industry="software">
+  <!-- Software Engineering -->
+  <div class="industry-section" id="sec-software-engineering" data-industry="software-engineering">
     <div class="industry-header">
-      <div class="industry-label">Software Engineering</div>
-      <span class="industry-count">6 templates</span>
+      <h2 class="industry-header__title">Software Engineering</h2>
+      <span class="industry-header__count">6 templates</span>
     </div>
     <div class="tpl-grid">
-
-      <div class="tpl-card" data-id="se-1" data-industry="software" data-layout="single">
-        <div class="tpl-preview layout-single">
-          <div class="prev-header-bar accent-blue"></div>
-          <div class="prev-name-block">
-            <div class="prev-line wide dark"></div>
-            <div class="prev-line medium"></div>
-          </div>
-          <div class="prev-divider"></div>
-          <div class="prev-section">
-            <div class="prev-section-title"></div>
-            <div class="prev-line full"></div>
-            <div class="prev-line full"></div>
-            <div class="prev-line w80"></div>
-          </div>
-          <div class="prev-section">
-            <div class="prev-section-title"></div>
-            <div class="prev-job-row">
-              <div class="prev-line w60 dark"></div>
-              <div class="prev-line w30 muted"></div>
-            </div>
-            <div class="prev-bullet"></div>
-            <div class="prev-bullet short"></div>
-            <div class="prev-bullet"></div>
-          </div>
-          <div class="prev-section">
-            <div class="prev-section-title"></div>
-            <div class="prev-skills-row">
-              <div class="prev-chip"></div>
-              <div class="prev-chip wide-chip"></div>
-              <div class="prev-chip"></div>
-              <div class="prev-chip wide-chip"></div>
-            </div>
+      <div class="tpl-card" id="card-se-1">
+        <div class="tpl-preview">
+          <div class="tpl-preview__inner">
+            <div class="tpl-preview__accent" style="background:#2563eb"></div>
+            <div class="tpl-preview__name">Jane Doe</div>
+            <div class="tpl-preview__role" style="color:#2563eb">Software Engineer</div>
+            <div class="tpl-preview__line tpl-preview__line--med"></div>
+            <div class="tpl-preview__section-label">EXPERIENCE</div>
+            <div class="tpl-preview__line"></div>
+            <div class="tpl-preview__line tpl-preview__line--short"></div>
+            <div class="tpl-preview__section-label">SKILLS</div>
+            <div class="tpl-preview__line tpl-preview__line--med"></div>
           </div>
         </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">Clean Dev</span>
-            <span class="tpl-tag">Software</span>
+        <div class="tpl-card__info">
+          <div class="tpl-card__name">Clean Dev</div>
+          <div class="tpl-card__meta">
+            <span class="tpl-card__meta-tag">Single column</span>
+            <span class="tpl-card__meta-tag">Blue</span>
           </div>
-          <div class="tpl-stars">★★★★★</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('se-1')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('se-1')">Use Template →</button>
+          <div class="tpl-card__actions">
+            <button class="tpl-card__use" onclick="useTemplate('se-1')">Use Template</button>
+            <button class="tpl-card__preview" onclick="previewTemplate('se-1')">Preview</button>
           </div>
         </div>
       </div>
-
-      <div class="tpl-card" data-id="se-2" data-industry="software" data-layout="single">
-        <div class="tpl-preview layout-single accent-teal">
-          <div class="prev-header-bar accent-teal-bar"></div>
-          <div class="prev-name-block">
-            <div class="prev-line wide dark"></div>
-            <div class="prev-line medium"></div>
-          </div>
-          <div class="prev-divider"></div>
-          <div class="prev-section">
-            <div class="prev-section-title teal-title"></div>
-            <div class="prev-line full"></div>
-            <div class="prev-line w80"></div>
-          </div>
-          <div class="prev-section">
-            <div class="prev-section-title teal-title"></div>
-            <div class="prev-job-row">
-              <div class="prev-line w60 dark"></div>
-              <div class="prev-line w30 muted"></div>
-            </div>
-            <div class="prev-bullet"></div>
-            <div class="prev-bullet short"></div>
-          </div>
-          <div class="prev-section">
-            <div class="prev-section-title teal-title"></div>
-            <div class="prev-skills-grid">
-              <div class="prev-skill-item"></div>
-              <div class="prev-skill-item"></div>
-              <div class="prev-skill-item"></div>
-              <div class="prev-skill-item"></div>
-              <div class="prev-skill-item"></div>
-              <div class="prev-skill-item"></div>
-            </div>
+      <div class="tpl-card" id="card-se-2">
+        <div class="tpl-preview">
+          <div class="tpl-preview__inner">
+            <div class="tpl-preview__accent" style="background:#0D9488"></div>
+            <div class="tpl-preview__name">Jane Doe</div>
+            <div class="tpl-preview__role" style="color:#0D9488">Full Stack Developer</div>
+            <div class="tpl-preview__line tpl-preview__line--med"></div>
+            <div class="tpl-preview__section-label">EXPERIENCE</div>
+            <div class="tpl-preview__line"></div>
+            <div class="tpl-preview__line tpl-preview__line--short"></div>
+            <div class="tpl-preview__section-label">SKILLS</div>
+            <div class="tpl-preview__line tpl-preview__line--med"></div>
           </div>
         </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">Tech Stack</span>
-            <span class="tpl-tag">Software</span>
+        <div class="tpl-card__info">
+          <div class="tpl-card__name">Tech Stack</div>
+          <div class="tpl-card__meta">
+            <span class="tpl-card__meta-tag">Single column</span>
+            <span class="tpl-card__meta-tag">Teal</span>
           </div>
-          <div class="tpl-stars">★★★★★</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('se-2')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('se-2')">Use Template →</button>
+          <div class="tpl-card__actions">
+            <button class="tpl-card__use" onclick="useTemplate('se-2')">Use Template</button>
+            <button class="tpl-card__preview" onclick="previewTemplate('se-2')">Preview</button>
           </div>
         </div>
       </div>
-
-      <div class="tpl-card" data-id="se-3" data-industry="software" data-layout="single">
-        <div class="tpl-preview layout-single dark-header">
-          <div class="prev-dark-header">
-            <div class="prev-line wide light"></div>
-            <div class="prev-line medium light-muted"></div>
-            <div class="prev-contact-row">
-              <div class="prev-contact-chip"></div>
-              <div class="prev-contact-chip wide-chip"></div>
-              <div class="prev-contact-chip"></div>
-            </div>
+      <div class="tpl-card" id="card-se-3">
+        <div class="tpl-preview">
+          <div class="tpl-preview__inner">
+            <div class="tpl-preview__accent" style="background:#2563eb"></div>
+            <div class="tpl-preview__name">Jane Doe</div>
+            <div class="tpl-preview__role" style="color:#2563eb">Open Source Dev</div>
+            <div class="tpl-preview__line tpl-preview__line--med"></div>
+            <div class="tpl-preview__section-label">PROJECTS</div>
+            <div class="tpl-preview__line"></div>
+            <div class="tpl-preview__line tpl-preview__line--short"></div>
+            <div class="tpl-preview__section-label">EXPERIENCE</div>
+            <div class="tpl-preview__line tpl-preview__line--med"></div>
           </div>
-          <div class="prev-body">
-            <div class="prev-section">
-              <div class="prev-section-title blue-title"></div>
-              <div class="prev-line full"></div>
-              <div class="prev-line w80"></div>
-            </div>
-            <div class="prev-section">
-              <div class="prev-section-title blue-title"></div>
-              <div class="prev-bullet"></div>
-              <div class="prev-bullet short"></div>
-              <div class="prev-bullet"></div>
-            </div>
-          </div>
+          <span class="tpl-preview__badge">Popular</span>
         </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">Open Source</span>
-            <span class="tpl-tag">Software</span>
+        <div class="tpl-card__info">
+          <div class="tpl-card__name">Open Source</div>
+          <div class="tpl-card__meta">
+            <span class="tpl-card__meta-tag">Single column</span>
+            <span class="tpl-card__meta-tag">Blue</span>
           </div>
-          <div class="tpl-stars">★★★★☆</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('se-3')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('se-3')">Use Template →</button>
+          <div class="tpl-card__actions">
+            <button class="tpl-card__use" onclick="useTemplate('se-3')">Use Template</button>
+            <button class="tpl-card__preview" onclick="previewTemplate('se-3')">Preview</button>
           </div>
         </div>
       </div>
-
-      <div class="tpl-card" data-id="se-4" data-industry="software" data-layout="single">
-        <div class="tpl-preview layout-single">
-          <div class="prev-left-accent-bar"></div>
-          <div class="prev-name-block pl-accent">
-            <div class="prev-line wide dark"></div>
-            <div class="prev-line medium"></div>
-          </div>
-          <div class="prev-divider"></div>
-          <div class="prev-section pl-accent">
-            <div class="prev-section-title"></div>
-            <div class="prev-line full"></div>
-            <div class="prev-line w80"></div>
-          </div>
-          <div class="prev-section pl-accent">
-            <div class="prev-section-title"></div>
-            <div class="prev-bullet"></div>
-            <div class="prev-bullet short"></div>
-          </div>
-        </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">Full Stack</span>
-            <span class="tpl-tag">Software</span>
-          </div>
-          <div class="tpl-stars">★★★★★</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('se-4')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('se-4')">Use Template →</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="tpl-card" data-id="se-5" data-industry="software" data-layout="single">
-        <div class="tpl-preview layout-single">
-          <div class="prev-name-center">
-            <div class="prev-line wide dark center-line"></div>
-            <div class="prev-line medium center-line"></div>
-            <div class="prev-divider thin"></div>
-          </div>
-          <div class="prev-section">
-            <div class="prev-section-title center-title"></div>
-            <div class="prev-line full"></div>
-            <div class="prev-line w80"></div>
-          </div>
-          <div class="prev-section">
-            <div class="prev-section-title center-title"></div>
-            <div class="prev-bullet"></div>
-            <div class="prev-bullet short"></div>
-          </div>
-        </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">Minimal Dev</span>
-            <span class="tpl-tag">Software</span>
-          </div>
-          <div class="tpl-stars">★★★★☆</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('se-5')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('se-5')">Use Template →</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="tpl-card" data-id="se-6" data-industry="software" data-layout="two-col">
-        <div class="tpl-preview layout-two-col">
-          <div class="prev-two-col-header blue-header">
-            <div class="prev-line wide light"></div>
-            <div class="prev-line medium light-muted"></div>
-          </div>
-          <div class="prev-two-col-body">
-            <div class="prev-col-main">
-              <div class="prev-section">
-                <div class="prev-section-title blue-title"></div>
-                <div class="prev-bullet"></div>
-                <div class="prev-bullet short"></div>
-                <div class="prev-bullet"></div>
-              </div>
-              <div class="prev-section">
-                <div class="prev-section-title blue-title"></div>
-                <div class="prev-bullet"></div>
-                <div class="prev-bullet short"></div>
-              </div>
+      <div class="tpl-card" id="card-se-4">
+        <div class="tpl-preview">
+          <div class="tpl-preview__inner" style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <div style="grid-column:1/-1">
+              <div class="tpl-preview__accent" style="background:#2563eb"></div>
+              <div class="tpl-preview__name">Jane Doe</div>
+              <div class="tpl-preview__role" style="color:#2563eb">Full Stack Engineer</div>
             </div>
-            <div class="prev-col-side">
-              <div class="prev-section">
-                <div class="prev-section-title blue-title"></div>
-                <div class="prev-skill-bar"></div>
-                <div class="prev-skill-bar w70"></div>
-                <div class="prev-skill-bar w85"></div>
-                <div class="prev-skill-bar w60"></div>
-              </div>
+            <div>
+              <div class="tpl-preview__section-label">EXPERIENCE</div>
+              <div class="tpl-preview__line"></div>
+              <div class="tpl-preview__line tpl-preview__line--short"></div>
+            </div>
+            <div>
+              <div class="tpl-preview__section-label">SKILLS</div>
+              <div class="tpl-preview__line"></div>
+              <div class="tpl-preview__line tpl-preview__line--short"></div>
             </div>
           </div>
         </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">Senior Engineer</span>
-            <span class="tpl-tag">Software</span>
+        <div class="tpl-card__info">
+          <div class="tpl-card__name">Full Stack</div>
+          <div class="tpl-card__meta">
+            <span class="tpl-card__meta-tag">Two column</span>
+            <span class="tpl-card__meta-tag">Blue</span>
           </div>
-          <div class="tpl-stars">★★★★★</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('se-6')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('se-6')">Use Template →</button>
+          <div class="tpl-card__actions">
+            <button class="tpl-card__use" onclick="useTemplate('se-4')">Use Template</button>
+            <button class="tpl-card__preview" onclick="previewTemplate('se-4')">Preview</button>
           </div>
         </div>
       </div>
-
+      <div class="tpl-card" id="card-se-5">
+        <div class="tpl-preview">
+          <div class="tpl-preview__inner">
+            <div style="height:2px;background:#2563eb;margin-bottom:10px;width:30px"></div>
+            <div class="tpl-preview__name">Jane Doe</div>
+            <div class="tpl-preview__role" style="color:#64748b">Software Engineer</div>
+            <div class="tpl-preview__line tpl-preview__line--med" style="margin-top:8px"></div>
+            <div class="tpl-preview__section-label">EXPERIENCE</div>
+            <div class="tpl-preview__line"></div>
+            <div class="tpl-preview__line tpl-preview__line--short"></div>
+          </div>
+        </div>
+        <div class="tpl-card__info">
+          <div class="tpl-card__name">Minimal Dev</div>
+          <div class="tpl-card__meta">
+            <span class="tpl-card__meta-tag">Single column</span>
+            <span class="tpl-card__meta-tag">Blue</span>
+          </div>
+          <div class="tpl-card__actions">
+            <button class="tpl-card__use" onclick="useTemplate('se-5')">Use Template</button>
+            <button class="tpl-card__preview" onclick="previewTemplate('se-5')">Preview</button>
+          </div>
+        </div>
+      </div>
+      <div class="tpl-card" id="card-se-6">
+        <div class="tpl-preview">
+          <div class="tpl-preview__inner" style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            <div style="grid-column:1/-1">
+              <div class="tpl-preview__accent" style="background:#2563eb"></div>
+              <div class="tpl-preview__name">Jane Doe</div>
+            </div>
+            <div>
+              <div class="tpl-preview__section-label">EXPERIENCE</div>
+              <div class="tpl-preview__line"></div>
+              <div class="tpl-preview__line tpl-preview__line--short"></div>
+              <div class="tpl-preview__line"></div>
+            </div>
+            <div>
+              <div class="tpl-preview__section-label">SKILLS</div>
+              <div class="tpl-preview__line tpl-preview__line--short"></div>
+              <div class="tpl-preview__line tpl-preview__line--short"></div>
+            </div>
+          </div>
+        </div>
+        <div class="tpl-card__info">
+          <div class="tpl-card__name">Senior Engineer</div>
+          <div class="tpl-card__meta">
+            <span class="tpl-card__meta-tag">Two column</span>
+            <span class="tpl-card__meta-tag">Blue</span>
+          </div>
+          <div class="tpl-card__actions">
+            <button class="tpl-card__use" onclick="useTemplate('se-6')">Use Template</button>
+            <button class="tpl-card__preview" onclick="previewTemplate('se-6')">Preview</button>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
 
-  <!-- ── MARKETING ── -->
-  <section class="industry-section reveal" data-industry="marketing">
+  <!-- Marketing -->
+  <div class="industry-section" id="sec-marketing" data-industry="marketing">
     <div class="industry-header">
-      <div class="industry-label">Marketing</div>
-      <span class="industry-count">4 templates</span>
+      <h2 class="industry-header__title">Marketing</h2>
+      <span class="industry-header__count">4 templates</span>
     </div>
     <div class="tpl-grid">
-
-      <div class="tpl-card" data-id="mk-1" data-industry="marketing" data-layout="two-col">
-        <div class="tpl-preview layout-two-col">
-          <div class="prev-sidebar-left purple-sidebar">
-            <div class="prev-avatar-circle"></div>
-            <div class="prev-line medium light center-line"></div>
-            <div class="prev-line short light-muted center-line"></div>
-            <div class="prev-divider light-div"></div>
-            <div class="prev-section">
-              <div class="prev-section-title light-title"></div>
-              <div class="prev-line full light-muted"></div>
-              <div class="prev-line w80 light-muted"></div>
-            </div>
-            <div class="prev-section">
-              <div class="prev-section-title light-title"></div>
-              <div class="prev-skill-dot"></div>
-              <div class="prev-skill-dot"></div>
-              <div class="prev-skill-dot"></div>
-            </div>
-          </div>
-          <div class="prev-col-main wider">
-            <div class="prev-section">
-              <div class="prev-section-title purple-title"></div>
-              <div class="prev-bullet"></div>
-              <div class="prev-bullet short"></div>
-              <div class="prev-bullet"></div>
-            </div>
-            <div class="prev-section">
-              <div class="prev-section-title purple-title"></div>
-              <div class="prev-bullet"></div>
-              <div class="prev-bullet short"></div>
-            </div>
-          </div>
-        </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">Brand Voice</span>
-            <span class="tpl-tag">Marketing</span>
-          </div>
-          <div class="tpl-stars">★★★★★</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('mk-1')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('mk-1')">Use Template →</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="tpl-card" data-id="mk-2" data-industry="marketing" data-layout="two-col">
-        <div class="tpl-preview layout-two-col">
-          <div class="prev-two-col-header purple-header">
-            <div class="prev-line wide light"></div>
-            <div class="prev-line medium light-muted"></div>
-          </div>
-          <div class="prev-two-col-body">
-            <div class="prev-col-main">
-              <div class="prev-section">
-                <div class="prev-section-title purple-title"></div>
-                <div class="prev-metric-row">
-                  <div class="prev-metric-box"></div>
-                  <div class="prev-metric-box"></div>
-                  <div class="prev-metric-box"></div>
-                </div>
-              </div>
-              <div class="prev-section">
-                <div class="prev-section-title purple-title"></div>
-                <div class="prev-bullet"></div>
-                <div class="prev-bullet short"></div>
-              </div>
-            </div>
-            <div class="prev-col-side">
-              <div class="prev-section">
-                <div class="prev-section-title purple-title"></div>
-                <div class="prev-chip purple-chip"></div>
-                <div class="prev-chip purple-chip wide-chip"></div>
-                <div class="prev-chip purple-chip"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">Campaign Pro</span>
-            <span class="tpl-tag">Marketing</span>
-          </div>
-          <div class="tpl-stars">★★★★★</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('mk-2')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('mk-2')">Use Template →</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="tpl-card" data-id="mk-3" data-industry="marketing" data-layout="two-col">
-        <div class="tpl-preview layout-single">
-          <div class="prev-name-block">
-            <div class="prev-line wide dark"></div>
-            <div class="prev-line medium purple-line"></div>
-          </div>
-          <div class="prev-divider purple-div"></div>
-          <div class="prev-section">
-            <div class="prev-section-title purple-title"></div>
-            <div class="prev-line full"></div>
-            <div class="prev-line w80"></div>
-          </div>
-          <div class="prev-section">
-            <div class="prev-section-title purple-title"></div>
-            <div class="prev-bullet"></div>
-            <div class="prev-bullet short"></div>
-          </div>
-        </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">Growth Lead</span>
-            <span class="tpl-tag">Marketing</span>
-          </div>
-          <div class="tpl-stars">★★★★☆</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('mk-3')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('mk-3')">Use Template →</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="tpl-card" data-id="mk-4" data-industry="marketing" data-layout="two-col">
-        <div class="tpl-preview layout-two-col">
-          <div class="prev-two-col-body full-height">
-            <div class="prev-col-main">
-              <div class="prev-name-block">
-                <div class="prev-line wide dark"></div>
-                <div class="prev-line medium"></div>
-              </div>
-              <div class="prev-divider"></div>
-              <div class="prev-section">
-                <div class="prev-section-title purple-title"></div>
-                <div class="prev-bullet"></div>
-                <div class="prev-bullet short"></div>
-                <div class="prev-bullet"></div>
-              </div>
-            </div>
-            <div class="prev-col-side purple-col">
-              <div class="prev-section">
-                <div class="prev-section-title light-title"></div>
-                <div class="prev-skill-bar light-bar"></div>
-                <div class="prev-skill-bar light-bar w70"></div>
-                <div class="prev-skill-bar light-bar w85"></div>
-              </div>
-              <div class="prev-section">
-                <div class="prev-section-title light-title"></div>
-                <div class="prev-line full light-muted"></div>
-                <div class="prev-line w80 light-muted"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">Digital Marketer</span>
-            <span class="tpl-tag">Marketing</span>
-          </div>
-          <div class="tpl-stars">★★★★★</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('mk-4')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('mk-4')">Use Template →</button>
-          </div>
-        </div>
-      </div>
-
+      <div class="tpl-card" id="card-mk-1"><div class="tpl-preview"><div class="tpl-preview__inner"><div class="tpl-preview__accent" style="background:#7C3AED"></div><div class="tpl-preview__name">Jane Doe</div><div class="tpl-preview__role" style="color:#7C3AED">Brand Strategist</div><div class="tpl-preview__line tpl-preview__line--med"></div><div class="tpl-preview__section-label">EXPERIENCE</div><div class="tpl-preview__line"></div></div></div><div class="tpl-card__info"><div class="tpl-card__name">Brand Voice</div><div class="tpl-card__meta"><span class="tpl-card__meta-tag">Two column</span><span class="tpl-card__meta-tag">Purple</span></div><div class="tpl-card__actions"><button class="tpl-card__use" onclick="useTemplate('mk-1')">Use Template</button><button class="tpl-card__preview" onclick="previewTemplate('mk-1')">Preview</button></div></div></div>
+      <div class="tpl-card" id="card-mk-2"><div class="tpl-preview"><div class="tpl-preview__inner"><div class="tpl-preview__accent" style="background:#7C3AED"></div><div class="tpl-preview__name">Jane Doe</div><div class="tpl-preview__role" style="color:#7C3AED">Campaign Manager</div><div class="tpl-preview__line tpl-preview__line--med"></div><div class="tpl-preview__section-label">EXPERIENCE</div><div class="tpl-preview__line"></div></div></div><div class="tpl-card__info"><div class="tpl-card__name">Campaign Pro</div><div class="tpl-card__meta"><span class="tpl-card__meta-tag">Two column</span><span class="tpl-card__meta-tag">Purple</span></div><div class="tpl-card__actions"><button class="tpl-card__use" onclick="useTemplate('mk-2')">Use Template</button><button class="tpl-card__preview" onclick="previewTemplate('mk-2')">Preview</button></div></div></div>
+      <div class="tpl-card" id="card-mk-3"><div class="tpl-preview"><div class="tpl-preview__inner"><div class="tpl-preview__accent" style="background:#7C3AED"></div><div class="tpl-preview__name">Jane Doe</div><div class="tpl-preview__role" style="color:#7C3AED">Growth Lead</div><div class="tpl-preview__line tpl-preview__line--med"></div><div class="tpl-preview__section-label">CAMPAIGNS</div><div class="tpl-preview__line"></div></div></div><div class="tpl-card__info"><div class="tpl-card__name">Growth Lead</div><div class="tpl-card__meta"><span class="tpl-card__meta-tag">Single column</span><span class="tpl-card__meta-tag">Purple</span></div><div class="tpl-card__actions"><button class="tpl-card__use" onclick="useTemplate('mk-3')">Use Template</button><button class="tpl-card__preview" onclick="previewTemplate('mk-3')">Preview</button></div></div></div>
+      <div class="tpl-card" id="card-mk-4"><div class="tpl-preview"><div class="tpl-preview__inner"><div class="tpl-preview__accent" style="background:#7C3AED"></div><div class="tpl-preview__name">Jane Doe</div><div class="tpl-preview__role" style="color:#7C3AED">Digital Marketer</div><div class="tpl-preview__line tpl-preview__line--med"></div><div class="tpl-preview__section-label">EXPERIENCE</div><div class="tpl-preview__line"></div></div></div><div class="tpl-card__info"><div class="tpl-card__name">Digital Marketer</div><div class="tpl-card__meta"><span class="tpl-card__meta-tag">Two column</span><span class="tpl-card__meta-tag">Purple</span></div><div class="tpl-card__actions"><button class="tpl-card__use" onclick="useTemplate('mk-4')">Use Template</button><button class="tpl-card__preview" onclick="previewTemplate('mk-4')">Preview</button></div></div></div>
     </div>
-  </section>
+  </div>
 
-  <!-- ── FINANCE ── -->
-  <section class="industry-section reveal" data-industry="finance">
+  <!-- Finance -->
+  <div class="industry-section" id="sec-finance" data-industry="finance">
     <div class="industry-header">
-      <div class="industry-label">Finance</div>
-      <span class="industry-count">4 templates</span>
+      <h2 class="industry-header__title">Finance</h2>
+      <span class="industry-header__count">4 templates</span>
     </div>
     <div class="tpl-grid">
-
-      <div class="tpl-card" data-id="fi-1" data-industry="finance" data-layout="two-col">
-        <div class="tpl-preview layout-two-col">
-          <div class="prev-two-col-header navy-header">
-            <div class="prev-line wide light"></div>
-            <div class="prev-line medium light-muted"></div>
-          </div>
-          <div class="prev-two-col-body">
-            <div class="prev-col-main">
-              <div class="prev-section">
-                <div class="prev-section-title navy-title"></div>
-                <div class="prev-bullet"></div>
-                <div class="prev-bullet short"></div>
-                <div class="prev-bullet"></div>
-              </div>
-              <div class="prev-section">
-                <div class="prev-section-title navy-title"></div>
-                <div class="prev-bullet"></div>
-                <div class="prev-bullet short"></div>
-              </div>
-            </div>
-            <div class="prev-col-side">
-              <div class="prev-section">
-                <div class="prev-section-title navy-title"></div>
-                <div class="prev-line full"></div>
-                <div class="prev-line w80"></div>
-                <div class="prev-line w60"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">Capital</span>
-            <span class="tpl-tag">Finance</span>
-          </div>
-          <div class="tpl-stars">★★★★★</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('fi-1')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('fi-1')">Use Template →</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="tpl-card" data-id="fi-2" data-industry="finance" data-layout="two-col">
-        <div class="tpl-preview layout-single">
-          <div class="prev-name-block">
-            <div class="prev-line wide dark"></div>
-            <div class="prev-line medium navy-line"></div>
-          </div>
-          <div class="prev-divider navy-div"></div>
-          <div class="prev-section">
-            <div class="prev-section-title navy-title"></div>
-            <div class="prev-bullet"></div>
-            <div class="prev-bullet short"></div>
-            <div class="prev-bullet"></div>
-          </div>
-          <div class="prev-section">
-            <div class="prev-section-title navy-title"></div>
-            <div class="prev-skills-row">
-              <div class="prev-chip navy-chip"></div>
-              <div class="prev-chip navy-chip wide-chip"></div>
-              <div class="prev-chip navy-chip"></div>
-            </div>
-          </div>
-        </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">Analyst Pro</span>
-            <span class="tpl-tag">Finance</span>
-          </div>
-          <div class="tpl-stars">★★★★★</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('fi-2')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('fi-2')">Use Template →</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="tpl-card" data-id="fi-3" data-industry="finance" data-layout="two-col">
-        <div class="tpl-preview layout-two-col">
-          <div class="prev-two-col-body full-height">
-            <div class="prev-col-main">
-              <div class="prev-name-block">
-                <div class="prev-line wide dark"></div>
-                <div class="prev-line medium"></div>
-              </div>
-              <div class="prev-divider navy-div"></div>
-              <div class="prev-section">
-                <div class="prev-section-title navy-title"></div>
-                <div class="prev-bullet"></div>
-                <div class="prev-bullet short"></div>
-              </div>
-              <div class="prev-section">
-                <div class="prev-section-title navy-title"></div>
-                <div class="prev-bullet"></div>
-                <div class="prev-bullet short"></div>
-              </div>
-            </div>
-            <div class="prev-col-side navy-col">
-              <div class="prev-section">
-                <div class="prev-section-title light-title"></div>
-                <div class="prev-line full light-muted"></div>
-                <div class="prev-line w80 light-muted"></div>
-              </div>
-              <div class="prev-section">
-                <div class="prev-section-title light-title"></div>
-                <div class="prev-skill-bar light-bar"></div>
-                <div class="prev-skill-bar light-bar w70"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">Portfolio</span>
-            <span class="tpl-tag">Finance</span>
-          </div>
-          <div class="tpl-stars">★★★★☆</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('fi-3')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('fi-3')">Use Template →</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="tpl-card" data-id="fi-4" data-industry="finance" data-layout="single">
-        <div class="tpl-preview layout-single">
-          <div class="prev-header-bar accent-navy"></div>
-          <div class="prev-name-block">
-            <div class="prev-line wide dark"></div>
-            <div class="prev-line medium"></div>
-          </div>
-          <div class="prev-divider"></div>
-          <div class="prev-section">
-            <div class="prev-section-title navy-title"></div>
-            <div class="prev-line full"></div>
-            <div class="prev-line w80"></div>
-          </div>
-          <div class="prev-section">
-            <div class="prev-section-title navy-title"></div>
-            <div class="prev-bullet"></div>
-            <div class="prev-bullet short"></div>
-          </div>
-        </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">Investment Banker</span>
-            <span class="tpl-tag">Finance</span>
-          </div>
-          <div class="tpl-stars">★★★★★</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('fi-4')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('fi-4')">Use Template →</button>
-          </div>
-        </div>
-      </div>
-
+      <div class="tpl-card" id="card-fi-1"><div class="tpl-preview"><div class="tpl-preview__inner"><div class="tpl-preview__accent" style="background:#1E3A5F"></div><div class="tpl-preview__name">Jane Doe</div><div class="tpl-preview__role" style="color:#1E3A5F">Investment Analyst</div><div class="tpl-preview__line tpl-preview__line--med"></div><div class="tpl-preview__section-label">EXPERIENCE</div><div class="tpl-preview__line"></div></div></div><div class="tpl-card__info"><div class="tpl-card__name">Capital</div><div class="tpl-card__meta"><span class="tpl-card__meta-tag">Two column</span><span class="tpl-card__meta-tag">Navy</span></div><div class="tpl-card__actions"><button class="tpl-card__use" onclick="useTemplate('fi-1')">Use Template</button><button class="tpl-card__preview" onclick="previewTemplate('fi-1')">Preview</button></div></div></div>
+      <div class="tpl-card" id="card-fi-2"><div class="tpl-preview"><div class="tpl-preview__inner"><div class="tpl-preview__accent" style="background:#1E3A5F"></div><div class="tpl-preview__name">Jane Doe</div><div class="tpl-preview__role" style="color:#1E3A5F">Financial Analyst</div><div class="tpl-preview__line tpl-preview__line--med"></div><div class="tpl-preview__section-label">EXPERIENCE</div><div class="tpl-preview__line"></div></div></div><div class="tpl-card__info"><div class="tpl-card__name">Analyst Pro</div><div class="tpl-card__meta"><span class="tpl-card__meta-tag">Single column</span><span class="tpl-card__meta-tag">Navy</span></div><div class="tpl-card__actions"><button class="tpl-card__use" onclick="useTemplate('fi-2')">Use Template</button><button class="tpl-card__preview" onclick="previewTemplate('fi-2')">Preview</button></div></div></div>
+      <div class="tpl-card" id="card-fi-3"><div class="tpl-preview"><div class="tpl-preview__inner"><div class="tpl-preview__accent" style="background:#1E3A5F"></div><div class="tpl-preview__name">Jane Doe</div><div class="tpl-preview__role" style="color:#1E3A5F">Portfolio Manager</div><div class="tpl-preview__line tpl-preview__line--med"></div><div class="tpl-preview__section-label">EXPERIENCE</div><div class="tpl-preview__line"></div></div></div><div class="tpl-card__info"><div class="tpl-card__name">Portfolio</div><div class="tpl-card__meta"><span class="tpl-card__meta-tag">Two column</span><span class="tpl-card__meta-tag">Navy</span></div><div class="tpl-card__actions"><button class="tpl-card__use" onclick="useTemplate('fi-3')">Use Template</button><button class="tpl-card__preview" onclick="previewTemplate('fi-3')">Preview</button></div></div></div>
+      <div class="tpl-card" id="card-fi-4"><div class="tpl-preview"><div class="tpl-preview__inner"><div class="tpl-preview__accent" style="background:#1E3A5F"></div><div class="tpl-preview__name">Jane Doe</div><div class="tpl-preview__role" style="color:#1E3A5F">Investment Banker</div><div class="tpl-preview__line tpl-preview__line--med"></div><div class="tpl-preview__section-label">EXPERIENCE</div><div class="tpl-preview__line"></div></div></div><div class="tpl-card__info"><div class="tpl-card__name">Investment Banker</div><div class="tpl-card__meta"><span class="tpl-card__meta-tag">Single column</span><span class="tpl-card__meta-tag">Navy</span></div><div class="tpl-card__actions"><button class="tpl-card__use" onclick="useTemplate('fi-4')">Use Template</button><button class="tpl-card__preview" onclick="previewTemplate('fi-4')">Preview</button></div></div></div>
     </div>
-  </section>
+  </div>
 
-  <!-- ── BUSINESS ── -->
-  <section class="industry-section reveal" data-industry="business">
+  <!-- Business -->
+  <div class="industry-section" id="sec-business" data-industry="business">
     <div class="industry-header">
-      <div class="industry-label">Business</div>
-      <span class="industry-count">3 templates</span>
+      <h2 class="industry-header__title">Business</h2>
+      <span class="industry-header__count">3 templates</span>
     </div>
     <div class="tpl-grid">
-
-      <div class="tpl-card" data-id="bz-1" data-industry="business" data-layout="two-col">
-        <div class="tpl-preview layout-two-col">
-          <div class="prev-two-col-header slate-header">
-            <div class="prev-line wide light"></div>
-            <div class="prev-line medium light-muted"></div>
-          </div>
-          <div class="prev-two-col-body">
-            <div class="prev-col-main">
-              <div class="prev-section">
-                <div class="prev-section-title slate-title"></div>
-                <div class="prev-bullet"></div>
-                <div class="prev-bullet short"></div>
-                <div class="prev-bullet"></div>
-              </div>
-              <div class="prev-section">
-                <div class="prev-section-title slate-title"></div>
-                <div class="prev-bullet"></div>
-                <div class="prev-bullet short"></div>
-              </div>
-            </div>
-            <div class="prev-col-side">
-              <div class="prev-section">
-                <div class="prev-section-title slate-title"></div>
-                <div class="prev-line full"></div>
-                <div class="prev-line w80"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">Executive</span>
-            <span class="tpl-tag">Business</span>
-          </div>
-          <div class="tpl-stars">★★★★★</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('bz-1')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('bz-1')">Use Template →</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="tpl-card" data-id="bz-2" data-industry="business" data-layout="single">
-        <div class="tpl-preview layout-single">
-          <div class="prev-name-block">
-            <div class="prev-line wide dark"></div>
-            <div class="prev-line medium slate-line"></div>
-          </div>
-          <div class="prev-divider slate-div"></div>
-          <div class="prev-section">
-            <div class="prev-section-title slate-title"></div>
-            <div class="prev-line full"></div>
-            <div class="prev-line w80"></div>
-          </div>
-          <div class="prev-section">
-            <div class="prev-section-title slate-title"></div>
-            <div class="prev-bullet"></div>
-            <div class="prev-bullet short"></div>
-            <div class="prev-bullet"></div>
-          </div>
-        </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">Corporate</span>
-            <span class="tpl-tag">Business</span>
-          </div>
-          <div class="tpl-stars">★★★★☆</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('bz-2')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('bz-2')">Use Template →</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="tpl-card" data-id="bz-3" data-industry="business" data-layout="two-col">
-        <div class="tpl-preview layout-two-col">
-          <div class="prev-two-col-body full-height">
-            <div class="prev-col-main">
-              <div class="prev-name-block">
-                <div class="prev-line wide dark"></div>
-                <div class="prev-line medium"></div>
-              </div>
-              <div class="prev-divider"></div>
-              <div class="prev-section">
-                <div class="prev-section-title slate-title"></div>
-                <div class="prev-bullet"></div>
-                <div class="prev-bullet short"></div>
-              </div>
-            </div>
-            <div class="prev-col-side slate-col">
-              <div class="prev-section">
-                <div class="prev-section-title light-title"></div>
-                <div class="prev-line full light-muted"></div>
-                <div class="prev-line w80 light-muted"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">Leadership</span>
-            <span class="tpl-tag">Business</span>
-          </div>
-          <div class="tpl-stars">★★★★★</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('bz-3')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('bz-3')">Use Template →</button>
-          </div>
-        </div>
-      </div>
-
+      <div class="tpl-card" id="card-bz-1"><div class="tpl-preview"><div class="tpl-preview__inner"><div class="tpl-preview__accent" style="background:#475569"></div><div class="tpl-preview__name">Jane Doe</div><div class="tpl-preview__role" style="color:#475569">Chief Executive</div><div class="tpl-preview__line tpl-preview__line--med"></div><div class="tpl-preview__section-label">LEADERSHIP</div><div class="tpl-preview__line"></div></div></div><div class="tpl-card__info"><div class="tpl-card__name">Executive</div><div class="tpl-card__meta"><span class="tpl-card__meta-tag">Two column</span><span class="tpl-card__meta-tag">Slate</span></div><div class="tpl-card__actions"><button class="tpl-card__use" onclick="useTemplate('bz-1')">Use Template</button><button class="tpl-card__preview" onclick="previewTemplate('bz-1')">Preview</button></div></div></div>
+      <div class="tpl-card" id="card-bz-2"><div class="tpl-preview"><div class="tpl-preview__inner"><div class="tpl-preview__accent" style="background:#475569"></div><div class="tpl-preview__name">Jane Doe</div><div class="tpl-preview__role" style="color:#475569">Business Analyst</div><div class="tpl-preview__line tpl-preview__line--med"></div><div class="tpl-preview__section-label">EXPERIENCE</div><div class="tpl-preview__line"></div></div></div><div class="tpl-card__info"><div class="tpl-card__name">Corporate</div><div class="tpl-card__meta"><span class="tpl-card__meta-tag">Single column</span><span class="tpl-card__meta-tag">Slate</span></div><div class="tpl-card__actions"><button class="tpl-card__use" onclick="useTemplate('bz-2')">Use Template</button><button class="tpl-card__preview" onclick="previewTemplate('bz-2')">Preview</button></div></div></div>
+      <div class="tpl-card" id="card-bz-3"><div class="tpl-preview"><div class="tpl-preview__inner"><div class="tpl-preview__accent" style="background:#475569"></div><div class="tpl-preview__name">Jane Doe</div><div class="tpl-preview__role" style="color:#475569">Team Lead</div><div class="tpl-preview__line tpl-preview__line--med"></div><div class="tpl-preview__section-label">LEADERSHIP</div><div class="tpl-preview__line"></div></div></div><div class="tpl-card__info"><div class="tpl-card__name">Leadership</div><div class="tpl-card__meta"><span class="tpl-card__meta-tag">Two column</span><span class="tpl-card__meta-tag">Slate</span></div><div class="tpl-card__actions"><button class="tpl-card__use" onclick="useTemplate('bz-3')">Use Template</button><button class="tpl-card__preview" onclick="previewTemplate('bz-3')">Preview</button></div></div></div>
     </div>
-  </section>
+  </div>
 
-  <!-- ── HEALTHCARE ── -->
-  <section class="industry-section reveal" data-industry="healthcare">
+  <!-- Healthcare -->
+  <div class="industry-section" id="sec-healthcare" data-industry="healthcare">
     <div class="industry-header">
-      <div class="industry-label">Healthcare</div>
-      <span class="industry-count">3 templates</span>
+      <h2 class="industry-header__title">Healthcare</h2>
+      <span class="industry-header__count">3 templates</span>
     </div>
     <div class="tpl-grid">
-
-      <div class="tpl-card" data-id="hc-1" data-industry="healthcare" data-layout="single">
-        <div class="tpl-preview layout-single">
-          <div class="prev-header-bar accent-green"></div>
-          <div class="prev-name-block">
-            <div class="prev-line wide dark"></div>
-            <div class="prev-line medium green-line"></div>
-          </div>
-          <div class="prev-divider"></div>
-          <div class="prev-section">
-            <div class="prev-section-title green-title"></div>
-            <div class="prev-line full"></div>
-            <div class="prev-line w80"></div>
-          </div>
-          <div class="prev-section">
-            <div class="prev-section-title green-title"></div>
-            <div class="prev-bullet"></div>
-            <div class="prev-bullet short"></div>
-            <div class="prev-bullet"></div>
-          </div>
-        </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">Clinical</span>
-            <span class="tpl-tag">Healthcare</span>
-          </div>
-          <div class="tpl-stars">★★★★★</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('hc-1')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('hc-1')">Use Template →</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="tpl-card" data-id="hc-2" data-industry="healthcare" data-layout="single">
-        <div class="tpl-preview layout-single">
-          <div class="prev-name-block">
-            <div class="prev-line wide dark"></div>
-            <div class="prev-line medium"></div>
-          </div>
-          <div class="prev-divider green-div"></div>
-          <div class="prev-section">
-            <div class="prev-section-title green-title"></div>
-            <div class="prev-line full"></div>
-            <div class="prev-line w80"></div>
-          </div>
-          <div class="prev-section">
-            <div class="prev-section-title green-title"></div>
-            <div class="prev-bullet"></div>
-            <div class="prev-bullet short"></div>
-          </div>
-          <div class="prev-section">
-            <div class="prev-section-title green-title"></div>
-            <div class="prev-skills-row">
-              <div class="prev-chip green-chip"></div>
-              <div class="prev-chip green-chip wide-chip"></div>
-            </div>
-          </div>
-        </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">Patient First</span>
-            <span class="tpl-tag">Healthcare</span>
-          </div>
-          <div class="tpl-stars">★★★★☆</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('hc-2')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('hc-2')">Use Template →</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="tpl-card" data-id="hc-3" data-industry="healthcare" data-layout="single">
-        <div class="tpl-preview layout-single">
-          <div class="prev-name-block">
-            <div class="prev-line wide dark"></div>
-            <div class="prev-line medium green-line"></div>
-          </div>
-          <div class="prev-divider"></div>
-          <div class="prev-section">
-            <div class="prev-section-title green-title"></div>
-            <div class="prev-bullet"></div>
-            <div class="prev-bullet short"></div>
-            <div class="prev-bullet"></div>
-          </div>
-          <div class="prev-section">
-            <div class="prev-section-title green-title"></div>
-            <div class="prev-line full"></div>
-            <div class="prev-line w80"></div>
-          </div>
-        </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">MedPro</span>
-            <span class="tpl-tag">Healthcare</span>
-          </div>
-          <div class="tpl-stars">★★★★★</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('hc-3')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('hc-3')">Use Template →</button>
-          </div>
-        </div>
-      </div>
-
+      <div class="tpl-card" id="card-hc-1"><div class="tpl-preview"><div class="tpl-preview__inner"><div class="tpl-preview__accent" style="background:#059669"></div><div class="tpl-preview__name">Jane Doe</div><div class="tpl-preview__role" style="color:#059669">RN, BSN</div><div class="tpl-preview__line tpl-preview__line--med"></div><div class="tpl-preview__section-label">EXPERIENCE</div><div class="tpl-preview__line"></div></div></div><div class="tpl-card__info"><div class="tpl-card__name">Clinical</div><div class="tpl-card__meta"><span class="tpl-card__meta-tag">Single column</span><span class="tpl-card__meta-tag">Green</span></div><div class="tpl-card__actions"><button class="tpl-card__use" onclick="useTemplate('hc-1')">Use Template</button><button class="tpl-card__preview" onclick="previewTemplate('hc-1')">Preview</button></div></div></div>
+      <div class="tpl-card" id="card-hc-2"><div class="tpl-preview"><div class="tpl-preview__inner"><div class="tpl-preview__accent" style="background:#059669"></div><div class="tpl-preview__name">Jane Doe</div><div class="tpl-preview__role" style="color:#059669">Physician</div><div class="tpl-preview__line tpl-preview__line--med"></div><div class="tpl-preview__section-label">EXPERIENCE</div><div class="tpl-preview__line"></div></div></div><div class="tpl-card__info"><div class="tpl-card__name">Patient First</div><div class="tpl-card__meta"><span class="tpl-card__meta-tag">Single column</span><span class="tpl-card__meta-tag">Green</span></div><div class="tpl-card__actions"><button class="tpl-card__use" onclick="useTemplate('hc-2')">Use Template</button><button class="tpl-card__preview" onclick="previewTemplate('hc-2')">Preview</button></div></div></div>
+      <div class="tpl-card" id="card-hc-3"><div class="tpl-preview"><div class="tpl-preview__inner"><div class="tpl-preview__accent" style="background:#059669"></div><div class="tpl-preview__name">Jane Doe</div><div class="tpl-preview__role" style="color:#059669">Medical Professional</div><div class="tpl-preview__line tpl-preview__line--med"></div><div class="tpl-preview__section-label">CERTIFICATIONS</div><div class="tpl-preview__line"></div></div></div><div class="tpl-card__info"><div class="tpl-card__name">MedPro</div><div class="tpl-card__meta"><span class="tpl-card__meta-tag">Single column</span><span class="tpl-card__meta-tag">Green</span></div><div class="tpl-card__actions"><button class="tpl-card__use" onclick="useTemplate('hc-3')">Use Template</button><button class="tpl-card__preview" onclick="previewTemplate('hc-3')">Preview</button></div></div></div>
     </div>
-  </section>
+  </div>
 
-  <!-- ── ARCHITECTURE ── -->
-  <section class="industry-section reveal" data-industry="architecture">
+  <!-- Architecture -->
+  <div class="industry-section" id="sec-architecture" data-industry="architecture">
     <div class="industry-header">
-      <div class="industry-label">Architecture</div>
-      <span class="industry-count">3 templates</span>
+      <h2 class="industry-header__title">Architecture</h2>
+      <span class="industry-header__count">3 templates</span>
     </div>
     <div class="tpl-grid">
-
-      <div class="tpl-card" data-id="ar-1" data-industry="architecture" data-layout="sidebar">
-        <div class="tpl-preview layout-sidebar">
-          <div class="prev-sidebar-left dark-sidebar">
-            <div class="prev-line medium light center-line"></div>
-            <div class="prev-line short light-muted center-line"></div>
-            <div class="prev-divider light-div"></div>
-            <div class="prev-section">
-              <div class="prev-section-title light-title"></div>
-              <div class="prev-skill-dot amber"></div>
-              <div class="prev-skill-dot amber"></div>
-              <div class="prev-skill-dot amber half"></div>
-            </div>
-            <div class="prev-section">
-              <div class="prev-section-title light-title"></div>
-              <div class="prev-line full light-muted"></div>
-              <div class="prev-line w80 light-muted"></div>
-            </div>
-          </div>
-          <div class="prev-col-main wider">
-            <div class="prev-section">
-              <div class="prev-section-title amber-title"></div>
-              <div class="prev-bullet"></div>
-              <div class="prev-bullet short"></div>
-              <div class="prev-bullet"></div>
-            </div>
-            <div class="prev-section">
-              <div class="prev-section-title amber-title"></div>
-              <div class="prev-bullet"></div>
-              <div class="prev-bullet short"></div>
-            </div>
-          </div>
-        </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">Blueprint</span>
-            <span class="tpl-tag">Architecture</span>
-          </div>
-          <div class="tpl-stars">★★★★★</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('ar-1')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('ar-1')">Use Template →</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="tpl-card" data-id="ar-2" data-industry="architecture" data-layout="sidebar">
-        <div class="tpl-preview layout-sidebar">
-          <div class="prev-col-main wider">
-            <div class="prev-name-block">
-              <div class="prev-line wide dark"></div>
-              <div class="prev-line medium amber-line"></div>
-            </div>
-            <div class="prev-divider amber-div"></div>
-            <div class="prev-section">
-              <div class="prev-section-title amber-title"></div>
-              <div class="prev-bullet"></div>
-              <div class="prev-bullet short"></div>
-            </div>
-          </div>
-          <div class="prev-sidebar-right amber-sidebar">
-            <div class="prev-section">
-              <div class="prev-section-title light-title"></div>
-              <div class="prev-line full light-muted"></div>
-              <div class="prev-line w80 light-muted"></div>
-            </div>
-            <div class="prev-section">
-              <div class="prev-section-title light-title"></div>
-              <div class="prev-skill-dot light-dot"></div>
-              <div class="prev-skill-dot light-dot"></div>
-            </div>
-          </div>
-        </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">Studio</span>
-            <span class="tpl-tag">Architecture</span>
-          </div>
-          <div class="tpl-stars">★★★★☆</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('ar-2')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('ar-2')">Use Template →</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="tpl-card" data-id="ar-3" data-industry="architecture" data-layout="sidebar">
-        <div class="tpl-preview layout-sidebar">
-          <div class="prev-sidebar-left amber-sidebar">
-            <div class="prev-avatar-square"></div>
-            <div class="prev-line medium light center-line"></div>
-            <div class="prev-line short light-muted center-line"></div>
-            <div class="prev-divider light-div"></div>
-            <div class="prev-section">
-              <div class="prev-section-title light-title"></div>
-              <div class="prev-line full light-muted"></div>
-              <div class="prev-line w80 light-muted"></div>
-            </div>
-          </div>
-          <div class="prev-col-main wider">
-            <div class="prev-section">
-              <div class="prev-section-title amber-title"></div>
-              <div class="prev-bullet"></div>
-              <div class="prev-bullet short"></div>
-            </div>
-            <div class="prev-section">
-              <div class="prev-section-title amber-title"></div>
-              <div class="prev-bullet"></div>
-              <div class="prev-bullet short"></div>
-            </div>
-          </div>
-        </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">Structural</span>
-            <span class="tpl-tag">Architecture</span>
-          </div>
-          <div class="tpl-stars">★★★★★</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('ar-3')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('ar-3')">Use Template →</button>
-          </div>
-        </div>
-      </div>
-
+      <div class="tpl-card" id="card-ar-1"><div class="tpl-preview"><div class="tpl-preview__inner"><div class="tpl-preview__accent" style="background:#D97706"></div><div class="tpl-preview__name">Jane Doe</div><div class="tpl-preview__role" style="color:#D97706">Architect</div><div class="tpl-preview__line tpl-preview__line--med"></div><div class="tpl-preview__section-label">PROJECTS</div><div class="tpl-preview__line"></div></div></div><div class="tpl-card__info"><div class="tpl-card__name">Blueprint</div><div class="tpl-card__meta"><span class="tpl-card__meta-tag">Sidebar</span><span class="tpl-card__meta-tag">Amber</span></div><div class="tpl-card__actions"><button class="tpl-card__use" onclick="useTemplate('ar-1')">Use Template</button><button class="tpl-card__preview" onclick="previewTemplate('ar-1')">Preview</button></div></div></div>
+      <div class="tpl-card" id="card-ar-2"><div class="tpl-preview"><div class="tpl-preview__inner"><div class="tpl-preview__accent" style="background:#D97706"></div><div class="tpl-preview__name">Jane Doe</div><div class="tpl-preview__role" style="color:#D97706">Studio Architect</div><div class="tpl-preview__line tpl-preview__line--med"></div><div class="tpl-preview__section-label">EXPERIENCE</div><div class="tpl-preview__line"></div></div></div><div class="tpl-card__info"><div class="tpl-card__name">Studio</div><div class="tpl-card__meta"><span class="tpl-card__meta-tag">Sidebar</span><span class="tpl-card__meta-tag">Amber</span></div><div class="tpl-card__actions"><button class="tpl-card__use" onclick="useTemplate('ar-2')">Use Template</button><button class="tpl-card__preview" onclick="previewTemplate('ar-2')">Preview</button></div></div></div>
+      <div class="tpl-card" id="card-ar-3"><div class="tpl-preview"><div class="tpl-preview__inner"><div class="tpl-preview__accent" style="background:#D97706"></div><div class="tpl-preview__name">Jane Doe</div><div class="tpl-preview__role" style="color:#D97706">Structural Engineer</div><div class="tpl-preview__line tpl-preview__line--med"></div><div class="tpl-preview__section-label">EXPERIENCE</div><div class="tpl-preview__line"></div></div></div><div class="tpl-card__info"><div class="tpl-card__name">Structural</div><div class="tpl-card__meta"><span class="tpl-card__meta-tag">Sidebar</span><span class="tpl-card__meta-tag">Amber</span></div><div class="tpl-card__actions"><button class="tpl-card__use" onclick="useTemplate('ar-3')">Use Template</button><button class="tpl-card__preview" onclick="previewTemplate('ar-3')">Preview</button></div></div></div>
     </div>
-  </section>
+  </div>
 
-  <!-- ── DESIGN ── -->
-  <section class="industry-section reveal" data-industry="design">
+  <!-- Design -->
+  <div class="industry-section" id="sec-design" data-industry="design">
     <div class="industry-header">
-      <div class="industry-label">Design</div>
-      <span class="industry-count">3 templates</span>
+      <h2 class="industry-header__title">Design</h2>
+      <span class="industry-header__count">3 templates</span>
     </div>
     <div class="tpl-grid">
-
-      <div class="tpl-card" data-id="ds-1" data-industry="design" data-layout="sidebar">
-        <div class="tpl-preview layout-sidebar">
-          <div class="prev-sidebar-left pink-sidebar">
-            <div class="prev-avatar-circle pink-avatar"></div>
-            <div class="prev-line medium light center-line"></div>
-            <div class="prev-line short light-muted center-line"></div>
-            <div class="prev-divider light-div"></div>
-            <div class="prev-section">
-              <div class="prev-section-title light-title"></div>
-              <div class="prev-skill-dot pink-dot"></div>
-              <div class="prev-skill-dot pink-dot"></div>
-              <div class="prev-skill-dot pink-dot half"></div>
-            </div>
-          </div>
-          <div class="prev-col-main wider">
-            <div class="prev-section">
-              <div class="prev-section-title pink-title"></div>
-              <div class="prev-bullet"></div>
-              <div class="prev-bullet short"></div>
-              <div class="prev-bullet"></div>
-            </div>
-            <div class="prev-section">
-              <div class="prev-section-title pink-title"></div>
-              <div class="prev-portfolio-grid">
-                <div class="prev-port-item"></div>
-                <div class="prev-port-item"></div>
-                <div class="prev-port-item"></div>
-                <div class="prev-port-item"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">Canvas</span>
-            <span class="tpl-tag">Design</span>
-          </div>
-          <div class="tpl-stars">★★★★★</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('ds-1')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('ds-1')">Use Template →</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="tpl-card" data-id="ds-2" data-industry="design" data-layout="sidebar">
-        <div class="tpl-preview layout-single">
-          <div class="prev-design-header">
-            <div class="prev-line wide light"></div>
-            <div class="prev-color-bar">
-              <div class="prev-color-dot c1"></div>
-              <div class="prev-color-dot c2"></div>
-              <div class="prev-color-dot c3"></div>
-              <div class="prev-color-dot c4"></div>
-            </div>
-          </div>
-          <div class="prev-section">
-            <div class="prev-section-title pink-title"></div>
-            <div class="prev-bullet"></div>
-            <div class="prev-bullet short"></div>
-          </div>
-          <div class="prev-section">
-            <div class="prev-section-title pink-title"></div>
-            <div class="prev-bullet"></div>
-            <div class="prev-bullet short"></div>
-          </div>
-        </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">UX Portfolio</span>
-            <span class="tpl-tag">Design</span>
-          </div>
-          <div class="tpl-stars">★★★★★</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('ds-2')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('ds-2')">Use Template →</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="tpl-card" data-id="ds-3" data-industry="design" data-layout="sidebar">
-        <div class="tpl-preview layout-sidebar">
-          <div class="prev-col-main wider">
-            <div class="prev-name-block">
-              <div class="prev-line wide dark"></div>
-              <div class="prev-line medium pink-line"></div>
-            </div>
-            <div class="prev-divider pink-div"></div>
-            <div class="prev-section">
-              <div class="prev-section-title pink-title"></div>
-              <div class="prev-bullet"></div>
-              <div class="prev-bullet short"></div>
-            </div>
-          </div>
-          <div class="prev-sidebar-right pink-sidebar">
-            <div class="prev-section">
-              <div class="prev-section-title light-title"></div>
-              <div class="prev-skill-dot pink-dot"></div>
-              <div class="prev-skill-dot pink-dot"></div>
-              <div class="prev-skill-dot pink-dot half"></div>
-            </div>
-          </div>
-        </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">Artboard</span>
-            <span class="tpl-tag">Design</span>
-          </div>
-          <div class="tpl-stars">★★★★☆</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('ds-3')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('ds-3')">Use Template →</button>
-          </div>
-        </div>
-      </div>
-
+      <div class="tpl-card" id="card-ds-1"><div class="tpl-preview"><div class="tpl-preview__inner"><div class="tpl-preview__accent" style="background:#DB2777"></div><div class="tpl-preview__name">Jane Doe</div><div class="tpl-preview__role" style="color:#DB2777">UI Designer</div><div class="tpl-preview__line tpl-preview__line--med"></div><div class="tpl-preview__section-label">PORTFOLIO</div><div class="tpl-preview__line"></div></div></div><div class="tpl-card__info"><div class="tpl-card__name">Canvas</div><div class="tpl-card__meta"><span class="tpl-card__meta-tag">Sidebar</span><span class="tpl-card__meta-tag">Pink</span></div><div class="tpl-card__actions"><button class="tpl-card__use" onclick="useTemplate('ds-1')">Use Template</button><button class="tpl-card__preview" onclick="previewTemplate('ds-1')">Preview</button></div></div></div>
+      <div class="tpl-card" id="card-ds-2"><div class="tpl-preview"><div class="tpl-preview__inner"><div class="tpl-preview__accent" style="background:#DB2777"></div><div class="tpl-preview__name">Jane Doe</div><div class="tpl-preview__role" style="color:#DB2777">UX Researcher</div><div class="tpl-preview__line tpl-preview__line--med"></div><div class="tpl-preview__section-label">CASE STUDIES</div><div class="tpl-preview__line"></div></div></div><div class="tpl-card__info"><div class="tpl-card__name">UX Portfolio</div><div class="tpl-card__meta"><span class="tpl-card__meta-tag">Sidebar</span><span class="tpl-card__meta-tag">Pink</span></div><div class="tpl-card__actions"><button class="tpl-card__use" onclick="useTemplate('ds-2')">Use Template</button><button class="tpl-card__preview" onclick="previewTemplate('ds-2')">Preview</button></div></div></div>
+      <div class="tpl-card" id="card-ds-3"><div class="tpl-preview"><div class="tpl-preview__inner"><div class="tpl-preview__accent" style="background:#DB2777"></div><div class="tpl-preview__name">Jane Doe</div><div class="tpl-preview__role" style="color:#DB2777">Art Director</div><div class="tpl-preview__line tpl-preview__line--med"></div><div class="tpl-preview__section-label">EXPERIENCE</div><div class="tpl-preview__line"></div></div></div><div class="tpl-card__info"><div class="tpl-card__name">Artboard</div><div class="tpl-card__meta"><span class="tpl-card__meta-tag">Sidebar</span><span class="tpl-card__meta-tag">Pink</span></div><div class="tpl-card__actions"><button class="tpl-card__use" onclick="useTemplate('ds-3')">Use Template</button><button class="tpl-card__preview" onclick="previewTemplate('ds-3')">Preview</button></div></div></div>
     </div>
-  </section>
+  </div>
 
-  <!-- ── ADMINISTRATIVE ── -->
-  <section class="industry-section reveal" data-industry="admin">
+  <!-- Education -->
+  <div class="industry-section" id="sec-education" data-industry="education">
     <div class="industry-header">
-      <div class="industry-label">Administrative</div>
-      <span class="industry-count">3 templates</span>
+      <h2 class="industry-header__title">Education</h2>
+      <span class="industry-header__count">3 templates</span>
     </div>
     <div class="tpl-grid">
-
-      <div class="tpl-card" data-id="ad-1" data-industry="admin" data-layout="single">
-        <div class="tpl-preview layout-single">
-          <div class="prev-name-block">
-            <div class="prev-line wide dark"></div>
-            <div class="prev-line medium"></div>
-          </div>
-          <div class="prev-divider"></div>
-          <div class="prev-section">
-            <div class="prev-section-title"></div>
-            <div class="prev-line full"></div>
-            <div class="prev-line full"></div>
-            <div class="prev-line w80"></div>
-          </div>
-          <div class="prev-section">
-            <div class="prev-section-title"></div>
-            <div class="prev-bullet"></div>
-            <div class="prev-bullet short"></div>
-            <div class="prev-bullet"></div>
-          </div>
-        </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">Office Pro</span>
-            <span class="tpl-tag">Administrative</span>
-          </div>
-          <div class="tpl-stars">★★★★★</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('ad-1')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('ad-1')">Use Template →</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="tpl-card" data-id="ad-2" data-industry="admin" data-layout="single">
-        <div class="tpl-preview layout-single">
-          <div class="prev-header-bar accent-blue"></div>
-          <div class="prev-name-block">
-            <div class="prev-line wide dark"></div>
-            <div class="prev-line medium"></div>
-          </div>
-          <div class="prev-divider"></div>
-          <div class="prev-section">
-            <div class="prev-section-title"></div>
-            <div class="prev-bullet"></div>
-            <div class="prev-bullet short"></div>
-          </div>
-          <div class="prev-section">
-            <div class="prev-section-title"></div>
-            <div class="prev-line full"></div>
-            <div class="prev-line w80"></div>
-          </div>
-        </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">Executive Assistant</span>
-            <span class="tpl-tag">Administrative</span>
-          </div>
-          <div class="tpl-stars">★★★★☆</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('ad-2')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('ad-2')">Use Template →</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="tpl-card" data-id="ad-3" data-industry="admin" data-layout="single">
-        <div class="tpl-preview layout-single">
-          <div class="prev-name-block">
-            <div class="prev-line wide dark"></div>
-            <div class="prev-line medium"></div>
-          </div>
-          <div class="prev-divider"></div>
-          <div class="prev-section">
-            <div class="prev-section-title"></div>
-            <div class="prev-bullet"></div>
-            <div class="prev-bullet short"></div>
-          </div>
-          <div class="prev-section">
-            <div class="prev-section-title"></div>
-            <div class="prev-skills-row">
-              <div class="prev-chip"></div>
-              <div class="prev-chip wide-chip"></div>
-              <div class="prev-chip"></div>
-            </div>
-          </div>
-        </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">Operations</span>
-            <span class="tpl-tag">Administrative</span>
-          </div>
-          <div class="tpl-stars">★★★★★</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('ad-3')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('ad-3')">Use Template →</button>
-          </div>
-        </div>
-      </div>
-
+      <div class="tpl-card" id="card-ed-1"><div class="tpl-preview"><div class="tpl-preview__inner"><div class="tpl-preview__accent" style="background:#4338CA"></div><div class="tpl-preview__name">Jane Doe</div><div class="tpl-preview__role" style="color:#4338CA">Professor</div><div class="tpl-preview__line tpl-preview__line--med"></div><div class="tpl-preview__section-label">PUBLICATIONS</div><div class="tpl-preview__line"></div></div></div><div class="tpl-card__info"><div class="tpl-card__name">Academic</div><div class="tpl-card__meta"><span class="tpl-card__meta-tag">Single column</span><span class="tpl-card__meta-tag">Indigo</span></div><div class="tpl-card__actions"><button class="tpl-card__use" onclick="useTemplate('ed-1')">Use Template</button><button class="tpl-card__preview" onclick="previewTemplate('ed-1')">Preview</button></div></div></div>
+      <div class="tpl-card" id="card-ed-2"><div class="tpl-preview"><div class="tpl-preview__inner"><div class="tpl-preview__accent" style="background:#4338CA"></div><div class="tpl-preview__name">Jane Doe</div><div class="tpl-preview__role" style="color:#4338CA">PhD Candidate</div><div class="tpl-preview__line tpl-preview__line--med"></div><div class="tpl-preview__section-label">RESEARCH</div><div class="tpl-preview__line"></div></div></div><div class="tpl-card__info"><div class="tpl-card__name">Scholar</div><div class="tpl-card__meta"><span class="tpl-card__meta-tag">Single column</span><span class="tpl-card__meta-tag">Indigo</span></div><div class="tpl-card__actions"><button class="tpl-card__use" onclick="useTemplate('ed-2')">Use Template</button><button class="tpl-card__preview" onclick="previewTemplate('ed-2')">Preview</button></div></div></div>
+      <div class="tpl-card" id="card-ed-3"><div class="tpl-preview"><div class="tpl-preview__inner"><div class="tpl-preview__accent" style="background:#4338CA"></div><div class="tpl-preview__name">Jane Doe</div><div class="tpl-preview__role" style="color:#4338CA">Teacher</div><div class="tpl-preview__line tpl-preview__line--med"></div><div class="tpl-preview__section-label">EXPERIENCE</div><div class="tpl-preview__line"></div></div></div><div class="tpl-card__info"><div class="tpl-card__name">Educator</div><div class="tpl-card__meta"><span class="tpl-card__meta-tag">Two column</span><span class="tpl-card__meta-tag">Indigo</span></div><div class="tpl-card__actions"><button class="tpl-card__use" onclick="useTemplate('ed-3')">Use Template</button><button class="tpl-card__preview" onclick="previewTemplate('ed-3')">Preview</button></div></div></div>
     </div>
-  </section>
-
-  <!-- ── ACTING / CREATIVE ── -->
-  <section class="industry-section reveal" data-industry="acting">
-    <div class="industry-header">
-      <div class="industry-label">Acting / Creative</div>
-      <span class="industry-count">3 templates</span>
-    </div>
-    <div class="tpl-grid">
-
-      <div class="tpl-card" data-id="ac-1" data-industry="acting" data-layout="sidebar">
-        <div class="tpl-preview layout-sidebar">
-          <div class="prev-sidebar-left red-sidebar">
-            <div class="prev-avatar-circle red-avatar"></div>
-            <div class="prev-line medium light center-line"></div>
-            <div class="prev-line short light-muted center-line"></div>
-            <div class="prev-divider light-div"></div>
-            <div class="prev-section">
-              <div class="prev-section-title light-title"></div>
-              <div class="prev-line full light-muted"></div>
-              <div class="prev-line w80 light-muted"></div>
-            </div>
-          </div>
-          <div class="prev-col-main wider">
-            <div class="prev-section">
-              <div class="prev-section-title red-title"></div>
-              <div class="prev-bullet"></div>
-              <div class="prev-bullet short"></div>
-              <div class="prev-bullet"></div>
-            </div>
-            <div class="prev-section">
-              <div class="prev-section-title red-title"></div>
-              <div class="prev-bullet"></div>
-              <div class="prev-bullet short"></div>
-            </div>
-          </div>
-        </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">Spotlight</span>
-            <span class="tpl-tag">Acting</span>
-          </div>
-          <div class="tpl-stars">★★★★★</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('ac-1')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('ac-1')">Use Template →</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="tpl-card" data-id="ac-2" data-industry="acting" data-layout="single">
-        <div class="tpl-preview layout-single">
-          <div class="prev-creative-header red-header">
-            <div class="prev-line wide light"></div>
-            <div class="prev-line medium light-muted"></div>
-          </div>
-          <div class="prev-section">
-            <div class="prev-section-title red-title"></div>
-            <div class="prev-line full"></div>
-            <div class="prev-line w80"></div>
-          </div>
-          <div class="prev-section">
-            <div class="prev-section-title red-title"></div>
-            <div class="prev-bullet"></div>
-            <div class="prev-bullet short"></div>
-          </div>
-        </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">Stage Ready</span>
-            <span class="tpl-tag">Acting</span>
-          </div>
-          <div class="tpl-stars">★★★★☆</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('ac-2')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('ac-2')">Use Template →</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="tpl-card" data-id="ac-3" data-industry="acting" data-layout="sidebar">
-        <div class="tpl-preview layout-single">
-          <div class="prev-name-block">
-            <div class="prev-line wide dark"></div>
-            <div class="prev-line medium red-line"></div>
-          </div>
-          <div class="prev-divider red-div"></div>
-          <div class="prev-section">
-            <div class="prev-section-title red-title"></div>
-            <div class="prev-bullet"></div>
-            <div class="prev-bullet short"></div>
-          </div>
-          <div class="prev-section">
-            <div class="prev-section-title red-title"></div>
-            <div class="prev-bullet"></div>
-            <div class="prev-bullet short"></div>
-          </div>
-        </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">Talent</span>
-            <span class="tpl-tag">Acting</span>
-          </div>
-          <div class="tpl-stars">★★★★★</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('ac-3')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('ac-3')">Use Template →</button>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ── EDUCATION ── -->
-  <section class="industry-section reveal" data-industry="education">
-    <div class="industry-header">
-      <div class="industry-label">Education</div>
-      <span class="industry-count">3 templates</span>
-    </div>
-    <div class="tpl-grid">
-
-      <div class="tpl-card" data-id="ed-1" data-industry="education" data-layout="single">
-        <div class="tpl-preview layout-single">
-          <div class="prev-header-bar accent-indigo"></div>
-          <div class="prev-name-block">
-            <div class="prev-line wide dark"></div>
-            <div class="prev-line medium indigo-line"></div>
-          </div>
-          <div class="prev-divider"></div>
-          <div class="prev-section">
-            <div class="prev-section-title indigo-title"></div>
-            <div class="prev-line full"></div>
-            <div class="prev-line w80"></div>
-          </div>
-          <div class="prev-section">
-            <div class="prev-section-title indigo-title"></div>
-            <div class="prev-bullet"></div>
-            <div class="prev-bullet short"></div>
-          </div>
-        </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">Academic</span>
-            <span class="tpl-tag">Education</span>
-          </div>
-          <div class="tpl-stars">★★★★★</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('ed-1')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('ed-1')">Use Template →</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="tpl-card" data-id="ed-2" data-industry="education" data-layout="single">
-        <div class="tpl-preview layout-single">
-          <div class="prev-name-block">
-            <div class="prev-line wide dark"></div>
-            <div class="prev-line medium indigo-line"></div>
-          </div>
-          <div class="prev-divider indigo-div"></div>
-          <div class="prev-section">
-            <div class="prev-section-title indigo-title"></div>
-            <div class="prev-bullet"></div>
-            <div class="prev-bullet short"></div>
-            <div class="prev-bullet"></div>
-          </div>
-          <div class="prev-section">
-            <div class="prev-section-title indigo-title"></div>
-            <div class="prev-line full"></div>
-            <div class="prev-line w80"></div>
-          </div>
-        </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">Scholar</span>
-            <span class="tpl-tag">Education</span>
-          </div>
-          <div class="tpl-stars">★★★★☆</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('ed-2')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('ed-2')">Use Template →</button>
-          </div>
-        </div>
-      </div>
-
-      <div class="tpl-card" data-id="ed-3" data-industry="education" data-layout="two-col">
-        <div class="tpl-preview layout-two-col">
-          <div class="prev-two-col-header indigo-header">
-            <div class="prev-line wide light"></div>
-            <div class="prev-line medium light-muted"></div>
-          </div>
-          <div class="prev-two-col-body">
-            <div class="prev-col-main">
-              <div class="prev-section">
-                <div class="prev-section-title indigo-title"></div>
-                <div class="prev-bullet"></div>
-                <div class="prev-bullet short"></div>
-              </div>
-              <div class="prev-section">
-                <div class="prev-section-title indigo-title"></div>
-                <div class="prev-bullet"></div>
-                <div class="prev-bullet short"></div>
-              </div>
-            </div>
-            <div class="prev-col-side">
-              <div class="prev-section">
-                <div class="prev-section-title indigo-title"></div>
-                <div class="prev-line full"></div>
-                <div class="prev-line w80"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="tpl-info">
-          <div class="tpl-top-row">
-            <span class="tpl-name">Educator</span>
-            <span class="tpl-tag">Education</span>
-          </div>
-          <div class="tpl-stars">★★★★★</div>
-          <div class="tpl-actions">
-            <button class="btn-preview" onclick="previewTemplate('ed-3')">Preview</button>
-            <button class="btn-use" onclick="useTemplate('ed-3')">Use Template →</button>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
+  </div>
 
 </div><!-- /tpl-library -->
 
-<!-- PREVIEW MODAL -->
-<div class="modal-overlay" id="preview-modal" onclick="closeModal(event)">
+<!-- ══ PREVIEW MODAL ══ -->
+<div class="modal-overlay" id="preview-modal">
   <div class="modal-box">
-    <button class="modal-close" onclick="closeModal()">✕</button>
-    <div class="modal-preview" id="modal-preview-content"></div>
+    <div class="modal-header">
+      <div class="modal-title" id="modal-title">Template Preview</div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
     <div class="modal-footer">
-      <p id="modal-template-name" class="modal-tpl-name"></p>
-      <button class="btn-use modal-use-btn" id="modal-use-btn">Use This Template →</button>
+      <button class="btn btn--ghost" onclick="closeModal()">Close</button>
+      <button class="btn btn--primary" id="modal-use-btn">Use This Template</button>
     </div>
   </div>
 </div>
 
-<!-- FOOTER -->
-<footer>
-  <div class="f-logo">Resume<span>IQ</span></div>
-  <p>© 2025 ResumeIQ. All rights reserved.</p>
-</footer>
+<!-- ══ TRANSITION OVERLAY ══ -->
+<div class="transition-overlay" id="transition-overlay">
+  <div class="transition-overlay__spinner"></div>
+  <div class="transition-overlay__text">Loading your template…</div>
+</div>
 
+<script>
+// Hide industry sections not selected
+document.querySelectorAll('.industry-section').forEach(s => s.style.display = 'block');
+</script>
+<script src="Frontend/templates.js"></script>
 </body>
 </html>

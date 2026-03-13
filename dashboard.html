@@ -4,518 +4,262 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Dashboard — ResumeIQ</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="Frontend/dashboard.css"/>
 </head>
-<body class="dash-body">
+<body>
 
-<!-- MOBILE OVERLAY -->
-<div class="dash-overlay" id="dash-overlay" onclick="closeSidebar()"></div>
-
-<!-- SIDEBAR -->
-<aside class="dash-sidebar" id="dash-sidebar">
-  <div class="dash-logo">
-    <a href="index.html">Resume<span>IQ</span></a>
-  </div>
-
-  <nav class="dash-nav">
-    <a href="dashboard.html" class="dash-nav-item active">
-      <svg class="dash-nav-icon" viewBox="0 0 20 20" fill="currentColor">
-        <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
-      </svg>
-      <span>Dashboard</span>
-    </a>
-
-    <a href="#" class="dash-nav-item">
-      <svg class="dash-nav-icon" viewBox="0 0 20 20" fill="currentColor">
-        <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/>
-      </svg>
-      <span>Resume Analyzer</span>
-    </a>
-
-    <a href="editor.html" class="dash-nav-item">
-      <svg class="dash-nav-icon" viewBox="0 0 20 20" fill="currentColor">
-        <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/>
-      </svg>
-      <span>Resume Builder</span>
-    </a>
-
-    <a href="#" class="dash-nav-item">
-      <svg class="dash-nav-icon" viewBox="0 0 20 20" fill="currentColor">
-        <path fill-rule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 000 2h3a1 1 0 000-2H6z" clip-rule="evenodd"/>
-      </svg>
-      <span>Cover Letter</span>
-    </a>
-
-    <a href="templates.html" class="dash-nav-item">
-      <svg class="dash-nav-icon" viewBox="0 0 20 20" fill="currentColor">
-        <path d="M3 3a1 1 0 000 2h11a1 1 0 100-2H3zm0 4a1 1 0 000 2h5a1 1 0 000-2H3zm0 4a1 1 0 100 2h4a1 1 0 100-2H3zm10 1a1 1 0 00-1 1v3a1 1 0 002 0v-3a1 1 0 00-1-1z"/>
-      </svg>
-      <span>Templates</span>
-    </a>
-
-    <div class="dash-nav-divider"></div>
-
-    <a href="#" class="dash-nav-item">
-      <svg class="dash-nav-icon" viewBox="0 0 20 20" fill="currentColor">
-        <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
-      </svg>
-      <span>Settings</span>
-    </a>
+<!-- ══ NAV ══ -->
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="nav__logo">Resume<span>IQ</span></a>
+    <div class="nav__links">
+      <a href="dashboard.html" class="nav__link nav__link--active">Dashboard</a>
+      <a href="templates.html" class="nav__link">Templates</a>
+    </div>
+    <div class="nav__spacer"></div>
+    <div class="nav__actions">
+      <span style="font-size:13px;color:var(--ink-3)">Jane Doe</span>
+      <div style="width:30px;height:30px;border-radius:50%;background:var(--brand-gradient);display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:700;flex-shrink:0;">J</div>
+    </div>
   </nav>
+</header>
 
-  <div class="dash-sidebar-footer">
-    <div class="dash-user">
-      <div class="dash-user-avatar">JD</div>
-      <div class="dash-user-info">
-        <div class="dash-user-name">Jane Doe</div>
-        <div class="dash-user-email">jane@example.com</div>
+<!-- ══ BODY ══ -->
+<main class="dash-body">
+
+  <!-- Header row -->
+  <div class="dash-header">
+    <div class="dash-greeting">
+      <div class="dash-greeting__eyebrow">Good morning</div>
+      <h1 class="dash-greeting__title">Welcome back, Jane 👋</h1>
+      <p class="dash-greeting__sub">Your last scan scored 82 — you're close to landing that interview.</p>
+    </div>
+    <div class="usage-widget">
+      <div class="usage-widget__top">
+        <span class="usage-widget__plan">Free Plan</span>
+        <span class="usage-widget__label">Scans this month</span>
+      </div>
+      <div class="usage-widget__bar">
+        <div class="usage-widget__fill" style="width:50%"></div>
+      </div>
+      <div class="usage-widget__meta">
+        <span>1 of 2 scans used</span>
+        <a href="#" class="usage-widget__upgrade">Upgrade →</a>
       </div>
     </div>
   </div>
-</aside>
 
-<!-- MAIN CONTENT WRAPPER -->
-<div class="dash-content-wrap">
-
-  <!-- MOBILE TOP BAR -->
-  <div class="dash-mobile-bar">
-    <button class="dash-menu-btn" onclick="openSidebar()" aria-label="Open menu">
-      <svg viewBox="0 0 20 20" fill="currentColor">
-        <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
-      </svg>
-    </button>
-    <span class="dash-mobile-logo">Resume<span>IQ</span></span>
-    <div class="dash-user-avatar dash-mobile-avatar">JD</div>
+  <!-- Stats -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-card__icon stat-card__icon--blue">📊</div>
+      <div class="stat-card__val">3</div>
+      <div class="stat-card__label">Total Scans</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card__icon stat-card__icon--green">🎯</div>
+      <div class="stat-card__val">74</div>
+      <div class="stat-card__label">Avg ATS Score</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card__icon stat-card__icon--purple">📝</div>
+      <div class="stat-card__val">2</div>
+      <div class="stat-card__label">Cover Letters</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card__icon stat-card__icon--amber">🗂️</div>
+      <div class="stat-card__val">1</div>
+      <div class="stat-card__label">Resume Drafts</div>
+    </div>
   </div>
 
-  <!-- MAIN SCROLLABLE CONTENT -->
-  <main class="dash-main">
-
-    <!-- ── HEADER ─────────────────────────────────── -->
-    <header class="dash-header">
-      <div class="dash-header-left">
-        <h1 class="dash-welcome">Good morning, Jane</h1>
-        <p class="dash-subtitle">Here's what's happening with your job search today.</p>
-      </div>
-      <div class="dash-header-right">
-        <!-- USAGE WIDGET -->
-        <div class="usage-widget">
-          <div class="usage-widget-top">
-            <div class="usage-plan-badge">
-              <svg viewBox="0 0 12 12" fill="currentColor" class="usage-badge-icon"><circle cx="6" cy="6" r="6"/></svg>
-              Free Plan
-            </div>
-            <a href="#" class="usage-upgrade-btn">Upgrade →</a>
-          </div>
-          <div class="usage-label">Scans used today</div>
-          <div class="usage-bar-row">
-            <div class="usage-bar">
-              <div class="usage-bar-fill" style="width: 50%"></div>
-            </div>
-            <span class="usage-count">1 / 2</span>
-          </div>
+  <!-- Scan zone -->
+  <div class="scan-zone">
+    <div class="scan-zone__header">
+      <div class="scan-zone__icon-wrap">📄</div>
+      <div>
+        <div class="scan-zone__badge">
+          <span class="badge badge--brand">Core Tool</span>
+        </div>
+        <h2 class="scan-zone__title">Resume Analyzer</h2>
+        <p class="scan-zone__desc">Upload your resume and get an instant ATS compatibility score with a full breakdown — missing keywords, formatting issues, and exactly what to fix.</p>
+        <div class="scan-zone__pills">
+          <span class="scan-zone__pill">ATS Score</span>
+          <span class="scan-zone__pill">Keyword Analysis</span>
+          <span class="scan-zone__pill">Formatting Check</span>
+          <span class="scan-zone__pill">AI Rewrites</span>
         </div>
       </div>
-    </header>
+    </div>
 
-    <!-- ── STATS ROW ──────────────────────────────── -->
-    <section class="dash-stats-row">
-      <div class="dash-stat">
-        <div class="dash-stat-icon dash-stat-icon--blue">
-          <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"/></svg>
-        </div>
-        <div class="dash-stat-body">
-          <div class="dash-stat-value">7</div>
-          <div class="dash-stat-label">Total Scans</div>
-        </div>
-      </div>
+    <label class="upload-area" id="upload-label" for="resume-upload">
+      <div class="upload-area__icon">⬆️</div>
+      <div class="upload-area__title">Drop your resume here</div>
+      <div class="upload-area__sub">PDF or DOCX, up to 5MB</div>
+      <button class="btn btn--primary" onclick="document.getElementById('resume-upload').click(); return false;">Browse Files</button>
+      <div class="upload-area__limit">Your file is processed locally and never stored</div>
+      <input type="file" id="resume-upload" class="upload-input" accept=".pdf,.doc,.docx"/>
+    </label>
+  </div>
 
-      <div class="dash-stat">
-        <div class="dash-stat-icon dash-stat-icon--green">
-          <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-        </div>
-        <div class="dash-stat-body">
-          <div class="dash-stat-value">74<span class="dash-stat-unit">%</span></div>
-          <div class="dash-stat-label">Avg ATS Score</div>
-        </div>
-      </div>
-
-      <div class="dash-stat">
-        <div class="dash-stat-icon dash-stat-icon--purple">
-          <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 000 2h3a1 1 0 000-2H6z" clip-rule="evenodd"/></svg>
-        </div>
-        <div class="dash-stat-body">
-          <div class="dash-stat-value">3</div>
-          <div class="dash-stat-label">Cover Letters</div>
-        </div>
-      </div>
-
-      <div class="dash-stat">
-        <div class="dash-stat-icon dash-stat-icon--amber">
-          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg>
-        </div>
-        <div class="dash-stat-body">
-          <div class="dash-stat-value">2</div>
-          <div class="dash-stat-label">Resume Drafts</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── PRIMARY TOOL: RESUME ANALYZER ─────────── -->
-    <section class="dash-section">
-      <div class="dash-primary-card">
-        <div class="dash-primary-card-left">
-          <div class="dash-primary-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25z"/>
-            </svg>
-          </div>
-          <div class="dash-primary-info">
-            <div class="dash-primary-badge">
-              <svg viewBox="0 0 8 8" fill="currentColor"><circle cx="4" cy="4" r="4"/></svg>
-              Core Tool
-            </div>
-            <h2 class="dash-primary-title">Resume Analyzer</h2>
-            <p class="dash-primary-desc">Get your ATS score, keyword gaps, formatting issues, and AI-powered bullet point suggestions — all in under 60 seconds.</p>
-            <div class="dash-primary-pills">
-              <span class="dash-pill">ATS Score</span>
-              <span class="dash-pill">Keyword Analysis</span>
-              <span class="dash-pill">AI Rewrites</span>
-              <span class="dash-pill">Formatting Check</span>
-            </div>
-          </div>
-        </div>
-        <div class="dash-primary-card-right">
-          <div class="dash-upload-zone" id="upload-zone"
-               ondragover="handleDragOver(event)"
-               ondragleave="handleDragLeave(event)"
-               ondrop="handleDrop(event)">
-            <div class="dash-upload-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5"/>
-              </svg>
-            </div>
-            <p class="dash-upload-title">Drop your resume here</p>
-            <p class="dash-upload-sub">PDF or DOCX &middot; Max 5 MB</p>
-            <button class="dash-upload-btn" onclick="document.getElementById('file-input').click()">Browse Files</button>
-            <input type="file" id="file-input" accept=".pdf,.doc,.docx" style="display:none"/>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── SECONDARY TOOLS ────────────────────────── -->
-    <section class="dash-section">
-      <div class="dash-tools-grid">
-
-        <!-- Resume Builder -->
-        <div class="dash-tool-card">
-          <div class="dash-tool-header">
-            <div class="dash-tool-icon dash-tool-icon--blue">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"/>
-              </svg>
-            </div>
-            <div class="dash-tool-meta">
-              <h3 class="dash-tool-title">Resume Builder</h3>
-              <p class="dash-tool-desc">Build a job-ready resume with 30+ ATS-optimized templates and a guided step-by-step editor.</p>
-            </div>
-          </div>
-          <div class="dash-tool-footer">
-            <div class="dash-tool-stats">
-              <span class="dash-tool-stat">30+ templates</span>
-              <span class="dash-tool-stat">6-step wizard</span>
-            </div>
-            <a href="editor.html" class="dash-tool-cta">Open Builder →</a>
-          </div>
-        </div>
-
-        <!-- Cover Letter Generator -->
-        <div class="dash-tool-card">
-          <div class="dash-tool-header">
-            <div class="dash-tool-icon dash-tool-icon--purple">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"/>
-              </svg>
-            </div>
-            <div class="dash-tool-meta">
-              <h3 class="dash-tool-title">Cover Letter Generator</h3>
-              <p class="dash-tool-desc">Generate personalized, compelling cover letters tailored to any job description using AI.</p>
-            </div>
-          </div>
-          <div class="dash-tool-footer">
-            <div class="dash-tool-stats">
-              <span class="dash-tool-stat">AI-powered</span>
-              <span class="dash-tool-stat">Tone control</span>
-            </div>
-            <a href="#" class="dash-tool-cta dash-tool-cta--purple">Generate Letter →</a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ── RESUME SCANS HISTORY ───────────────────── -->
-    <section class="dash-section">
-      <div class="dash-section-header">
+  <!-- Tools grid -->
+  <div class="tools-grid">
+    <a href="templates.html" class="tool-card">
+      <div class="tool-card__top">
+        <div class="tool-card__icon tool-card__icon--blue">🏗️</div>
         <div>
-          <h2 class="dash-section-title">Resume Scans</h2>
-          <p class="dash-section-sub">Your recent ATS analysis results</p>
+          <div class="tool-card__name">Resume Builder</div>
+          <div class="tool-card__badge-row">
+            <span class="badge badge--gray">500+ templates</span>
+          </div>
         </div>
-        <button class="dash-section-action">View all</button>
       </div>
-
-      <div class="dash-activity-list">
-
-        <!-- Row: High score -->
-        <div class="dash-activity-row">
-          <div class="dash-activity-left">
-            <div class="dash-ats-badge dash-ats-badge--green">
-              <span class="dash-ats-score">82</span>
-              <svg class="dash-ats-ring" viewBox="0 0 36 36">
-                <circle class="dash-ats-track" cx="18" cy="18" r="15.9" fill="none" stroke-width="2.5"/>
-                <circle class="dash-ats-fill dash-ats-fill--green" cx="18" cy="18" r="15.9" fill="none" stroke-width="2.5" stroke-dasharray="82 18" stroke-dashoffset="25"/>
-              </svg>
-            </div>
-          </div>
-          <div class="dash-activity-mid">
-            <div class="dash-activity-name">Resume_SoftwareEngineer_2024.pdf</div>
-            <div class="dash-activity-summary">Strong keyword match &middot; Missing: Docker, CI/CD &middot; 2 formatting warnings</div>
-          </div>
-          <div class="dash-activity-right">
-            <span class="dash-activity-date">Mar 12, 2025</span>
-            <a href="#" class="dash-activity-view">View Report</a>
-            <div class="dash-overflow-menu">
-              <button class="dash-overflow-btn" onclick="toggleMenu(this)" aria-label="More options">
-                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/></svg>
-              </button>
-              <div class="dash-overflow-dropdown">
-                <a href="#">
-                  <svg viewBox="0 0 16 16" fill="currentColor"><path d="M7 9H5V7h2V5h2v2h2v2H9v2H7V9z"/><path fill-rule="evenodd" d="M0 8a8 8 0 1116 0A8 8 0 010 8zm8-7a7 7 0 100 14A7 7 0 008 1z" clip-rule="evenodd"/></svg>
-                  Download report
-                </a>
-                <a href="#">
-                  <svg viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M8 3a5 5 0 104.546 2.914.5.5 0 00-.908-.417A4 4 0 118 4v1l3-2-3-2v1z" clip-rule="evenodd"/></svg>
-                  Re-analyze
-                </a>
-                <div class="dash-overflow-divider"></div>
-                <a href="#" class="danger">
-                  <svg viewBox="0 0 16 16" fill="currentColor"><path d="M6.5 1h3a.5.5 0 01.5.5v1H6v-1a.5.5 0 01.5-.5zM11 2.5v-1A1.5 1.5 0 009.5 0h-3A1.5 1.5 0 005 1.5v1H2.506a.58.58 0 00-.01 0H1.5a.5.5 0 000 1h.538l.853 10.66A2 2 0 004.885 16h6.23a2 2 0 001.994-1.84l.853-10.66H14.5a.5.5 0 000-1h-.995a.59.59 0 00-.01 0H11z"/></svg>
-                  Delete
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Row: Medium score -->
-        <div class="dash-activity-row">
-          <div class="dash-activity-left">
-            <div class="dash-ats-badge dash-ats-badge--amber">
-              <span class="dash-ats-score">61</span>
-              <svg class="dash-ats-ring" viewBox="0 0 36 36">
-                <circle class="dash-ats-track" cx="18" cy="18" r="15.9" fill="none" stroke-width="2.5"/>
-                <circle class="dash-ats-fill dash-ats-fill--amber" cx="18" cy="18" r="15.9" fill="none" stroke-width="2.5" stroke-dasharray="61 39" stroke-dashoffset="25"/>
-              </svg>
-            </div>
-          </div>
-          <div class="dash-activity-mid">
-            <div class="dash-activity-name">ProductManager_Resume_v3.pdf</div>
-            <div class="dash-activity-summary">Moderate score &middot; Weak bullet points detected &middot; Add metrics to experience section</div>
-          </div>
-          <div class="dash-activity-right">
-            <span class="dash-activity-date">Mar 10, 2025</span>
-            <a href="#" class="dash-activity-view">View Report</a>
-            <div class="dash-overflow-menu">
-              <button class="dash-overflow-btn" onclick="toggleMenu(this)" aria-label="More options">
-                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/></svg>
-              </button>
-              <div class="dash-overflow-dropdown">
-                <a href="#">
-                  <svg viewBox="0 0 16 16" fill="currentColor"><path d="M7 9H5V7h2V5h2v2h2v2H9v2H7V9z"/><path fill-rule="evenodd" d="M0 8a8 8 0 1116 0A8 8 0 010 8zm8-7a7 7 0 100 14A7 7 0 008 1z" clip-rule="evenodd"/></svg>
-                  Download report
-                </a>
-                <a href="#">
-                  <svg viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M8 3a5 5 0 104.546 2.914.5.5 0 00-.908-.417A4 4 0 118 4v1l3-2-3-2v1z" clip-rule="evenodd"/></svg>
-                  Re-analyze
-                </a>
-                <div class="dash-overflow-divider"></div>
-                <a href="#" class="danger">
-                  <svg viewBox="0 0 16 16" fill="currentColor"><path d="M6.5 1h3a.5.5 0 01.5.5v1H6v-1a.5.5 0 01.5-.5zM11 2.5v-1A1.5 1.5 0 009.5 0h-3A1.5 1.5 0 005 1.5v1H2.506a.58.58 0 00-.01 0H1.5a.5.5 0 000 1h.538l.853 10.66A2 2 0 004.885 16h6.23a2 2 0 001.994-1.84l.853-10.66H14.5a.5.5 0 000-1h-.995a.59.59 0 00-.01 0H11z"/></svg>
-                  Delete
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Row: Low score -->
-        <div class="dash-activity-row">
-          <div class="dash-activity-left">
-            <div class="dash-ats-badge dash-ats-badge--red">
-              <span class="dash-ats-score">38</span>
-              <svg class="dash-ats-ring" viewBox="0 0 36 36">
-                <circle class="dash-ats-track" cx="18" cy="18" r="15.9" fill="none" stroke-width="2.5"/>
-                <circle class="dash-ats-fill dash-ats-fill--red" cx="18" cy="18" r="15.9" fill="none" stroke-width="2.5" stroke-dasharray="38 62" stroke-dashoffset="25"/>
-              </svg>
-            </div>
-          </div>
-          <div class="dash-activity-mid">
-            <div class="dash-activity-name">OldResume_2021.docx</div>
-            <div class="dash-activity-summary">Low ATS compatibility &middot; Tables and graphics detected &middot; Major keyword gaps found</div>
-          </div>
-          <div class="dash-activity-right">
-            <span class="dash-activity-date">Feb 28, 2025</span>
-            <a href="#" class="dash-activity-view">View Report</a>
-            <div class="dash-overflow-menu">
-              <button class="dash-overflow-btn" onclick="toggleMenu(this)" aria-label="More options">
-                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/></svg>
-              </button>
-              <div class="dash-overflow-dropdown">
-                <a href="#">
-                  <svg viewBox="0 0 16 16" fill="currentColor"><path d="M7 9H5V7h2V5h2v2h2v2H9v2H7V9z"/><path fill-rule="evenodd" d="M0 8a8 8 0 1116 0A8 8 0 010 8zm8-7a7 7 0 100 14A7 7 0 008 1z" clip-rule="evenodd"/></svg>
-                  Download report
-                </a>
-                <a href="#">
-                  <svg viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M8 3a5 5 0 104.546 2.914.5.5 0 00-.908-.417A4 4 0 118 4v1l3-2-3-2v1z" clip-rule="evenodd"/></svg>
-                  Re-analyze
-                </a>
-                <div class="dash-overflow-divider"></div>
-                <a href="#" class="danger">
-                  <svg viewBox="0 0 16 16" fill="currentColor"><path d="M6.5 1h3a.5.5 0 01.5.5v1H6v-1a.5.5 0 01.5-.5zM11 2.5v-1A1.5 1.5 0 009.5 0h-3A1.5 1.5 0 005 1.5v1H2.506a.58.58 0 00-.01 0H1.5a.5.5 0 000 1h.538l.853 10.66A2 2 0 004.885 16h6.23a2 2 0 001.994-1.84l.853-10.66H14.5a.5.5 0 000-1h-.995a.59.59 0 00-.01 0H11z"/></svg>
-                  Delete
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ── COVER LETTERS SECTION ──────────────────── -->
-    <section class="dash-section">
-      <div class="dash-section-header">
+      <p class="tool-card__desc">Build a polished, ATS-friendly resume from scratch with a 6-step guided wizard and 500+ industry templates.</p>
+      <span class="tool-card__action">Open Builder →</span>
+    </a>
+    <div class="tool-card" style="cursor:default">
+      <div class="tool-card__top">
+        <div class="tool-card__icon tool-card__icon--purple">✉️</div>
         <div>
-          <h2 class="dash-section-title">Cover Letters</h2>
-          <p class="dash-section-sub">Recently generated cover letters</p>
+          <div class="tool-card__name">Cover Letter Generator</div>
+          <div class="tool-card__badge-row">
+            <span class="badge badge--amber">Coming soon</span>
+          </div>
         </div>
-        <button class="dash-section-action dash-section-action--purple">Generate new</button>
       </div>
+      <p class="tool-card__desc">AI-generated cover letters tailored to the job description. Tone control, company research, and one-click personalization.</p>
+      <span class="tool-card__action" style="color:var(--ink-4)">In development</span>
+    </div>
+  </div>
 
-      <div class="dash-activity-list">
-
-        <div class="dash-activity-row">
-          <div class="dash-activity-left">
-            <div class="dash-letter-icon">
-              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 000 2h3a1 1 0 000-2H6z" clip-rule="evenodd"/></svg>
-            </div>
-          </div>
-          <div class="dash-activity-mid">
-            <div class="dash-activity-name">Senior Frontend Engineer — Stripe</div>
-            <div class="dash-activity-summary">Professional tone &middot; 3 paragraphs &middot; Tailored to React / TypeScript role</div>
-          </div>
-          <div class="dash-activity-right">
-            <span class="dash-activity-date">Mar 11, 2025</span>
-            <a href="#" class="dash-activity-view dash-activity-view--purple">View Letter</a>
-            <div class="dash-overflow-menu">
-              <button class="dash-overflow-btn" onclick="toggleMenu(this)" aria-label="More options">
-                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/></svg>
-              </button>
-              <div class="dash-overflow-dropdown">
-                <a href="#">Copy text</a>
-                <a href="#">Download PDF</a>
-                <a href="#">Edit letter</a>
-                <div class="dash-overflow-divider"></div>
-                <a href="#" class="danger">Delete</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="dash-activity-row">
-          <div class="dash-activity-left">
-            <div class="dash-letter-icon">
-              <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 13V5a2 2 0 00-2-2H4a2 2 0 00-2 2v8a2 2 0 002 2h3l3 3 3-3h3a2 2 0 002-2zM5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zm1 3a1 1 0 000 2h3a1 1 0 000-2H6z" clip-rule="evenodd"/></svg>
-            </div>
-          </div>
-          <div class="dash-activity-mid">
-            <div class="dash-activity-name">Product Manager — Linear</div>
-            <div class="dash-activity-summary">Confident tone &middot; 4 paragraphs &middot; Emphasizes cross-functional experience</div>
-          </div>
-          <div class="dash-activity-right">
-            <span class="dash-activity-date">Mar 5, 2025</span>
-            <a href="#" class="dash-activity-view dash-activity-view--purple">View Letter</a>
-            <div class="dash-overflow-menu">
-              <button class="dash-overflow-btn" onclick="toggleMenu(this)" aria-label="More options">
-                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/></svg>
-              </button>
-              <div class="dash-overflow-dropdown">
-                <a href="#">Copy text</a>
-                <a href="#">Download PDF</a>
-                <a href="#">Edit letter</a>
-                <div class="dash-overflow-divider"></div>
-                <a href="#" class="danger">Delete</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
+  <!-- Scan history -->
+  <div class="section-header">
+    <h3 class="section-header__title">Recent Scans</h3>
+    <a href="#" class="section-header__action">View all</a>
+  </div>
+  <div class="scan-list">
+    <!-- Scan 1 -->
+    <div class="scan-item">
+      <div class="score-ring score-ring--48">
+        <svg width="46" height="46" viewBox="0 0 46 46">
+          <circle cx="23" cy="23" r="19" fill="none" stroke="#e2e8f0" stroke-width="3.5"/>
+          <circle cx="23" cy="23" r="19" fill="none" stroke="#10b981" stroke-width="3.5"
+            stroke-dasharray="119.38" stroke-dashoffset="21.49" stroke-linecap="round"/>
+        </svg>
+        <span class="score-ring__val" style="color:#10b981">82</span>
       </div>
-    </section>
+      <div class="scan-item__info">
+        <div class="scan-item__name">resume_v3.pdf</div>
+        <div class="scan-item__meta">Software Engineer · 14 keywords matched · Mar 11, 2025</div>
+      </div>
+      <div class="scan-item__actions">
+        <a href="#" class="scan-item__view-btn">View Report</a>
+        <div class="overflow-menu">
+          <button class="overflow-btn" onclick="toggleMenu(this)">···</button>
+          <div class="overflow-dropdown">
+            <button class="overflow-item">⬇️ &nbsp;Download Report</button>
+            <button class="overflow-item">🔄 &nbsp;Re-analyze</button>
+            <button class="overflow-item overflow-item--danger">🗑️ &nbsp;Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Scan 2 -->
+    <div class="scan-item">
+      <div class="score-ring score-ring--48">
+        <svg width="46" height="46" viewBox="0 0 46 46">
+          <circle cx="23" cy="23" r="19" fill="none" stroke="#e2e8f0" stroke-width="3.5"/>
+          <circle cx="23" cy="23" r="19" fill="none" stroke="#f59e0b" stroke-width="3.5"
+            stroke-dasharray="119.38" stroke-dashoffset="45.46" stroke-linecap="round"/>
+        </svg>
+        <span class="score-ring__val" style="color:#f59e0b">61</span>
+      </div>
+      <div class="scan-item__info">
+        <div class="scan-item__name">resume_v2.pdf</div>
+        <div class="scan-item__meta">Software Engineer · 9 keywords matched · Mar 8, 2025</div>
+      </div>
+      <div class="scan-item__actions">
+        <a href="#" class="scan-item__view-btn">View Report</a>
+        <div class="overflow-menu">
+          <button class="overflow-btn" onclick="toggleMenu(this)">···</button>
+          <div class="overflow-dropdown">
+            <button class="overflow-item">⬇️ &nbsp;Download Report</button>
+            <button class="overflow-item">🔄 &nbsp;Re-analyze</button>
+            <button class="overflow-item overflow-item--danger">🗑️ &nbsp;Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Scan 3 -->
+    <div class="scan-item">
+      <div class="score-ring score-ring--48">
+        <svg width="46" height="46" viewBox="0 0 46 46">
+          <circle cx="23" cy="23" r="19" fill="none" stroke="#e2e8f0" stroke-width="3.5"/>
+          <circle cx="23" cy="23" r="19" fill="none" stroke="#ef4444" stroke-width="3.5"
+            stroke-dasharray="119.38" stroke-dashoffset="73.01" stroke-linecap="round"/>
+        </svg>
+        <span class="score-ring__val" style="color:#ef4444">38</span>
+      </div>
+      <div class="scan-item__info">
+        <div class="scan-item__name">resume_v1.pdf</div>
+        <div class="scan-item__meta">Software Engineer · 4 keywords matched · Mar 1, 2025</div>
+      </div>
+      <div class="scan-item__actions">
+        <a href="#" class="scan-item__view-btn">View Report</a>
+        <div class="overflow-menu">
+          <button class="overflow-btn" onclick="toggleMenu(this)">···</button>
+          <div class="overflow-dropdown">
+            <button class="overflow-item">⬇️ &nbsp;Download Report</button>
+            <button class="overflow-item">🔄 &nbsp;Re-analyze</button>
+            <button class="overflow-item overflow-item--danger">🗑️ &nbsp;Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  </main><!-- /dash-main -->
-</div><!-- /dash-content-wrap -->
+</main>
 
 <script>
-// ── SIDEBAR (mobile) ──────────────────────────────────
-function openSidebar() {
-  document.getElementById('dash-sidebar').classList.add('open');
-  document.getElementById('dash-overlay').classList.add('visible');
-  document.body.style.overflow = 'hidden';
+// Upload drag-and-drop
+const uploadLabel = document.getElementById('upload-label');
+const uploadInput = document.getElementById('resume-upload');
+if (uploadLabel) {
+  uploadLabel.addEventListener('dragover', e => { e.preventDefault(); uploadLabel.classList.add('dragover'); });
+  uploadLabel.addEventListener('dragleave', () => uploadLabel.classList.remove('dragover'));
+  uploadLabel.addEventListener('drop', e => {
+    e.preventDefault(); uploadLabel.classList.remove('dragover');
+    const file = e.dataTransfer.files[0];
+    if (file) handleFile(file);
+  });
 }
-function closeSidebar() {
-  document.getElementById('dash-sidebar').classList.remove('open');
-  document.getElementById('dash-overlay').classList.remove('visible');
-  document.body.style.overflow = '';
-}
-
-// ── OVERFLOW MENUS ────────────────────────────────────
-function toggleMenu(btn) {
-  const dropdown = btn.nextElementSibling;
-  const allDropdowns = document.querySelectorAll('.dash-overflow-dropdown');
-  allDropdowns.forEach(d => { if (d !== dropdown) d.classList.remove('open'); });
-  dropdown.classList.toggle('open');
-}
-document.addEventListener('click', e => {
-  if (!e.target.closest('.dash-overflow-menu')) {
-    document.querySelectorAll('.dash-overflow-dropdown').forEach(d => d.classList.remove('open'));
-  }
-});
-
-// ── UPLOAD ZONE DRAG ──────────────────────────────────
-function handleDragOver(e) {
-  e.preventDefault();
-  e.currentTarget.classList.add('drag-over');
-}
-function handleDragLeave(e) {
-  e.currentTarget.classList.remove('drag-over');
-}
-function handleDrop(e) {
-  e.preventDefault();
-  e.currentTarget.classList.remove('drag-over');
-  const files = e.dataTransfer.files;
-  if (files.length) handleFile(files[0]);
+if (uploadInput) {
+  uploadInput.addEventListener('change', () => {
+    if (uploadInput.files[0]) handleFile(uploadInput.files[0]);
+  });
 }
 function handleFile(file) {
-  console.log('File selected:', file.name);
-  // hook up to analyzer logic here
+  const allowed = ['application/pdf','application/msword','application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+  if (!allowed.includes(file.type)) { alert('Please upload a PDF or DOCX file.'); return; }
+  if (file.size > 5 * 1024 * 1024) { alert('File must be under 5MB.'); return; }
+  const title = uploadLabel.querySelector('.upload-area__title');
+  const sub = uploadLabel.querySelector('.upload-area__sub');
+  if (title) title.textContent = file.name;
+  if (sub) sub.textContent = 'Analyzing…';
 }
-document.getElementById('file-input').addEventListener('change', e => {
-  if (e.target.files.length) handleFile(e.target.files[0]);
+
+// Overflow menus
+function toggleMenu(btn) {
+  const menu = btn.closest('.overflow-menu');
+  const isOpen = menu.classList.contains('open');
+  document.querySelectorAll('.overflow-menu.open').forEach(m => m.classList.remove('open'));
+  if (!isOpen) menu.classList.add('open');
+}
+document.addEventListener('click', e => {
+  if (!e.target.closest('.overflow-menu')) {
+    document.querySelectorAll('.overflow-menu.open').forEach(m => m.classList.remove('open'));
+  }
 });
 </script>
-
 </body>
 </html>
