@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Dashboard — ResumeIQ</title>
+<link rel="stylesheet" href="Frontend/dashboard.css"/>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="nav__logo">Resume<span>IQ</span></a>
+    <div class="nav__links">
+      <a href="dashboard.html" class="nav__link nav__link--active">Dashboard</a>
+      <a href="templates.html" class="nav__link">Templates</a>
+    </div>
+    <div class="nav__spacer"></div>
+    <div class="nav__actions">
+      <span style="font-size:13px;color:var(--ink-3)">Jane Doe</span>
+      <div style="width:30px;height:30px;border-radius:50%;background:var(--brand-gradient);display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:700;flex-shrink:0;">J</div>
+    </div>
+  </nav>
+</header>
+
+<!-- ══ BODY ══ -->
+<main class="dash-body">
+
+  <!-- Header row -->
+  <div class="dash-header">
+    <div class="dash-greeting">
+      <div class="dash-greeting__eyebrow">Good morning</div>
+      <h1 class="dash-greeting__title">Welcome back, Jane 👋</h1>
+      <p class="dash-greeting__sub">Your last scan scored 82 — you're close to landing that interview.</p>
+    </div>
+    <div class="usage-widget">
+      <div class="usage-widget__top">
+        <span class="usage-widget__plan">Free Plan</span>
+        <span class="usage-widget__label">Scans this month</span>
+      </div>
+      <div class="usage-widget__bar">
+        <div class="usage-widget__fill" style="width:50%"></div>
+      </div>
+      <div class="usage-widget__meta">
+        <span>1 of 2 scans used</span>
+        <a href="#" class="usage-widget__upgrade">Upgrade →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-card__icon stat-card__icon--blue">📊</div>
+      <div class="stat-card__val">3</div>
+      <div class="stat-card__label">Total Scans</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card__icon stat-card__icon--green">🎯</div>
+      <div class="stat-card__val">74</div>
+      <div class="stat-card__label">Avg ATS Score</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card__icon stat-card__icon--purple">📝</div>
+      <div class="stat-card__val">2</div>
+      <div class="stat-card__label">Cover Letters</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card__icon stat-card__icon--amber">🗂️</div>
+      <div class="stat-card__val">1</div>
+      <div class="stat-card__label">Resume Drafts</div>
+    </div>
+  </div>
+
+  <!-- Scan zone -->
+  <div class="scan-zone">
+    <div class="scan-zone__header">
+      <div class="scan-zone__icon-wrap">📄</div>
+      <div>
+        <div class="scan-zone__badge">
+          <span class="badge badge--brand">Core Tool</span>
+        </div>
+        <h2 class="scan-zone__title">Resume Analyzer</h2>
+        <p class="scan-zone__desc">Upload your resume and get an instant ATS compatibility score with a full breakdown — missing keywords, formatting issues, and exactly what to fix.</p>
+        <div class="scan-zone__pills">
+          <span class="scan-zone__pill">ATS Score</span>
+          <span class="scan-zone__pill">Keyword Analysis</span>
+          <span class="scan-zone__pill">Formatting Check</span>
+          <span class="scan-zone__pill">AI Rewrites</span>
+        </div>
+      </div>
+    </div>
+
+    <label class="upload-area" id="upload-label" for="resume-upload">
+      <div class="upload-area__icon">⬆️</div>
+      <div class="upload-area__title">Drop your resume here</div>
+      <div class="upload-area__sub">PDF or DOCX, up to 5MB</div>
+      <button class="btn btn--primary" onclick="document.getElementById('resume-upload').click(); return false;">Browse Files</button>
+      <div class="upload-area__limit">Your file is processed locally and never stored</div>
+      <input type="file" id="resume-upload" class="upload-input" accept=".pdf,.doc,.docx"/>
+    </label>
+  </div>
+
+  <!-- Tools grid -->
+  <div class="tools-grid">
+    <a href="templates.html" class="tool-card">
+      <div class="tool-card__top">
+        <div class="tool-card__icon tool-card__icon--blue">🏗️</div>
+        <div>
+          <div class="tool-card__name">Resume Builder</div>
+          <div class="tool-card__badge-row">
+            <span class="badge badge--gray">500+ templates</span>
+          </div>
+        </div>
+      </div>
+      <p class="tool-card__desc">Build a polished, ATS-friendly resume from scratch with a 6-step guided wizard and 500+ industry templates.</p>
+      <span class="tool-card__action">Open Builder →</span>
+    </a>
+    <div class="tool-card" style="cursor:default">
+      <div class="tool-card__top">
+        <div class="tool-card__icon tool-card__icon--purple">✉️</div>
+        <div>
+          <div class="tool-card__name">Cover Letter Generator</div>
+          <div class="tool-card__badge-row">
+            <span class="badge badge--amber">Coming soon</span>
+          </div>
+        </div>
+      </div>
+      <p class="tool-card__desc">AI-generated cover letters tailored to the job description. Tone control, company research, and one-click personalization.</p>
+      <span class="tool-card__action" style="color:var(--ink-4)">In development</span>
+    </div>
+  </div>
+
+  <!-- Scan history -->
+  <div class="section-header">
+    <h3 class="section-header__title">Recent Scans</h3>
+    <a href="#" class="section-header__action">View all</a>
+  </div>
+  <div class="scan-list">
+    <!-- Scan 1 -->
+    <div class="scan-item">
+      <div class="score-ring score-ring--48">
+        <svg width="46" height="46" viewBox="0 0 46 46">
+          <circle cx="23" cy="23" r="19" fill="none" stroke="#e2e8f0" stroke-width="3.5"/>
+          <circle cx="23" cy="23" r="19" fill="none" stroke="#10b981" stroke-width="3.5"
+            stroke-dasharray="119.38" stroke-dashoffset="21.49" stroke-linecap="round"/>
+        </svg>
+        <span class="score-ring__val" style="color:#10b981">82</span>
+      </div>
+      <div class="scan-item__info">
+        <div class="scan-item__name">resume_v3.pdf</div>
+        <div class="scan-item__meta">Software Engineer · 14 keywords matched · Mar 11, 2025</div>
+      </div>
+      <div class="scan-item__actions">
+        <a href="#" class="scan-item__view-btn">View Report</a>
+        <div class="overflow-menu">
+          <button class="overflow-btn" onclick="toggleMenu(this)">···</button>
+          <div class="overflow-dropdown">
+            <button class="overflow-item">⬇️ &nbsp;Download Report</button>
+            <button class="overflow-item">🔄 &nbsp;Re-analyze</button>
+            <button class="overflow-item overflow-item--danger">🗑️ &nbsp;Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Scan 2 -->
+    <div class="scan-item">
+      <div class="score-ring score-ring--48">
+        <svg width="46" height="46" viewBox="0 0 46 46">
+          <circle cx="23" cy="23" r="19" fill="none" stroke="#e2e8f0" stroke-width="3.5"/>
+          <circle cx="23" cy="23" r="19" fill="none" stroke="#f59e0b" stroke-width="3.5"
+            stroke-dasharray="119.38" stroke-dashoffset="45.46" stroke-linecap="round"/>
+        </svg>
+        <span class="score-ring__val" style="color:#f59e0b">61</span>
+      </div>
+      <div class="scan-item__info">
+        <div class="scan-item__name">resume_v2.pdf</div>
+        <div class="scan-item__meta">Software Engineer · 9 keywords matched · Mar 8, 2025</div>
+      </div>
+      <div class="scan-item__actions">
+        <a href="#" class="scan-item__view-btn">View Report</a>
+        <div class="overflow-menu">
+          <button class="overflow-btn" onclick="toggleMenu(this)">···</button>
+          <div class="overflow-dropdown">
+            <button class="overflow-item">⬇️ &nbsp;Download Report</button>
+            <button class="overflow-item">🔄 &nbsp;Re-analyze</button>
+            <button class="overflow-item overflow-item--danger">🗑️ &nbsp;Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Scan 3 -->
+    <div class="scan-item">
+      <div class="score-ring score-ring--48">
+        <svg width="46" height="46" viewBox="0 0 46 46">
+          <circle cx="23" cy="23" r="19" fill="none" stroke="#e2e8f0" stroke-width="3.5"/>
+          <circle cx="23" cy="23" r="19" fill="none" stroke="#ef4444" stroke-width="3.5"
+            stroke-dasharray="119.38" stroke-dashoffset="73.01" stroke-linecap="round"/>
+        </svg>
+        <span class="score-ring__val" style="color:#ef4444">38</span>
+      </div>
+      <div class="scan-item__info">
+        <div class="scan-item__name">resume_v1.pdf</div>
+        <div class="scan-item__meta">Software Engineer · 4 keywords matched · Mar 1, 2025</div>
+      </div>
+      <div class="scan-item__actions">
+        <a href="#" class="scan-item__view-btn">View Report</a>
+        <div class="overflow-menu">
+          <button class="overflow-btn" onclick="toggleMenu(this)">···</button>
+          <div class="overflow-dropdown">
+            <button class="overflow-item">⬇️ &nbsp;Download Report</button>
+            <button class="overflow-item">🔄 &nbsp;Re-analyze</button>
+            <button class="overflow-item overflow-item--danger">🗑️ &nbsp;Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+// Upload drag-and-drop
+const uploadLabel = document.getElementById('upload-label');
+const uploadInput = document.getElementById('resume-upload');
+if (uploadLabel) {
+  uploadLabel.addEventListener('dragover', e => { e.preventDefault(); uploadLabel.classList.add('dragover'); });
+  uploadLabel.addEventListener('dragleave', () => uploadLabel.classList.remove('dragover'));
+  uploadLabel.addEventListener('drop', e => {
+    e.preventDefault(); uploadLabel.classList.remove('dragover');
+    const file = e.dataTransfer.files[0];
+    if (file) handleFile(file);
+  });
+}
+if (uploadInput) {
+  uploadInput.addEventListener('change', () => {
+    if (uploadInput.files[0]) handleFile(uploadInput.files[0]);
+  });
+}
+function handleFile(file) {
+  const allowed = ['application/pdf','application/msword','application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+  if (!allowed.includes(file.type)) { alert('Please upload a PDF or DOCX file.'); return; }
+  if (file.size > 5 * 1024 * 1024) { alert('File must be under 5MB.'); return; }
+  const title = uploadLabel.querySelector('.upload-area__title');
+  const sub = uploadLabel.querySelector('.upload-area__sub');
+  if (title) title.textContent = file.name;
+  if (sub) sub.textContent = 'Analyzing…';
+}
+
+// Overflow menus
+function toggleMenu(btn) {
+  const menu = btn.closest('.overflow-menu');
+  const isOpen = menu.classList.contains('open');
+  document.querySelectorAll('.overflow-menu.open').forEach(m => m.classList.remove('open'));
+  if (!isOpen) menu.classList.add('open');
+}
+document.addEventListener('click', e => {
+  if (!e.target.closest('.overflow-menu')) {
+    document.querySelectorAll('.overflow-menu.open').forEach(m => m.classList.remove('open'));
+  }
+});
+</script>
+</body>
+</html>

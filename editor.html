@@ -4,401 +4,399 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Resume Builder — ResumeIQ</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="style.css"/>
 <link rel="stylesheet" href="Frontend/editor.css"/>
-<script src="Frontend/editor.js" defer></script>
 </head>
-<body class="editor-body">
+<body>
 
-<!-- TOP BAR -->
-<header class="editor-topbar">
-  <a class="logo" href="index.html">Resume<span>IQ</span></a>
-  <div class="editor-topbar-center">
-    <span class="tpl-indicator" id="tpl-indicator">
-      <span class="tpl-indicator-dot"></span>
-      <span id="tpl-indicator-name">Clean Dev</span>
-    </span>
-    <button class="btn-change-tpl" onclick="window.location.href='templates.html'">Change Template</button>
+<!-- ══ TOP BAR ══ -->
+<div class="editor-topbar">
+  <a href="dashboard.html" class="editor-topbar__logo">Resume<span>IQ</span></a>
+  <span class="editor-topbar__sep">/</span>
+  <span class="editor-topbar__page">Builder</span>
+  <div class="editor-topbar__spacer"></div>
+  <div class="tpl-indicator">
+    <span class="tpl-indicator__label">Template:</span>
+    <span class="tpl-indicator__name" id="tpl-indicator-name">Clean Dev</span>
+    <a href="templates.html" class="tpl-indicator__change">Change</a>
   </div>
-  <div class="editor-topbar-right">
-    <button class="btn-save" id="btn-save" onclick="saveResume()">Save Draft</button>
-    <button class="btn-download" onclick="downloadResume()">Download PDF →</button>
-  </div>
-</header>
+  <button id="btn-save" class="btn btn--ghost btn--sm" onclick="saveResume()">Save Draft</button>
+  <button class="btn btn--primary btn--sm" onclick="downloadResume()">⬇ Download PDF</button>
+</div>
 
-<!-- EDITOR LAYOUT -->
-<div class="editor-layout">
+<!-- ══ MAIN ══ -->
+<div class="editor-main">
 
-  <!-- LEFT: STEP FORM PANEL -->
-  <aside class="editor-sidebar">
+  <!-- ── Left: Step nav ── -->
+  <aside class="step-nav">
+    <div class="step-nav__title">Steps</div>
 
-    <!-- STEP NAVIGATION -->
-    <div class="step-nav">
-      <div class="step-nav-item active" data-step="1" onclick="goToStep(1)">
-        <div class="step-nav-num">1</div>
-        <div class="step-nav-label">Contact Info</div>
+    <button class="step-nav-item active" data-step="1" onclick="goToStep(1)">
+      <div class="step-nav-item__num">1</div>
+      <div class="step-nav-item__info">
+        <div class="step-nav-item__label">Contact Info</div>
+        <div class="step-nav-item__sub">Name, email, links</div>
       </div>
-      <div class="step-nav-connector"></div>
-      <div class="step-nav-item" data-step="2" onclick="goToStep(2)">
-        <div class="step-nav-num">2</div>
-        <div class="step-nav-label">Summary</div>
+    </button>
+    <button class="step-nav-item" data-step="2" onclick="goToStep(2)">
+      <div class="step-nav-item__num">2</div>
+      <div class="step-nav-item__info">
+        <div class="step-nav-item__label">Summary</div>
+        <div class="step-nav-item__sub">Professional overview</div>
       </div>
-      <div class="step-nav-connector"></div>
-      <div class="step-nav-item" data-step="3" onclick="goToStep(3)">
-        <div class="step-nav-num">3</div>
-        <div class="step-nav-label">Experience</div>
+    </button>
+    <button class="step-nav-item" data-step="3" onclick="goToStep(3)">
+      <div class="step-nav-item__num">3</div>
+      <div class="step-nav-item__info">
+        <div class="step-nav-item__label">Experience</div>
+        <div class="step-nav-item__sub">Work history</div>
       </div>
-      <div class="step-nav-connector"></div>
-      <div class="step-nav-item" data-step="4" onclick="goToStep(4)">
-        <div class="step-nav-num">4</div>
-        <div class="step-nav-label">Skills</div>
+    </button>
+    <button class="step-nav-item" data-step="4" onclick="goToStep(4)">
+      <div class="step-nav-item__num">4</div>
+      <div class="step-nav-item__info">
+        <div class="step-nav-item__label">Skills</div>
+        <div class="step-nav-item__sub">Technical &amp; soft skills</div>
       </div>
-      <div class="step-nav-connector"></div>
-      <div class="step-nav-item" data-step="5" onclick="goToStep(5)">
-        <div class="step-nav-num">5</div>
-        <div class="step-nav-label">Education</div>
+    </button>
+    <button class="step-nav-item" data-step="5" onclick="goToStep(5)">
+      <div class="step-nav-item__num">5</div>
+      <div class="step-nav-item__info">
+        <div class="step-nav-item__label">Education</div>
+        <div class="step-nav-item__sub">Degrees &amp; certificates</div>
       </div>
-      <div class="step-nav-connector"></div>
-      <div class="step-nav-item" data-step="6" onclick="goToStep(6)">
-        <div class="step-nav-num">6</div>
-        <div class="step-nav-label">Projects</div>
+    </button>
+    <button class="step-nav-item" data-step="6" onclick="goToStep(6)">
+      <div class="step-nav-item__num">6</div>
+      <div class="step-nav-item__info">
+        <div class="step-nav-item__label">Projects &amp; Certs</div>
+        <div class="step-nav-item__sub">Portfolio &amp; achievements</div>
+      </div>
+    </button>
+
+    <div class="step-nav__footer">
+      <button class="btn btn--ghost btn--sm" onclick="saveResume()" style="width:100%;justify-content:center">Save Draft</button>
+    </div>
+  </aside>
+
+  <!-- ── Center: Forms ── -->
+  <div class="step-forms">
+
+    <!-- Step 1: Contact -->
+    <div class="step-form active" id="step-1">
+      <div class="step-form__header">
+        <h2 class="step-form__title">Contact Information</h2>
+        <p class="step-form__desc">This is the header of your resume — make sure it's complete and professional.</p>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" id="f-name" placeholder="Jane Doe" oninput="updatePreview()"/>
+        </div>
+        <div class="form-group">
+          <label>Job Title</label>
+          <input type="text" id="f-title" placeholder="Software Engineer" oninput="updatePreview()"/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Email *</label>
+          <input type="email" id="f-email" placeholder="jane@example.com" oninput="updatePreview()"/>
+        </div>
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="tel" id="f-phone" placeholder="+1 555 000 0000" oninput="updatePreview()"/>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Location</label>
+          <input type="text" id="f-location" placeholder="San Francisco, CA" oninput="updatePreview()"/>
+        </div>
+        <div class="form-group">
+          <label>LinkedIn URL</label>
+          <input type="url" id="f-linkedin" placeholder="linkedin.com/in/janedoe" oninput="updatePreview()"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Personal Website / Portfolio</label>
+        <input type="url" id="f-website" placeholder="janedoe.dev" oninput="updatePreview()"/>
+      </div>
+      <div class="step-nav-btns">
+        <span></span>
+        <button class="btn btn--primary" onclick="goToStep(2)">Next: Summary →</button>
       </div>
     </div>
 
-    <!-- STEP FORMS -->
-    <div class="step-forms">
+    <!-- Step 2: Summary -->
+    <div class="step-form" id="step-2">
+      <div class="step-form__header">
+        <h2 class="step-form__title">Professional Summary</h2>
+        <p class="step-form__desc">A concise 2–3 sentence overview of your experience and value. Keep it under 400 characters for best ATS results.</p>
+      </div>
+      <div class="ai-suggestion">
+        <div class="ai-suggestion__head">✦ AI Tip</div>
+        <div class="ai-suggestion__text">Start with your job title, years of experience, and 2 key skills. End with your biggest career achievement. Avoid personal pronouns.</div>
+      </div>
+      <div class="form-group">
+        <label>Summary</label>
+        <textarea id="f-summary" rows="5"
+          placeholder="Results-driven Software Engineer with 5 years building scalable web applications. Expert in React, Node.js and AWS. Reduced infrastructure costs by 40% at Acme Corp."
+          oninput="updatePreview()"></textarea>
+        <div class="char-count-row">
+          <span class="char-count"><span id="summary-count">0</span> / 400</span>
+        </div>
+      </div>
+      <div class="step-nav-btns">
+        <button class="btn btn--ghost" onclick="goToStep(1)">← Back</button>
+        <button class="btn btn--primary" onclick="goToStep(3)">Next: Experience →</button>
+      </div>
+    </div>
 
-      <!-- STEP 1: CONTACT -->
-      <div class="step-form active" id="step-1">
-        <div class="step-header">
-          <div class="step-badge">Step 1 of 6</div>
-          <h2 class="step-title">Contact Information</h2>
-          <p class="step-desc">Add your basic contact details. This will appear at the top of your resume.</p>
-        </div>
-        <div class="form-group">
-          <label>Full Name *</label>
-          <input type="text" id="f-name" placeholder="e.g. Jane Smith" oninput="updatePreview()"/>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Job Title</label>
-            <input type="text" id="f-title" placeholder="e.g. Software Engineer" oninput="updatePreview()"/>
+    <!-- Step 3: Experience -->
+    <div class="step-form" id="step-3">
+      <div class="step-form__header">
+        <h2 class="step-form__title">Work Experience</h2>
+        <p class="step-form__desc">List your most recent positions first. Use bullet points and quantify your impact wherever possible.</p>
+      </div>
+      <div id="experience-entries">
+        <div class="entry-card experience-entry" data-entry="0">
+          <div class="entry-header">
+            <span class="entry-label">Position 1</span>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Job Title *</label>
+              <input type="text" class="exp-title" placeholder="Software Engineer" oninput="updatePreview()"/>
+            </div>
+            <div class="form-group">
+              <label>Company *</label>
+              <input type="text" class="exp-company" placeholder="Acme Corp" oninput="updatePreview()"/>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Start Date</label>
+              <input type="text" class="exp-start" placeholder="Jan 2022" oninput="updatePreview()"/>
+            </div>
+            <div class="form-group">
+              <label>End Date</label>
+              <input type="text" class="exp-end" placeholder="Present" oninput="updatePreview()"/>
+            </div>
           </div>
           <div class="form-group">
             <label>Location</label>
-            <input type="text" id="f-location" placeholder="e.g. New York, NY" oninput="updatePreview()"/>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Email *</label>
-            <input type="email" id="f-email" placeholder="jane@example.com" oninput="updatePreview()"/>
+            <input type="text" class="exp-location" placeholder="Remote" oninput="updatePreview()"/>
           </div>
           <div class="form-group">
-            <label>Phone</label>
-            <input type="tel" id="f-phone" placeholder="+1 (555) 000-0000" oninput="updatePreview()"/>
+            <label>Responsibilities &amp; Achievements</label>
+            <textarea class="exp-bullets" rows="5"
+              placeholder="• Led migration to microservices, reducing deploy time by 60%&#10;• Built React dashboard used by 50,000+ users&#10;• Mentored 3 junior engineers"
+              oninput="updatePreview()"></textarea>
+            <div class="form-hint">Start each line with • for bullet points. Quantify results when possible.</div>
           </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>LinkedIn URL</label>
-            <input type="url" id="f-linkedin" placeholder="linkedin.com/in/janesmith" oninput="updatePreview()"/>
-          </div>
-          <div class="form-group">
-            <label>Website / GitHub</label>
-            <input type="url" id="f-website" placeholder="github.com/janesmith" oninput="updatePreview()"/>
-          </div>
-        </div>
-        <div class="step-actions">
-          <button class="btn-next" onclick="goToStep(2)">Next: Professional Summary →</button>
         </div>
       </div>
-
-      <!-- STEP 2: SUMMARY -->
-      <div class="step-form" id="step-2">
-        <div class="step-header">
-          <div class="step-badge">Step 2 of 6</div>
-          <h2 class="step-title">Professional Summary</h2>
-          <p class="step-desc">Write 2–3 sentences summarizing your experience and key strengths.</p>
-        </div>
-        <div class="form-group">
-          <label>Summary</label>
-          <textarea id="f-summary" rows="5" placeholder="e.g. Results-driven Software Engineer with 5+ years of experience building scalable web applications. Passionate about clean code, system design, and leading cross-functional teams to deliver impactful products." oninput="updatePreview()"></textarea>
-          <div class="char-count"><span id="summary-count">0</span> / 400 characters</div>
-        </div>
-        <div class="ai-suggest-box">
-          <div class="ai-suggest-icon">✦</div>
-          <div class="ai-suggest-text">
-            <strong>AI Suggestion</strong>
-            <p>Start with your years of experience, strongest skill, and a key achievement. Avoid personal pronouns.</p>
-          </div>
-        </div>
-        <div class="step-actions">
-          <button class="btn-back" onclick="goToStep(1)">← Back</button>
-          <button class="btn-next" onclick="goToStep(3)">Next: Work Experience →</button>
-        </div>
+      <button class="add-entry-btn" onclick="addExperienceEntry()">+ Add Another Position</button>
+      <div class="step-nav-btns">
+        <button class="btn btn--ghost" onclick="goToStep(2)">← Back</button>
+        <button class="btn btn--primary" onclick="goToStep(4)">Next: Skills →</button>
       </div>
+    </div>
 
-      <!-- STEP 3: EXPERIENCE -->
-      <div class="step-form" id="step-3">
-        <div class="step-header">
-          <div class="step-badge">Step 3 of 6</div>
-          <h2 class="step-title">Work Experience</h2>
-          <p class="step-desc">Add your work history, most recent first. Use bullet points for impact.</p>
-        </div>
-        <div id="experience-entries">
-          <div class="experience-entry" data-entry="0">
-            <div class="entry-header">
-              <span class="entry-label">Position 1</span>
-              <button class="entry-remove" onclick="removeEntry('experience', 0)" style="display:none">Remove</button>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label>Job Title *</label>
-                <input type="text" class="exp-title" placeholder="e.g. Senior Software Engineer" oninput="updatePreview()"/>
-              </div>
-              <div class="form-group">
-                <label>Company *</label>
-                <input type="text" class="exp-company" placeholder="e.g. Google" oninput="updatePreview()"/>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label>Start Date</label>
-                <input type="text" class="exp-start" placeholder="Jan 2022" oninput="updatePreview()"/>
-              </div>
-              <div class="form-group">
-                <label>End Date</label>
-                <input type="text" class="exp-end" placeholder="Present" oninput="updatePreview()"/>
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Location</label>
-              <input type="text" class="exp-location" placeholder="San Francisco, CA" oninput="updatePreview()"/>
-            </div>
-            <div class="form-group">
-              <label>Responsibilities & Achievements</label>
-              <textarea class="exp-bullets" rows="4" placeholder="• Led development of microservices architecture serving 2M+ users&#10;• Reduced API latency by 40% through query optimization&#10;• Mentored team of 4 junior engineers" oninput="updatePreview()"></textarea>
-              <div class="form-hint">Start each line with • for bullet points. Focus on measurable outcomes.</div>
-            </div>
-          </div>
-        </div>
-        <button class="btn-add-entry" onclick="addExperienceEntry()">+ Add Another Position</button>
-        <div class="step-actions">
-          <button class="btn-back" onclick="goToStep(2)">← Back</button>
-          <button class="btn-next" onclick="goToStep(4)">Next: Skills →</button>
-        </div>
+    <!-- Step 4: Skills -->
+    <div class="step-form" id="step-4">
+      <div class="step-form__header">
+        <h2 class="step-form__title">Skills</h2>
+        <p class="step-form__desc">Separate skills with commas. Include keywords from the job descriptions you're targeting.</p>
       </div>
-
-      <!-- STEP 4: SKILLS -->
-      <div class="step-form" id="step-4">
-        <div class="step-header">
-          <div class="step-badge">Step 4 of 6</div>
-          <h2 class="step-title">Skills</h2>
-          <p class="step-desc">List your top technical and soft skills. These are scanned by ATS systems.</p>
-        </div>
+      <div class="ai-suggestion">
+        <div class="ai-suggestion__head">✦ ATS Tip</div>
+        <div class="ai-suggestion__text">Include exact keyword phrases from job postings here — ATS systems search for exact matches. Don't abbreviate (write "TypeScript" not "TS").</div>
+      </div>
+      <div class="form-group">
+        <label>Technical Skills</label>
+        <input type="text" id="f-tech-skills" placeholder="React, TypeScript, Node.js, PostgreSQL, AWS, Docker" oninput="updatePreview()"/>
+      </div>
+      <div class="form-group">
+        <label>Soft Skills</label>
+        <input type="text" id="f-soft-skills" placeholder="Team leadership, Communication, Problem-solving, Agile" oninput="updatePreview()"/>
+      </div>
+      <div class="form-row">
         <div class="form-group">
-          <label>Technical Skills</label>
-          <input type="text" id="f-tech-skills" placeholder="e.g. Python, React, Node.js, AWS, Docker, PostgreSQL" oninput="updatePreview()"/>
-          <div class="form-hint">Separate skills with commas. Match keywords from job descriptions.</div>
-        </div>
-        <div class="form-group">
-          <label>Soft Skills</label>
-          <input type="text" id="f-soft-skills" placeholder="e.g. Leadership, Communication, Problem Solving" oninput="updatePreview()"/>
-        </div>
-        <div class="form-group">
-          <label>Tools & Technologies</label>
-          <input type="text" id="f-tools" placeholder="e.g. Git, Jira, VS Code, Figma" oninput="updatePreview()"/>
+          <label>Tools &amp; Platforms</label>
+          <input type="text" id="f-tools" placeholder="GitHub, Jira, Figma, VS Code" oninput="updatePreview()"/>
         </div>
         <div class="form-group">
           <label>Languages</label>
-          <input type="text" id="f-languages" placeholder="e.g. English (Native), Spanish (Conversational)" oninput="updatePreview()"/>
-        </div>
-        <div class="step-actions">
-          <button class="btn-back" onclick="goToStep(3)">← Back</button>
-          <button class="btn-next" onclick="goToStep(5)">Next: Education →</button>
+          <input type="text" id="f-languages" placeholder="English (native), Spanish (conversational)" oninput="updatePreview()"/>
         </div>
       </div>
+      <div class="step-nav-btns">
+        <button class="btn btn--ghost" onclick="goToStep(3)">← Back</button>
+        <button class="btn btn--primary" onclick="goToStep(5)">Next: Education →</button>
+      </div>
+    </div>
 
-      <!-- STEP 5: EDUCATION -->
-      <div class="step-form" id="step-5">
-        <div class="step-header">
-          <div class="step-badge">Step 5 of 6</div>
-          <h2 class="step-title">Education</h2>
-          <p class="step-desc">Add your educational background, most recent first.</p>
-        </div>
-        <div id="education-entries">
-          <div class="education-entry" data-entry="0">
-            <div class="entry-header">
-              <span class="entry-label">Degree 1</span>
-              <button class="entry-remove" onclick="removeEntry('education', 0)" style="display:none">Remove</button>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label>Degree / Certificate *</label>
-                <input type="text" class="edu-degree" placeholder="e.g. B.S. Computer Science" oninput="updatePreview()"/>
-              </div>
-              <div class="form-group">
-                <label>Institution *</label>
-                <input type="text" class="edu-school" placeholder="e.g. MIT" oninput="updatePreview()"/>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label>Graduation Year</label>
-                <input type="text" class="edu-year" placeholder="e.g. 2020" oninput="updatePreview()"/>
-              </div>
-              <div class="form-group">
-                <label>GPA (optional)</label>
-                <input type="text" class="edu-gpa" placeholder="e.g. 3.8 / 4.0" oninput="updatePreview()"/>
-              </div>
+    <!-- Step 5: Education -->
+    <div class="step-form" id="step-5">
+      <div class="step-form__header">
+        <h2 class="step-form__title">Education</h2>
+        <p class="step-form__desc">List your most recent degree first. Include GPA only if it's 3.5 or above.</p>
+      </div>
+      <div id="education-entries">
+        <div class="entry-card education-entry" data-entry="0">
+          <div class="entry-header">
+            <span class="entry-label">Degree 1</span>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Degree / Certificate *</label>
+              <input type="text" class="edu-degree" placeholder="B.S. Computer Science" oninput="updatePreview()"/>
             </div>
             <div class="form-group">
-              <label>Honors / Relevant Coursework</label>
-              <input type="text" class="edu-honors" placeholder="e.g. Magna Cum Laude, Dean's List" oninput="updatePreview()"/>
+              <label>Institution *</label>
+              <input type="text" class="edu-school" placeholder="MIT" oninput="updatePreview()"/>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Graduation Year</label>
+              <input type="text" class="edu-year" placeholder="2020" oninput="updatePreview()"/>
+            </div>
+            <div class="form-group">
+              <label>GPA (optional)</label>
+              <input type="text" class="edu-gpa" placeholder="3.9 / 4.0" oninput="updatePreview()"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Honors / Relevant Coursework</label>
+            <input type="text" class="edu-honors" placeholder="Summa Cum Laude, Dean's List" oninput="updatePreview()"/>
+          </div>
+        </div>
+      </div>
+      <button class="add-entry-btn" onclick="addEducationEntry()">+ Add Another Degree</button>
+      <div class="step-nav-btns">
+        <button class="btn btn--ghost" onclick="goToStep(4)">← Back</button>
+        <button class="btn btn--primary" onclick="goToStep(6)">Next: Projects →</button>
+      </div>
+    </div>
+
+    <!-- Step 6: Projects & Certs -->
+    <div class="step-form" id="step-6">
+      <div class="step-form__header">
+        <h2 class="step-form__title">Projects &amp; Certifications</h2>
+        <p class="step-form__desc">Showcase your best work and credentials. These can be the deciding factor for technical roles.</p>
+      </div>
+
+      <h4 style="font-size:14px;font-weight:700;color:var(--ink-2);margin-bottom:14px;">Projects</h4>
+      <div id="project-entries">
+        <div class="entry-card project-entry" data-entry="0">
+          <div class="entry-header">
+            <span class="entry-label">Project 1</span>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Project Name</label>
+              <input type="text" class="proj-name" placeholder="Portfolio Website" oninput="updatePreview()"/>
+            </div>
+            <div class="form-group">
+              <label>Tech Stack</label>
+              <input type="text" class="proj-tech" placeholder="React, Tailwind, Vercel" oninput="updatePreview()"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Description</label>
+            <textarea class="proj-desc" rows="2" placeholder="Brief description of what you built and why it matters..." oninput="updatePreview()"></textarea>
+          </div>
+          <div class="form-group">
+            <label>URL / GitHub</label>
+            <input type="url" class="proj-url" placeholder="github.com/jane/portfolio" oninput="updatePreview()"/>
+          </div>
+        </div>
+      </div>
+      <button class="add-entry-btn" onclick="addProjectEntry()">+ Add Another Project</button>
+
+      <h4 style="font-size:14px;font-weight:700;color:var(--ink-2);margin:24px 0 14px;">Certifications</h4>
+      <div id="cert-entries">
+        <div class="entry-card cert-entry">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Certification</label>
+              <input type="text" class="cert-name" placeholder="AWS Certified Developer" oninput="updatePreview()"/>
+            </div>
+            <div class="form-group">
+              <label>Issuer &amp; Year</label>
+              <input type="text" class="cert-issuer" placeholder="Amazon Web Services, 2024" oninput="updatePreview()"/>
             </div>
           </div>
         </div>
-        <button class="btn-add-entry" onclick="addEducationEntry()">+ Add Another Degree</button>
-        <div class="step-actions">
-          <button class="btn-back" onclick="goToStep(4)">← Back</button>
-          <button class="btn-next" onclick="goToStep(6)">Next: Projects →</button>
-        </div>
       </div>
+      <button class="add-entry-btn" onclick="addCertEntry()">+ Add Certification</button>
 
-      <!-- STEP 6: PROJECTS / CERTIFICATIONS -->
-      <div class="step-form" id="step-6">
-        <div class="step-header">
-          <div class="step-badge">Step 6 of 6</div>
-          <h2 class="step-title">Projects & Certifications</h2>
-          <p class="step-desc">Showcase notable projects and professional certifications.</p>
-        </div>
-
-        <div class="subsection-title">Projects</div>
-        <div id="project-entries">
-          <div class="project-entry" data-entry="0">
-            <div class="entry-header">
-              <span class="entry-label">Project 1</span>
-              <button class="entry-remove" onclick="removeEntry('project', 0)" style="display:none">Remove</button>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label>Project Name</label>
-                <input type="text" class="proj-name" placeholder="e.g. E-Commerce Platform" oninput="updatePreview()"/>
-              </div>
-              <div class="form-group">
-                <label>Tech Stack</label>
-                <input type="text" class="proj-tech" placeholder="e.g. React, Node.js, MongoDB" oninput="updatePreview()"/>
-              </div>
-            </div>
-            <div class="form-group">
-              <label>Description</label>
-              <textarea class="proj-desc" rows="2" placeholder="Built a full-stack e-commerce app with 10k+ monthly users..." oninput="updatePreview()"></textarea>
-            </div>
-            <div class="form-group">
-              <label>Project URL (optional)</label>
-              <input type="url" class="proj-url" placeholder="github.com/username/project" oninput="updatePreview()"/>
-            </div>
-          </div>
-        </div>
-        <button class="btn-add-entry" onclick="addProjectEntry()">+ Add Another Project</button>
-
-        <div class="subsection-title" style="margin-top:1.5rem">Certifications</div>
-        <div id="cert-entries">
-          <div class="cert-entry" data-entry="0">
-            <div class="form-row">
-              <div class="form-group">
-                <label>Certification Name</label>
-                <input type="text" class="cert-name" placeholder="e.g. AWS Solutions Architect" oninput="updatePreview()"/>
-              </div>
-              <div class="form-group">
-                <label>Issuer &amp; Year</label>
-                <input type="text" class="cert-issuer" placeholder="e.g. Amazon Web Services, 2023" oninput="updatePreview()"/>
-              </div>
-            </div>
-          </div>
-        </div>
-        <button class="btn-add-entry" onclick="addCertEntry()">+ Add Certification</button>
-
-        <div class="step-actions">
-          <button class="btn-back" onclick="goToStep(5)">← Back</button>
-          <button class="btn-finish" onclick="downloadResume()">Download Resume →</button>
-        </div>
+      <div class="step-nav-btns">
+        <button class="btn btn--ghost" onclick="goToStep(5)">← Back</button>
+        <button class="btn btn--primary" onclick="downloadResume()">⬇ Download PDF</button>
       </div>
+    </div>
 
-    </div><!-- /step-forms -->
-  </aside>
+  </div><!-- /step-forms -->
 
-  <!-- RIGHT: LIVE PREVIEW PANEL -->
-  <main class="editor-preview-panel">
+  <!-- ── Right: Preview ── -->
+  <div class="preview-panel">
     <div class="preview-toolbar">
-      <span class="preview-label">Live Preview</span>
-      <div class="preview-zoom">
-        <button onclick="zoomPreview(-0.1)">−</button>
-        <span id="zoom-level">100%</span>
-        <button onclick="zoomPreview(0.1)">+</button>
-      </div>
+      <span class="preview-toolbar__label">Live Preview</span>
+      <button class="zoom-btn" onclick="zoomPreview(-0.1)">−</button>
+      <span class="zoom-level" id="zoom-level">100%</span>
+      <button class="zoom-btn" onclick="zoomPreview(0.1)">+</button>
     </div>
     <div class="preview-scroll">
       <div class="resume-sheet" id="resume-sheet">
-        <!-- Dynamically rendered by editor.js -->
         <div class="resume-render" id="resume-render">
 
-          <!-- TEMPLATE: single-column default -->
-          <div class="r-header" id="r-header">
-            <div class="r-name" id="r-name">Your Name</div>
-            <div class="r-title" id="r-title">Job Title</div>
+          <!-- Header -->
+          <div class="r-header">
+            <div class="r-name r-placeholder" id="r-name">Your Name</div>
+            <div class="r-title r-placeholder" id="r-title">Job Title</div>
             <div class="r-contact" id="r-contact">
-              <span id="r-email">email@example.com</span>
-              <span class="r-sep">·</span>
-              <span id="r-phone">+1 (555) 000-0000</span>
-              <span class="r-sep">·</span>
-              <span id="r-location">City, State</span>
+              <span style="color:#CBD5E1;font-style:italic">email · phone · location</span>
             </div>
             <div class="r-links" id="r-links"></div>
           </div>
 
-          <div class="r-divider"></div>
-
-          <div class="r-section" id="r-summary-sec">
-            <div class="r-sec-title">Professional Summary</div>
-            <div class="r-sec-body">
-              <p id="r-summary" class="r-placeholder">Your professional summary will appear here...</p>
-            </div>
+          <!-- Summary -->
+          <div class="r-section">
+            <div class="r-sec-title">Summary</div>
+            <div class="r-summary r-placeholder" id="r-summary">Your professional summary will appear here...</div>
           </div>
 
-          <div class="r-divider"></div>
-
-          <div class="r-section" id="r-experience-sec">
-            <div class="r-sec-title">Work Experience</div>
-            <div class="r-sec-body" id="r-experience-body">
+          <!-- Experience -->
+          <div class="r-section">
+            <div class="r-sec-title">Experience</div>
+            <div id="r-experience-body">
               <div class="r-placeholder">Your work experience will appear here...</div>
             </div>
           </div>
 
-          <div class="r-divider"></div>
-
-          <div class="r-section" id="r-skills-sec">
+          <!-- Skills -->
+          <div class="r-section">
             <div class="r-sec-title">Skills</div>
-            <div class="r-sec-body" id="r-skills-body">
+            <div id="r-skills-body">
               <div class="r-placeholder">Your skills will appear here...</div>
             </div>
           </div>
 
-          <div class="r-divider"></div>
-
-          <div class="r-section" id="r-education-sec">
+          <!-- Education -->
+          <div class="r-section">
             <div class="r-sec-title">Education</div>
-            <div class="r-sec-body" id="r-education-body">
+            <div id="r-education-body">
               <div class="r-placeholder">Your education will appear here...</div>
             </div>
           </div>
 
-          <div class="r-section" id="r-projects-sec">
-            <div class="r-divider"></div>
-            <div class="r-sec-title">Projects & Certifications</div>
-            <div class="r-sec-body" id="r-projects-body">
+          <!-- Projects -->
+          <div class="r-section">
+            <div class="r-sec-title">Projects &amp; Certifications</div>
+            <div id="r-projects-body">
               <div class="r-placeholder">Your projects and certifications will appear here...</div>
             </div>
           </div>
@@ -406,9 +404,10 @@
         </div><!-- /resume-render -->
       </div><!-- /resume-sheet -->
     </div><!-- /preview-scroll -->
-  </main>
+  </div><!-- /preview-panel -->
 
-</div><!-- /editor-layout -->
+</div><!-- /editor-main -->
 
+<script src="Frontend/editor.js"></script>
 </body>
 </html>

@@ -4,158 +4,240 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>ResumeIQ — Land More Interviews</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="style.css"/>
-<script src="Frontend/script.js" defer></script>
-
-<style>
-
-</style>
 </head>
 <body>
 
-<nav>
-  <a class="logo" href="#">Resume<span>IQ</span></a>
-  <div class="nav-r">
-    <a href="#how">How it works</a>
-    <a href="templates.html">Templates</a>
-    <a href="#pricing">Pricing</a>
-    <a href="editor.html" class="nav-cta">Build Resume</a>
-  </div>
-</nav>
+<!-- ══ NAV ══ -->
+<header class="site-header">
+  <nav class="nav">
+    <a href="index.html" class="nav__logo">Resume<span>IQ</span></a>
+    <div class="nav__links">
+      <a href="#features" class="nav__link">Features</a>
+      <a href="#how" class="nav__link">How it works</a>
+      <a href="#pricing" class="nav__link">Pricing</a>
+    </div>
+    <div class="nav__spacer"></div>
+    <div class="nav__actions">
+      <a href="dashboard.html" class="btn btn--ghost btn--sm">Sign in</a>
+      <a href="dashboard.html" class="btn btn--primary btn--sm">Get started free</a>
+    </div>
+  </nav>
+</header>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-tag">AI-powered resume analysis</div>
-  <h1>Your resume, <em>optimized</em> to get interviews.</h1>
-  <p>Upload your resume and get an ATS score, keyword gaps, and AI-rewritten bullet points — in under 60 seconds.</p>
-  <div class="hero-btns">
-    <a href="#" class="btn-p">Analyze my resume →</a>
-    <a href="#how" class="btn-s">How it works</a>
-  </div>
-</div>
-
-<!-- STATS -->
-<div class="stats reveal">
-  <div>
-    <div class="stat-n">94<span>%</span></div>
-    <div class="stat-l">ATS pass rate</div>
-  </div>
-  <div>
-    <div class="stat-n">3<span>×</span></div>
-    <div class="stat-l">More callbacks</div>
-  </div>
-  <div>
-    <div class="stat-n">&lt;60<span>s</span></div>
-    <div class="stat-l">Full analysis</div>
-  </div>
-</div>
-
-<!-- HOW IT WORKS -->
-<div class="steps-wrap reveal" id="how">
-  <div class="sec-label">How it works</div>
-  <h2 class="sec-title">Three steps to a <em>better</em> resume.</h2>
-  <div class="steps">
-    <div class="step">
-      <div class="step-n">01</div>
-      <div class="step-body">
-        <div class="step-t">Upload your resume</div>
-        <div class="step-d">Drop your PDF or Word file. We parse every section instantly.</div>
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="container">
+    <div class="hero__badge">✦ Trusted by 50,000+ job seekers</div>
+    <h1 class="hero__title">
+      Your resume,<br/>
+      <span class="gradient-text">built to get hired</span>
+    </h1>
+    <p class="hero__desc">
+      ResumeIQ analyzes your resume against real ATS systems, surfaces exactly what's
+      missing, and helps you fix it — in under 60 seconds.
+    </p>
+    <div class="hero__actions">
+      <a href="dashboard.html" class="btn btn--primary btn--lg">Analyze my resume — it's free</a>
+      <a href="#how" class="btn btn--ghost btn--lg">See how it works</a>
+    </div>
+    <p class="hero__note">No credit card · Free forever on the basic plan</p>
+    <div class="hero__stats">
+      <div class="hero__stat">
+        <span class="hero__stat-val">94%</span>
+        <span class="hero__stat-label">ATS pass rate</span>
+      </div>
+      <div class="hero__stat">
+        <span class="hero__stat-val">3×</span>
+        <span class="hero__stat-label">More callbacks</span>
+      </div>
+      <div class="hero__stat">
+        <span class="hero__stat-val">&lt;60s</span>
+        <span class="hero__stat-label">Analysis time</span>
       </div>
     </div>
-    <div class="step">
-      <div class="step-n">02</div>
-      <div class="step-body">
-        <div class="step-t">Get your ATS score</div>
-        <div class="step-d">We check compatibility, keywords, bullet impact, formatting, and skills alignment.</div>
+
+    <!-- Dashboard mockup -->
+    <div class="hero__mockup reveal">
+      <div class="mockup-bar">
+        <span class="mockup-dot mockup-dot--r"></span>
+        <span class="mockup-dot mockup-dot--y"></span>
+        <span class="mockup-dot mockup-dot--g"></span>
       </div>
-    </div>
-    <div class="step">
-      <div class="step-n">03</div>
-      <div class="step-body">
-        <div class="step-t">Download your improved resume</div>
-        <div class="step-d">Get AI-rewritten bullets, keyword fixes, and a downloadable optimized version.</div>
+      <div class="mockup-body">
+        <div class="mockup-left">
+          <div class="mockup-score-card">
+            <div class="mockup-score-num">82</div>
+            <div class="mockup-score-lbl">ATS Score</div>
+            <div class="mockup-bar-wrap"><div class="mockup-bar-fill"></div></div>
+          </div>
+          <div class="mockup-mini-card">
+            <div class="mockup-mini-label">Keywords matched</div>
+            <div class="mockup-mini-val">14 / 17</div>
+          </div>
+        </div>
+        <div class="mockup-right">
+          <div class="mockup-issue mockup-issue--ok">
+            <span class="mockup-issue-icon">✓</span>
+            Contact info complete — name, email, phone, LinkedIn all present
+          </div>
+          <div class="mockup-issue mockup-issue--warn">
+            <span class="mockup-issue-icon">⚠</span>
+            Missing keyword "CI/CD pipelines" — appears in 87% of matching job descriptions
+          </div>
+          <div class="mockup-issue mockup-issue--err">
+            <span class="mockup-issue-icon">✕</span>
+            Table in skills section detected — most ATS parsers cannot read tables
+          </div>
+          <div class="mockup-issue mockup-issue--warn">
+            <span class="mockup-issue-icon">⚠</span>
+            2 of 5 experience bullets lack quantified impact — add metrics to improve score
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- FEATURES -->
-<div class="feats-wrap reveal">
-  <div class="feats-inner">
-    <div class="sec-label">Features</div>
-    <h2 class="sec-title">Everything your resume needs to <em>pass.</em></h2>
-    <div class="feat-grid">
-      <div class="feat">
-        <div class="feat-title">ATS Score</div>
-        <div class="feat-desc">See exactly how your resume performs in automated screening systems before you apply.</div>
-      </div>
-      <div class="feat">
-        <div class="feat-title">Keyword Optimization</div>
-        <div class="feat-desc">Find and fill keyword gaps for your target role with placement suggestions.</div>
-      </div>
-      <div class="feat">
-        <div class="feat-title">Bullet Point Rewrite</div>
-        <div class="feat-desc">AI turns vague duties into measurable impact statements automatically.</div>
-      </div>
-      <div class="feat">
-        <div class="feat-title">Formatting Check</div>
-        <div class="feat-desc">Flags tables, columns, and graphics that silently break ATS parsers.</div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- PRICING -->
-<div class="pricing-wrap reveal" id="pricing">
-  <div class="sec-label" style="text-align:center;">Pricing</div>
-  <h2 class="sec-title">Simple pricing, <em>no subscriptions.</em></h2>
-  <div class="pricing-grid">
-    <div class="plan">
-      <div class="plan-name">Free</div>
-      <div class="plan-price"><sup>$</sup>0</div>
-      <div class="plan-note">2 scans / month. No card needed.</div>
-      <div class="plan-sep"></div>
-      <ul class="plan-list">
-        <li class="on"><span class="ic">✓</span> 2 resume scans / month</li>
-        <li class="on"><span class="ic">✓</span> ATS score</li>
-        <li class="on"><span class="ic">✓</span> Basic keyword feedback</li>
-        <li class="off"><span class="ic">–</span> AI bullet rewrites</li>
-        <li class="off"><span class="ic">–</span> Full section analysis</li>
-        <li class="off"><span class="ic">–</span> Downloadable rewrite</li>
-      </ul>
-      <a href="#" class="plan-btn plan-btn-f">Get started free</a>
-    </div>
-    <div class="plan pro">
-      <div class="plan-badge">Most popular</div>
-      <div class="plan-name">Pro Credits</div>
-      <div class="plan-price"><sup>$</sup>19 <span class="per">one-time</span></div>
-      <div class="plan-note">Buy once, use whenever.</div>
-      <div class="plan-sep"></div>
-      <ul class="plan-list">
-        <li class="on"><span class="ic">✓</span> 20 full-depth scans</li>
-        <li class="on"><span class="ic">✓</span> Full ATS breakdown</li>
-        <li class="on"><span class="ic">✓</span> AI bullet rewrites</li>
-        <li class="on"><span class="ic">✓</span> Section-by-section analysis</li>
-        <li class="on"><span class="ic">✓</span> Downloadable rewrite</li>
-        <li class="on"><span class="ic">✓</span> Keyword suggestions</li>
-      </ul>
-      <a href="#" class="plan-btn plan-btn-p">Buy credits — $19</a>
+<!-- ══ SOCIAL PROOF ══ -->
+<div class="proof">
+  <div class="container">
+    <div class="proof__inner">
+      <div class="proof__item">🏆 &nbsp;#1 Resume Tool on Product Hunt</div>
+      <div class="proof__item">⭐ &nbsp;4.9 / 5 from 3,200+ reviews</div>
+      <div class="proof__item">🚀 &nbsp;50,000+ resumes optimized</div>
+      <div class="proof__item">🔒 &nbsp;Your data is never stored or shared</div>
     </div>
   </div>
 </div>
 
-<!-- CTA -->
-<div class="cta reveal">
-  <h2>Ready to <em>land</em> the interview?</h2>
-  <p>Free to start. Results in 60 seconds. No account required.</p>
-  <a href="#" class="btn-p">Analyze my resume →</a>
-</div>
+<!-- ══ HOW IT WORKS ══ -->
+<section class="how" id="how">
+  <div class="container">
+    <p class="section-eyebrow">How it works</p>
+    <h2 class="section-title">From upload to interview-ready<br/>in three steps</h2>
+    <p class="section-sub">No fluff. Just a clear path to a better resume.</p>
 
-<!-- FOOTER -->
-<footer>
-  <div class="f-logo">Resume<span>IQ</span></div>
-  <p>© 2025 ResumeIQ. All rights reserved.</p>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step__num">1</div>
+        <h3 class="step__title">Upload your resume</h3>
+        <p class="step__desc">Drop your PDF or DOCX. ResumeIQ reads it exactly the way an ATS system would — including what gets lost.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step__num">2</div>
+        <h3 class="step__title">Get your ATS score</h3>
+        <p class="step__desc">See a score from 0–100 with a detailed breakdown: missing keywords, formatting issues, and what to fix first.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step__num">3</div>
+        <h3 class="step__title">Fix, build &amp; download</h3>
+        <p class="step__desc">Use the resume builder to apply fixes, pick a template, and download a polished PDF in minutes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FEATURES ══ -->
+<section class="features" id="features">
+  <div class="container">
+    <p class="section-eyebrow" style="color:var(--brand-dim)">What's inside</p>
+    <h2 class="section-title">Everything you need to<br/>beat the bots</h2>
+    <p class="section-sub">Four tools. One goal: more interviews.</p>
+
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-card__icon">📊</div>
+        <h3 class="feature-card__title">ATS Score &amp; Analysis</h3>
+        <p class="feature-card__desc">Instant 0–100 score with a full breakdown of keyword gaps, formatting issues, and section completeness — the same way real ATS software reads your file.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-card__icon">🔍</div>
+        <h3 class="feature-card__title">Keyword Optimization</h3>
+        <p class="feature-card__desc">Automatically identifies which keywords from your target roles are missing and tells you exactly where to add them for maximum impact.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-card__icon">✍️</div>
+        <h3 class="feature-card__title">AI Bullet Rewriter</h3>
+        <p class="feature-card__desc">Transforms vague job duties into achievement-focused bullets with real metrics. The kind of language that makes recruiters stop scrolling.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-card__icon">🎨</div>
+        <h3 class="feature-card__title">Resume Builder + 500 Templates</h3>
+        <p class="feature-card__desc">Build from scratch with a guided 6-step wizard and choose from 500+ ATS-optimized templates across every industry and role level.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PRICING ══ -->
+<section class="pricing" id="pricing">
+  <div class="container" style="text-align:center">
+    <p class="section-eyebrow">Pricing</p>
+    <h2 class="section-title">Start free. Upgrade when you're ready.</h2>
+    <p class="section-sub" style="margin:0 auto">No subscriptions. No surprise charges. Pay once if you need more.</p>
+
+    <div class="pricing-grid">
+      <!-- Free -->
+      <div class="pricing-card reveal">
+        <div class="pricing-name">Free</div>
+        <div class="pricing-price"><sup>$</sup>0</div>
+        <p class="pricing-desc">Perfect for a first pass on your resume.</p>
+        <ul class="pricing-features">
+          <li class="pricing-feature"><span class="pricing-feature-check">✓</span>2 ATS scans per month</li>
+          <li class="pricing-feature"><span class="pricing-feature-check">✓</span>Full ATS score &amp; breakdown</li>
+          <li class="pricing-feature"><span class="pricing-feature-check">✓</span>Keyword gap report</li>
+          <li class="pricing-feature"><span class="pricing-feature-check">✓</span>Resume builder (all 6 steps)</li>
+          <li class="pricing-feature"><span class="pricing-feature-check">✓</span>10 free templates</li>
+        </ul>
+        <a href="dashboard.html" class="btn btn--ghost" style="width:100%;justify-content:center">Get started free</a>
+      </div>
+      <!-- Pro -->
+      <div class="pricing-card pricing-card--featured reveal">
+        <div class="pricing-badge">Most popular</div>
+        <div class="pricing-name">Pro Credits</div>
+        <div class="pricing-price"><sup>$</sup>19</div>
+        <p class="pricing-desc">One-time purchase. Use whenever you need it.</p>
+        <ul class="pricing-features">
+          <li class="pricing-feature"><span class="pricing-feature-check">✓</span>Unlimited ATS scans</li>
+          <li class="pricing-feature"><span class="pricing-feature-check">✓</span>Everything in Free</li>
+          <li class="pricing-feature"><span class="pricing-feature-check">✓</span>AI bullet point rewrites</li>
+          <li class="pricing-feature"><span class="pricing-feature-check">✓</span>All 500+ premium templates</li>
+          <li class="pricing-feature"><span class="pricing-feature-check">✓</span>Cover letter generator</li>
+        </ul>
+        <a href="dashboard.html" class="btn btn--primary" style="width:100%;justify-content:center;background:var(--brand-gradient)">Upgrade for $19</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA BANNER ══ -->
+<section class="cta-banner">
+  <div class="container">
+    <h2 class="cta-banner__title">Ready to land more interviews?</h2>
+    <p class="cta-banner__sub">Analyze your resume in 60 seconds. Free, no sign-up required.</p>
+    <div class="hero__actions">
+      <a href="dashboard.html" class="btn btn--lg" style="background:#fff;color:var(--brand-dark);font-weight:700">Analyze my resume →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__logo">Resume<span>IQ</span></div>
+      <div class="footer__links">
+        <a href="#features" class="footer__link">Features</a>
+        <a href="#pricing" class="footer__link">Pricing</a>
+        <a href="templates.html" class="footer__link">Templates</a>
+        <a href="dashboard.html" class="footer__link">Dashboard</a>
+      </div>
+      <p class="footer__copy">© 2025 ResumeIQ. All rights reserved.</p>
+    </div>
+  </div>
 </footer>
+
+<script src="Frontend/script.js"></script>
 </body>
 </html>

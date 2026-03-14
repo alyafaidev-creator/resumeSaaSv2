@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Design Direction Previews</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #0a0a0a;
+    color: #fff;
+    min-height: 100vh;
+  }
+
+  /* ── Selector bar ── */
+  .selector {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #111;
+    border-bottom: 1px solid #222;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .selector::-webkit-scrollbar { display: none; }
+  .selector-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    color: #555;
+    white-space: nowrap;
+    margin-right: 8px;
+  }
+  .tab {
+    background: none;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    color: #888;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 7px 16px;
+    transition: all .15s;
+    white-space: nowrap;
+  }
+  .tab:hover { border-color: #444; color: #ccc; }
+  .tab.active { background: #fff; border-color: #fff; color: #000; }
+
+  /* ── Preview frames ── */
+  .frame { display: none; }
+  .frame.active { display: block; }
+
+  /* ══════════════════════════════════════
+     DIRECTION 1 — Career OS (Dark editorial)
+  ══════════════════════════════════════ */
+  .cos { background: #0E0E10; color: #e4e4e7; font-family: 'Inter', sans-serif; min-height: 100vh; }
+
+  /* top nav */
+  .cos-nav {
+    height: 48px;
+    background: #0E0E10;
+    border-bottom: 1px solid #1f1f23;
+    display: flex;
+    align-items: center;
+    padding: 0 28px;
+    gap: 32px;
+  }
+  .cos-logo { font-size: 15px; font-weight: 700; color: #fff; letter-spacing: -.3px; }
+  .cos-nav-links { display: flex; gap: 24px; margin-left: 16px; }
+  .cos-nav-link { font-size: 13px; color: #71717a; cursor: pointer; }
+  .cos-nav-link.active { color: #e4e4e7; }
+  .cos-nav-right { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+  .cos-badge { background: #18181b; border: 1px solid #27272a; border-radius: 6px; font-size: 11px; color: #a1a1aa; padding: 3px 10px; }
+  .cos-avatar { width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, #6366f1, #8b5cf6); }
+
+  /* content */
+  .cos-body { max-width: 1100px; margin: 0 auto; padding: 48px 28px; }
+  .cos-heading-row { display: flex; align-items: baseline; gap: 16px; margin-bottom: 40px; }
+  .cos-h1 { font-size: 28px; font-weight: 700; letter-spacing: -.5px; color: #fafafa; }
+  .cos-sub { font-size: 14px; color: #52525b; }
+
+  .cos-modules { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 32px; }
+  .cos-module {
+    background: #111113;
+    border: 1px solid #1f1f23;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .cos-module-label { font-size: 11px; text-transform: uppercase; letter-spacing: .08em; color: #52525b; margin-bottom: 8px; }
+  .cos-module-val { font-size: 36px; font-weight: 700; color: #fafafa; letter-spacing: -1px; }
+  .cos-module-meta { font-size: 12px; color: #52525b; margin-top: 4px; }
+  .cos-module-val.green { color: #4ade80; }
+  .cos-module-val.amber { color: #fbbf24; }
+
+  .cos-section-title { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: #52525b; margin-bottom: 14px; }
+  .cos-upload {
+    border: 1px dashed #27272a;
+    border-radius: 10px;
+    padding: 36px;
+    text-align: center;
+    margin-bottom: 32px;
+    background: #111113;
+  }
+  .cos-upload-icon { font-size: 28px; margin-bottom: 10px; opacity: .4; }
+  .cos-upload-text { font-size: 14px; color: #71717a; }
+  .cos-upload-btn {
+    display: inline-block;
+    margin-top: 14px;
+    background: #18181b;
+    border: 1px solid #27272a;
+    border-radius: 7px;
+    padding: 8px 20px;
+    font-size: 13px;
+    color: #e4e4e7;
+    cursor: pointer;
+  }
+
+  .cos-table { width: 100%; border-collapse: collapse; }
+  .cos-table th { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: #52525b; padding: 8px 12px; text-align: left; border-bottom: 1px solid #1f1f23; }
+  .cos-table td { font-size: 13px; color: #a1a1aa; padding: 12px; border-bottom: 1px solid #18181b; }
+  .cos-table td:first-child { color: #e4e4e7; font-weight: 500; }
+  .cos-score-num { font-size: 20px; font-weight: 700; }
+  .cos-score-num.g { color: #4ade80; }
+  .cos-score-num.a { color: #fbbf24; }
+  .cos-score-num.r { color: #f87171; }
+
+  .cos-statusbar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    height: 26px;
+    background: #6366f1;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    font-size: 11px;
+    gap: 24px;
+    color: rgba(255,255,255,.8);
+  }
+  .cos-statusbar span { color: #fff; font-weight: 600; }
+
+  /* ══════════════════════════════════════
+     DIRECTION 2 — Launchpad (Friendly)
+  ══════════════════════════════════════ */
+  .lp { background: #f0f9ff; color: #0f172a; font-family: 'Inter', sans-serif; min-height: 100vh; }
+
+  .lp-topbar {
+    background: #fff;
+    padding: 0 24px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #e0f2fe;
+    gap: 16px;
+  }
+  .lp-logo { font-size: 18px; font-weight: 800; color: #0ea5e9; }
+  .lp-logo span { color: #0f172a; }
+  .lp-progress-wrap { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+  .lp-prog-label { font-size: 12px; color: #64748b; font-weight: 500; }
+  .lp-prog-bar { width: 120px; height: 8px; background: #e0f2fe; border-radius: 99px; overflow: hidden; }
+  .lp-prog-fill { height: 100%; width: 50%; background: linear-gradient(90deg, #38bdf8, #0ea5e9); border-radius: 99px; }
+  .lp-avatar { width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(135deg, #38bdf8, #818cf8); margin-left: 12px; }
+
+  .lp-body { max-width: 600px; margin: 0 auto; padding: 40px 24px 80px; }
+  .lp-greet { font-size: 26px; font-weight: 800; color: #0f172a; margin-bottom: 4px; }
+  .lp-greet-sub { font-size: 15px; color: #64748b; margin-bottom: 32px; }
+
+  .lp-checklist { display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; }
+  .lp-check-item {
+    background: #fff;
+    border: 2px solid #e0f2fe;
+    border-radius: 20px;
+    padding: 18px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    transition: border-color .15s, transform .1s;
+  }
+  .lp-check-item:hover { border-color: #38bdf8; transform: translateY(-1px); }
+  .lp-check-item.done { border-color: #bbf7d0; background: #f0fdf4; }
+  .lp-check-icon {
+    width: 48px; height: 48px;
+    border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px;
+    flex-shrink: 0;
+  }
+  .lp-check-icon.sky { background: #e0f2fe; }
+  .lp-check-icon.mint { background: #dcfce7; }
+  .lp-check-icon.peach { background: #fff7ed; }
+  .lp-check-icon.lav { background: #f5f3ff; }
+  .lp-check-title { font-size: 15px; font-weight: 700; color: #0f172a; margin-bottom: 2px; }
+  .lp-check-desc { font-size: 13px; color: #64748b; }
+  .lp-check-arrow { margin-left: auto; color: #94a3b8; font-size: 18px; }
+  .lp-check-done { margin-left: auto; background: #86efac; border-radius: 99px; padding: 3px 10px; font-size: 11px; font-weight: 700; color: #166534; }
+
+  .lp-ats-card {
+    background: linear-gradient(135deg, #0ea5e9, #818cf8);
+    border-radius: 24px;
+    padding: 24px;
+    color: #fff;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .lp-ats-score { font-size: 56px; font-weight: 800; line-height: 1; }
+  .lp-ats-label { font-size: 13px; opacity: .8; margin-top: 4px; }
+  .lp-ats-msg { font-size: 15px; font-weight: 600; }
+  .lp-ats-sub { font-size: 13px; opacity: .85; margin-top: 4px; }
+  .lp-prog2 { height: 10px; background: rgba(255,255,255,.2); border-radius: 99px; margin-top: 10px; overflow: hidden; }
+  .lp-prog2-fill { height: 100%; width: 82%; background: #fff; border-radius: 99px; }
+
+  .lp-bottom-nav {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    height: 64px;
+    background: #fff;
+    border-top: 2px solid #e0f2fe;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 8px;
+  }
+  .lp-bn-item { display: flex; flex-direction: column; align-items: center; gap: 3px; cursor: pointer; padding: 6px 16px; border-radius: 12px; }
+  .lp-bn-item.active { background: #e0f2fe; }
+  .lp-bn-icon { font-size: 20px; }
+  .lp-bn-label { font-size: 10px; font-weight: 600; color: #64748b; }
+  .lp-bn-item.active .lp-bn-label { color: #0ea5e9; }
+
+  /* ══════════════════════════════════════
+     DIRECTION 3 — ProStack (Dev-tool)
+  ══════════════════════════════════════ */
+  .ps { background: #1e1e2e; color: #cdd6f4; font-family: 'JetBrains Mono', monospace; min-height: 100vh; }
+
+  .ps-layout { display: flex; height: 100vh; flex-direction: column; }
+  .ps-titlebar {
+    height: 36px;
+    background: #181825;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 8px;
+    border-bottom: 1px solid #313244;
+    flex-shrink: 0;
+  }
+  .ps-dot { width: 12px; height: 12px; border-radius: 50%; }
+  .ps-dot.r { background: #f38ba8; } .ps-dot.y { background: #f9e2af; } .ps-dot.g { background: #a6e3a1; }
+  .ps-titlebar-name { margin-left: 12px; font-size: 12px; color: #6c7086; }
+
+  .ps-main { display: flex; flex: 1; overflow: hidden; }
+
+  /* file tree */
+  .ps-filetree {
+    width: 200px;
+    background: #181825;
+    border-right: 1px solid #313244;
+    padding: 12px 0;
+    flex-shrink: 0;
+    overflow-y: auto;
+  }
+  .ps-tree-section { font-size: 11px; color: #585b70; text-transform: uppercase; letter-spacing: .06em; padding: 4px 16px 4px; }
+  .ps-tree-item { font-size: 12px; padding: 4px 16px; cursor: pointer; display: flex; align-items: center; gap: 8px; color: #a6adc8; }
+  .ps-tree-item:hover { background: #1e1e2e; color: #cdd6f4; }
+  .ps-tree-item.active { background: #313244; color: #cba6f7; }
+  .ps-tree-icon { font-size: 13px; }
+  .ps-tree-score { margin-left: auto; font-size: 10px; }
+  .ps-tree-score.g { color: #a6e3a1; }
+  .ps-tree-score.a { color: #f9e2af; }
+  .ps-tree-score.r { color: #f38ba8; }
+
+  /* center panel */
+  .ps-center { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+  .ps-tabs { display: flex; background: #181825; border-bottom: 1px solid #313244; flex-shrink: 0; }
+  .ps-tab-item { font-size: 12px; padding: 8px 16px; color: #585b70; cursor: pointer; border-right: 1px solid #313244; }
+  .ps-tab-item.active { background: #1e1e2e; color: #cdd6f4; border-bottom: 2px solid #cba6f7; margin-bottom: -1px; }
+
+  .ps-content { flex: 1; padding: 24px; overflow-y: auto; }
+  .ps-file-header { margin-bottom: 20px; }
+  .ps-file-path { font-size: 12px; color: #585b70; margin-bottom: 4px; }
+  .ps-file-title { font-size: 18px; font-weight: 500; color: #cdd6f4; }
+
+  .ps-lint-box {
+    background: #181825;
+    border: 1px solid #313244;
+    border-left: 3px solid #f9e2af;
+    border-radius: 6px;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+    font-size: 12px;
+  }
+  .ps-lint-box.warn { border-left-color: #f9e2af; }
+  .ps-lint-box.err  { border-left-color: #f38ba8; }
+  .ps-lint-box.ok   { border-left-color: #a6e3a1; }
+  .ps-lint-code { color: #585b70; margin-bottom: 3px; }
+  .ps-lint-msg { color: #cdd6f4; }
+  .ps-lint-msg span { color: #cba6f7; }
+
+  .ps-field-group { margin-bottom: 20px; }
+  .ps-field-label { font-size: 11px; color: #6c7086; margin-bottom: 6px; }
+  .ps-field-input {
+    width: 100%;
+    background: #181825;
+    border: 1px solid #313244;
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: #cdd6f4;
+    outline: none;
+  }
+  .ps-field-input:focus { border-color: #cba6f7; }
+
+  /* right analysis panel */
+  .ps-analysis {
+    width: 220px;
+    background: #181825;
+    border-left: 1px solid #313244;
+    padding: 16px;
+    flex-shrink: 0;
+    overflow-y: auto;
+  }
+  .ps-analysis-title { font-size: 11px; color: #585b70; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 12px; }
+  .ps-score-big { font-size: 48px; font-weight: 500; color: #a6e3a1; line-height: 1; }
+  .ps-score-label { font-size: 11px; color: #585b70; margin-bottom: 16px; }
+  .ps-kw-item { display: flex; justify-content: space-between; font-size: 11px; padding: 5px 0; border-bottom: 1px solid #1e1e2e; color: #a6adc8; }
+  .ps-kw-item.found { color: #a6e3a1; }
+  .ps-kw-item.missing { color: #f38ba8; }
+
+  /* status bar */
+  .ps-statusbar {
+    height: 24px;
+    background: #cba6f7;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    font-size: 11px;
+    color: #1e1e2e;
+    gap: 20px;
+    flex-shrink: 0;
+  }
+  .ps-statusbar b { font-weight: 600; }
+
+  /* ══════════════════════════════════════
+     DIRECTION 4 — Elevate (Luxury/Premium)
+  ══════════════════════════════════════ */
+  .el { background: #FAF8F4; color: #1c1712; font-family: 'Inter', sans-serif; min-height: 100vh; }
+
+  .el-sidebar {
+    position: fixed;
+    top: 0; left: 0; bottom: 0;
+    width: 220px;
+    background: #f5f0e8;
+    border-right: 1px solid #e8e0d0;
+    padding: 28px 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .el-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1c1712;
+    padding: 0 24px 28px;
+    border-bottom: 1px solid #e8e0d0;
+    letter-spacing: -.3px;
+  }
+  .el-logo span { color: #b8860b; }
+  .el-nav { padding: 20px 0; flex: 1; }
+  .el-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 24px;
+    font-size: 13px;
+    color: #8c7a5e;
+    cursor: pointer;
+    letter-spacing: .01em;
+  }
+  .el-nav-item:hover { color: #1c1712; }
+  .el-nav-item.active { color: #b8860b; font-weight: 600; background: rgba(184,134,11,.06); }
+  .el-nav-icon { font-size: 15px; width: 18px; text-align: center; }
+  .el-user-section { padding: 20px 24px; border-top: 1px solid #e8e0d0; }
+  .el-user-name { font-size: 13px; font-weight: 600; color: #1c1712; }
+  .el-user-plan { font-size: 11px; color: #b8860b; letter-spacing: .04em; text-transform: uppercase; }
+
+  .el-main { margin-left: 220px; padding: 56px 64px; max-width: 1100px; }
+  .el-greeting-label { font-size: 11px; text-transform: uppercase; letter-spacing: .14em; color: #b8860b; margin-bottom: 10px; }
+  .el-h1 { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 700; color: #1c1712; letter-spacing: -.5px; margin-bottom: 6px; }
+  .el-sub { font-size: 15px; color: #8c7a5e; margin-bottom: 56px; }
+
+  .el-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 56px; }
+  .el-stat {
+    background: #fff;
+    border: 1px solid #e8e0d0;
+    border-radius: 12px;
+    padding: 24px;
+  }
+  .el-stat-label { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; color: #8c7a5e; margin-bottom: 12px; }
+  .el-stat-val { font-family: 'Playfair Display', serif; font-size: 32px; color: #1c1712; }
+  .el-stat-meta { font-size: 12px; color: #b8a990; margin-top: 4px; }
+
+  .el-upload {
+    background: #fff;
+    border: 1px solid #e8e0d0;
+    border-radius: 16px;
+    padding: 48px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .el-upload-ornament { font-size: 36px; margin-bottom: 16px; opacity: .4; }
+  .el-upload-title { font-family: 'Playfair Display', serif; font-size: 22px; color: #1c1712; margin-bottom: 8px; }
+  .el-upload-desc { font-size: 14px; color: #8c7a5e; max-width: 380px; margin: 0 auto 24px; line-height: 1.6; }
+  .el-upload-btn {
+    background: #1c1712;
+    color: #FAF8F4;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 32px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    letter-spacing: .02em;
+  }
+
+  .el-history-title { font-family: 'Playfair Display', serif; font-size: 20px; color: #1c1712; margin-bottom: 20px; }
+  .el-history-item {
+    background: #fff;
+    border: 1px solid #e8e0d0;
+    border-radius: 10px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 12px;
+  }
+  .el-gauge {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: conic-gradient(#b8860b calc(var(--pct) * 1%), #e8e0d0 0);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .el-gauge-inner {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700; color: #1c1712;
+  }
+  .el-history-name { font-size: 14px; font-weight: 600; color: #1c1712; margin-bottom: 3px; }
+  .el-history-meta { font-size: 12px; color: #8c7a5e; }
+  .el-history-action { margin-left: auto; font-size: 13px; color: #b8860b; cursor: pointer; font-weight: 500; }
+
+  /* ══════════════════════════════════════
+     DIRECTION 5 — SwiftResume (Ultra-minimal)
+  ══════════════════════════════════════ */
+  .sw { background: #fff; color: #111; font-family: 'Inter', sans-serif; min-height: 100vh; }
+
+  .sw-header {
+    border-bottom: 1px solid #f0f0f0;
+    padding: 0 32px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+  }
+  .sw-logo { font-size: 16px; font-weight: 700; color: #111; }
+  .sw-logo span { color: #2563eb; }
+  .sw-header-right { margin-left: auto; display: flex; align-items: center; gap: 16px; }
+  .sw-header-link { font-size: 13px; color: #888; cursor: pointer; }
+  .sw-cta-btn {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .sw-body { max-width: 720px; margin: 0 auto; padding: 56px 32px; }
+  .sw-h1 { font-size: 32px; font-weight: 800; color: #111; letter-spacing: -.5px; margin-bottom: 8px; }
+  .sw-lead { font-size: 16px; color: #666; margin-bottom: 40px; }
+
+  /* accordion steps */
+  .sw-accordion { border: 1px solid #e8e8e8; border-radius: 10px; overflow: hidden; margin-bottom: 32px; }
+  .sw-acc-step {
+    border-bottom: 1px solid #e8e8e8;
+  }
+  .sw-acc-step:last-child { border-bottom: none; }
+  .sw-acc-header {
+    display: flex;
+    align-items: center;
+    padding: 16px 20px;
+    cursor: pointer;
+    background: #fff;
+    gap: 14px;
+  }
+  .sw-acc-header:hover { background: #fafafa; }
+  .sw-acc-num {
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    font-size: 12px; font-weight: 700; color: #888;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .sw-acc-num.done { background: #2563eb; color: #fff; }
+  .sw-acc-num.active { background: #111; color: #fff; }
+  .sw-acc-title { font-size: 14px; font-weight: 600; color: #111; }
+  .sw-acc-time { margin-left: auto; font-size: 12px; color: #bbb; }
+  .sw-acc-body { padding: 4px 20px 20px 60px; display: none; }
+  .sw-acc-body.open { display: block; }
+  .sw-acc-field { margin-bottom: 14px; }
+  .sw-acc-label { font-size: 12px; font-weight: 600; color: #555; margin-bottom: 5px; }
+  .sw-acc-input {
+    width: 100%;
+    border: 1px solid #e8e8e8;
+    border-radius: 7px;
+    padding: 9px 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #111;
+    outline: none;
+  }
+  .sw-acc-input:focus { border-color: #2563eb; }
+  .sw-acc-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+  .sw-actions { display: flex; align-items: center; justify-content: space-between; }
+  .sw-progress-wrap { display: flex; align-items: center; gap: 10px; }
+  .sw-prog-bar { width: 160px; height: 6px; background: #f0f0f0; border-radius: 99px; overflow: hidden; }
+  .sw-prog-fill { height: 100%; background: #2563eb; border-radius: 99px; }
+  .sw-prog-text { font-size: 12px; color: #888; }
+  .sw-next-btn {
+    background: #111;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 11px 28px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .sw-history-title { font-size: 13px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 14px; }
+  .sw-table { width: 100%; border-collapse: collapse; }
+  .sw-table th { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: #bbb; padding: 8px 0; text-align: left; border-bottom: 1px solid #f0f0f0; }
+  .sw-table td { font-size: 13px; padding: 12px 0; border-bottom: 1px solid #f8f8f8; color: #555; }
+  .sw-table td:first-child { color: #111; font-weight: 500; }
+  .sw-score-pill { display: inline-block; padding: 2px 10px; border-radius: 99px; font-size: 12px; font-weight: 700; }
+  .sw-score-pill.g { background: #dcfce7; color: #166534; }
+  .sw-score-pill.a { background: #fef9c3; color: #854d0e; }
+  .sw-score-pill.r { background: #fee2e2; color: #991b1b; }
+  .sw-view-link { color: #2563eb; font-size: 13px; cursor: pointer; }
+</style>
+</head>
+<body>
+
+<!-- Selector bar -->
+<div class="selector">
+  <span class="selector-label">Design Direction</span>
+  <button class="tab active" onclick="show(1, this)">1 · Career OS</button>
+  <button class="tab" onclick="show(2, this)">2 · Launchpad</button>
+  <button class="tab" onclick="show(3, this)">3 · ProStack</button>
+  <button class="tab" onclick="show(4, this)">4 · Elevate</button>
+  <button class="tab" onclick="show(5, this)">5 · SwiftResume</button>
+</div>
+
+<!-- ══ FRAME 1: Career OS ══ -->
+<div class="frame active" id="f1">
+<div class="cos">
+  <nav class="cos-nav">
+    <span class="cos-logo">CareerOS</span>
+    <div class="cos-nav-links">
+      <span class="cos-nav-link active">Dashboard</span>
+      <span class="cos-nav-link">Resumes</span>
+      <span class="cos-nav-link">Letters</span>
+      <span class="cos-nav-link">Templates</span>
+    </div>
+    <div class="cos-nav-right">
+      <span class="cos-badge">Free Plan</span>
+      <div class="cos-avatar"></div>
+    </div>
+  </nav>
+  <div class="cos-body">
+    <div class="cos-heading-row">
+      <span class="cos-h1">Workspace</span>
+      <span class="cos-sub">jane@example.com</span>
+    </div>
+    <div class="cos-modules">
+      <div class="cos-module">
+        <div class="cos-module-label">ATS Score</div>
+        <div class="cos-module-val green">82</div>
+        <div class="cos-module-meta">Last scan · 2 days ago</div>
+      </div>
+      <div class="cos-module">
+        <div class="cos-module-label">Scans Used</div>
+        <div class="cos-module-val amber">1/2</div>
+        <div class="cos-module-meta">Resets monthly</div>
+      </div>
+      <div class="cos-module">
+        <div class="cos-module-label">Drafts</div>
+        <div class="cos-module-val">3</div>
+        <div class="cos-module-meta">Resume builder</div>
+      </div>
+    </div>
+    <div class="cos-section-title">Analyze Resume</div>
+    <div class="cos-upload">
+      <div class="cos-upload-icon">⌗</div>
+      <div class="cos-upload-text">Drop PDF or DOCX here, or click to select</div>
+      <div class="cos-upload-btn">Choose File</div>
+    </div>
+    <div class="cos-section-title">Scan History</div>
+    <table class="cos-table">
+      <thead>
+        <tr>
+          <th>File</th>
+          <th>Score</th>
+          <th>Keywords</th>
+          <th>Date</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>resume_v3.pdf</td>
+          <td><span class="cos-score-num g">82</span></td>
+          <td>14 matched · 3 missing</td>
+          <td>Mar 11</td>
+          <td style="color:#6366f1;font-size:12px;cursor:pointer;">View →</td>
+        </tr>
+        <tr>
+          <td>resume_v2.pdf</td>
+          <td><span class="cos-score-num a">61</span></td>
+          <td>9 matched · 7 missing</td>
+          <td>Mar 8</td>
+          <td style="color:#6366f1;font-size:12px;cursor:pointer;">View →</td>
+        </tr>
+        <tr>
+          <td>resume_v1.pdf</td>
+          <td><span class="cos-score-num r">38</span></td>
+          <td>4 matched · 12 missing</td>
+          <td>Mar 1</td>
+          <td style="color:#6366f1;font-size:12px;cursor:pointer;">View →</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="cos-statusbar">
+    <span>ATS: 82</span>
+    <span style="opacity:.6">·</span>
+    branch: resume_v3
+    <span style="opacity:.6">·</span>
+    1 scan remaining
+    <span style="margin-left:auto;opacity:.6">CareerOS v2.0</span>
+  </div>
+</div>
+</div>
+
+<!-- ══ FRAME 2: Launchpad ══ -->
+<div class="frame" id="f2">
+<div class="lp">
+  <div class="lp-topbar">
+    <div class="lp-logo">Launch<span>pad</span></div>
+    <div class="lp-progress-wrap">
+      <span class="lp-prog-label">Profile 50% complete</span>
+      <div class="lp-prog-bar"><div class="lp-prog-fill"></div></div>
+      <div class="lp-avatar"></div>
+    </div>
+  </div>
+  <div class="lp-body">
+    <div class="lp-greet">Hey Jane! 👋</div>
+    <div class="lp-greet-sub">Let's get your resume job-ready today.</div>
+
+    <div class="lp-ats-card">
+      <div>
+        <div class="lp-ats-score">82</div>
+        <div class="lp-ats-label">ATS Score</div>
+        <div class="lp-prog2"><div class="lp-prog2-fill"></div></div>
+      </div>
+      <div>
+        <div class="lp-ats-msg">Great progress! 🎉</div>
+        <div class="lp-ats-sub">You're ahead of 71% of applicants.<br>Fix 3 keywords to reach 90+.</div>
+      </div>
+    </div>
+
+    <div class="lp-checklist">
+      <div class="lp-check-item done">
+        <div class="lp-check-icon mint">✅</div>
+        <div>
+          <div class="lp-check-title">Scan Your Resume</div>
+          <div class="lp-check-desc">ATS score: 82 · Scanned Mar 11</div>
+        </div>
+        <div class="lp-check-done">Done</div>
+      </div>
+      <div class="lp-check-item">
+        <div class="lp-check-icon sky">📄</div>
+        <div>
+          <div class="lp-check-title">Build Your Resume</div>
+          <div class="lp-check-desc">6 quick steps · Takes ~10 minutes</div>
+        </div>
+        <div class="lp-check-arrow">›</div>
+      </div>
+      <div class="lp-check-item">
+        <div class="lp-check-icon peach">✉️</div>
+        <div>
+          <div class="lp-check-title">Write a Cover Letter</div>
+          <div class="lp-check-desc">AI-generated in under 2 minutes</div>
+        </div>
+        <div class="lp-check-arrow">›</div>
+      </div>
+      <div class="lp-check-item">
+        <div class="lp-check-icon lav">🎨</div>
+        <div>
+          <div class="lp-check-title">Pick a Template</div>
+          <div class="lp-check-desc">500+ ATS-friendly designs</div>
+        </div>
+        <div class="lp-check-arrow">›</div>
+      </div>
+    </div>
+  </div>
+  <div class="lp-bottom-nav">
+    <div class="lp-bn-item active">
+      <div class="lp-bn-icon">🏠</div>
+      <div class="lp-bn-label">Home</div>
+    </div>
+    <div class="lp-bn-item">
+      <div class="lp-bn-icon">📄</div>
+      <div class="lp-bn-label">Resume</div>
+    </div>
+    <div class="lp-bn-item">
+      <div class="lp-bn-icon">✉️</div>
+      <div class="lp-bn-label">Letters</div>
+    </div>
+    <div class="lp-bn-item">
+      <div class="lp-bn-icon">👤</div>
+      <div class="lp-bn-label">Profile</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══ FRAME 3: ProStack ══ -->
+<div class="frame" id="f3">
+<div class="ps">
+  <div class="ps-layout">
+    <div class="ps-titlebar">
+      <div class="ps-dot r"></div>
+      <div class="ps-dot y"></div>
+      <div class="ps-dot g"></div>
+      <span class="ps-titlebar-name">prostack — resume_v3.pdf — Dashboard</span>
+    </div>
+    <div class="ps-main">
+      <!-- file tree -->
+      <div class="ps-filetree">
+        <div class="ps-tree-section">Resumes</div>
+        <div class="ps-tree-item active">
+          <span class="ps-tree-icon">📄</span>resume_v3.pdf
+          <span class="ps-tree-score g">82</span>
+        </div>
+        <div class="ps-tree-item">
+          <span class="ps-tree-icon">📄</span>resume_v2.pdf
+          <span class="ps-tree-score a">61</span>
+        </div>
+        <div class="ps-tree-item">
+          <span class="ps-tree-icon">📄</span>resume_v1.pdf
+          <span class="ps-tree-score r">38</span>
+        </div>
+        <div class="ps-tree-section" style="margin-top:12px">Letters</div>
+        <div class="ps-tree-item">
+          <span class="ps-tree-icon">✉️</span>stripe_cl.txt
+        </div>
+        <div class="ps-tree-item">
+          <span class="ps-tree-icon">✉️</span>notion_cl.txt
+        </div>
+        <div class="ps-tree-section" style="margin-top:12px">Templates</div>
+        <div class="ps-tree-item">
+          <span class="ps-tree-icon">🎨</span>clean_dev.tmpl
+        </div>
+        <div class="ps-tree-item">
+          <span class="ps-tree-icon">🎨</span>tech_stack.tmpl
+        </div>
+      </div>
+      <!-- center -->
+      <div class="ps-center">
+        <div class="ps-tabs">
+          <div class="ps-tab-item active">resume_v3.pdf</div>
+          <div class="ps-tab-item">ATS Report</div>
+          <div class="ps-tab-item">Editor</div>
+        </div>
+        <div class="ps-content">
+          <div class="ps-file-header">
+            <div class="ps-file-path">~/resumes/resume_v3.pdf · ATS Analysis</div>
+            <div class="ps-file-title">resume_v3.pdf</div>
+          </div>
+          <div class="ps-lint-box warn">
+            <div class="ps-lint-code">WARN ats/keyword-density</div>
+            <div class="ps-lint-msg">Missing high-value keyword: <span>"CI/CD pipelines"</span> — found in 87% of matched JDs</div>
+          </div>
+          <div class="ps-lint-box err">
+            <div class="ps-lint-code">ERR  ats/format-table</div>
+            <div class="ps-lint-msg">Table element detected in skills section — <span>not parseable</span> by most ATS parsers</div>
+          </div>
+          <div class="ps-lint-box ok">
+            <div class="ps-lint-code">OK   ats/contact-info</div>
+            <div class="ps-lint-msg">All required fields present: name, email, phone, <span>LinkedIn</span></div>
+          </div>
+          <div class="ps-lint-box warn">
+            <div class="ps-lint-code">WARN ats/bullet-quantify</div>
+            <div class="ps-lint-msg">2/5 experience bullets lack quantified impact — add <span>metrics</span> to improve score</div>
+          </div>
+          <div class="ps-field-group" style="margin-top:20px">
+            <div class="ps-field-label">// Upload new resume for analysis</div>
+            <input class="ps-field-input" type="text" placeholder="drag file here or type path..." />
+          </div>
+        </div>
+      </div>
+      <!-- right analysis -->
+      <div class="ps-analysis">
+        <div class="ps-analysis-title">Analysis</div>
+        <div class="ps-score-big">82</div>
+        <div class="ps-score-label">/ 100 · ATS Score</div>
+        <div class="ps-analysis-title" style="margin-top:4px">Keywords</div>
+        <div class="ps-kw-item found">✓ React.js</div>
+        <div class="ps-kw-item found">✓ TypeScript</div>
+        <div class="ps-kw-item found">✓ REST APIs</div>
+        <div class="ps-kw-item found">✓ Git / GitHub</div>
+        <div class="ps-kw-item missing">✗ CI/CD</div>
+        <div class="ps-kw-item missing">✗ Docker</div>
+        <div class="ps-kw-item missing">✗ AWS</div>
+        <div class="ps-analysis-title" style="margin-top:12px">Issues</div>
+        <div style="font-size:11px;color:#f38ba8;margin-bottom:3px">1 error</div>
+        <div style="font-size:11px;color:#f9e2af;margin-bottom:3px">2 warnings</div>
+        <div style="font-size:11px;color:#a6e3a1">3 passed</div>
+      </div>
+    </div>
+    <div class="ps-statusbar">
+      <b>main</b>
+      <span>resume_v3.pdf</span>
+      <span>ATS: 82/100</span>
+      <span>1 error · 2 warnings</span>
+      <span style="margin-left:auto">ProStack v1.0</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══ FRAME 4: Elevate ══ -->
+<div class="frame" id="f4">
+<div class="el">
+  <div class="el-sidebar">
+    <div class="el-logo">Elev<span>·</span>ate</div>
+    <nav class="el-nav">
+      <div class="el-nav-item active"><span class="el-nav-icon">◈</span> Dashboard</div>
+      <div class="el-nav-item"><span class="el-nav-icon">◻</span> My Resumes</div>
+      <div class="el-nav-item"><span class="el-nav-icon">✦</span> Cover Letters</div>
+      <div class="el-nav-item"><span class="el-nav-icon">◈</span> Templates</div>
+      <div class="el-nav-item"><span class="el-nav-icon">◻</span> Settings</div>
+    </nav>
+    <div class="el-user-section">
+      <div class="el-user-name">Jane Doe</div>
+      <div class="el-user-plan">Pro Member</div>
+    </div>
+  </div>
+  <div class="el-main">
+    <div class="el-greeting-label">Good morning</div>
+    <div class="el-h1">Welcome back, Jane.</div>
+    <div class="el-sub">Your career documents are ready when you are.</div>
+    <div class="el-stats">
+      <div class="el-stat">
+        <div class="el-stat-label">ATS Score</div>
+        <div class="el-stat-val">82</div>
+        <div class="el-stat-meta">Last analysed Mar 11</div>
+      </div>
+      <div class="el-stat">
+        <div class="el-stat-label">Scans</div>
+        <div class="el-stat-val">4</div>
+        <div class="el-stat-meta">This month</div>
+      </div>
+      <div class="el-stat">
+        <div class="el-stat-label">Cover Letters</div>
+        <div class="el-stat-val">2</div>
+        <div class="el-stat-meta">Generated</div>
+      </div>
+      <div class="el-stat">
+        <div class="el-stat-label">Drafts</div>
+        <div class="el-stat-val">3</div>
+        <div class="el-stat-meta">Saved locally</div>
+      </div>
+    </div>
+    <div class="el-upload">
+      <div class="el-upload-ornament">◈</div>
+      <div class="el-upload-title">Analyse Your Resume</div>
+      <div class="el-upload-desc">Upload your document and receive a comprehensive ATS compatibility report within seconds.</div>
+      <button class="el-upload-btn">Upload Document</button>
+    </div>
+    <div class="el-history-title">Recent Documents</div>
+    <div class="el-history-item">
+      <div class="el-gauge" style="--pct:82"><div class="el-gauge-inner">82</div></div>
+      <div>
+        <div class="el-history-name">resume_v3.pdf</div>
+        <div class="el-history-meta">Software Engineer · Scanned Mar 11</div>
+      </div>
+      <div class="el-history-action">View Report →</div>
+    </div>
+    <div class="el-history-item">
+      <div class="el-gauge" style="--pct:61"><div class="el-gauge-inner">61</div></div>
+      <div>
+        <div class="el-history-name">resume_v2.pdf</div>
+        <div class="el-history-meta">Software Engineer · Scanned Mar 8</div>
+      </div>
+      <div class="el-history-action">View Report →</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══ FRAME 5: SwiftResume ══ -->
+<div class="frame" id="f5">
+<div class="sw">
+  <div class="sw-header">
+    <div class="sw-logo">Swift<span>Resume</span></div>
+    <div class="sw-header-right">
+      <span class="sw-header-link">Sign in</span>
+      <button class="sw-cta-btn">Start Free</button>
+    </div>
+  </div>
+  <div class="sw-body">
+    <div class="sw-h1">Your resume, done.</div>
+    <div class="sw-lead">Fill in 6 sections. Download your PDF. Get hired.</div>
+
+    <div class="sw-accordion">
+      <!-- step 1 open -->
+      <div class="sw-acc-step">
+        <div class="sw-acc-header">
+          <div class="sw-acc-num active">1</div>
+          <div class="sw-acc-title">Contact Information</div>
+          <div class="sw-acc-time">~1 min</div>
+        </div>
+        <div class="sw-acc-body open">
+          <div class="sw-acc-row">
+            <div class="sw-acc-field">
+              <div class="sw-acc-label">Full Name</div>
+              <input class="sw-acc-input" type="text" placeholder="Jane Doe" />
+            </div>
+            <div class="sw-acc-field">
+              <div class="sw-acc-label">Job Title</div>
+              <input class="sw-acc-input" type="text" placeholder="Software Engineer" />
+            </div>
+          </div>
+          <div class="sw-acc-row">
+            <div class="sw-acc-field">
+              <div class="sw-acc-label">Email</div>
+              <input class="sw-acc-input" type="email" placeholder="jane@example.com" />
+            </div>
+            <div class="sw-acc-field">
+              <div class="sw-acc-label">Phone</div>
+              <input class="sw-acc-input" type="text" placeholder="+1 555 000 0000" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- step 2 done -->
+      <div class="sw-acc-step">
+        <div class="sw-acc-header">
+          <div class="sw-acc-num done">✓</div>
+          <div class="sw-acc-title">Summary</div>
+          <div class="sw-acc-time" style="color:#22c55e">Done</div>
+        </div>
+      </div>
+      <!-- steps 3-6 pending -->
+      <div class="sw-acc-step">
+        <div class="sw-acc-header">
+          <div class="sw-acc-num">3</div>
+          <div class="sw-acc-title">Work Experience</div>
+          <div class="sw-acc-time">~3 min</div>
+        </div>
+      </div>
+      <div class="sw-acc-step">
+        <div class="sw-acc-header">
+          <div class="sw-acc-num">4</div>
+          <div class="sw-acc-title">Skills</div>
+          <div class="sw-acc-time">~1 min</div>
+        </div>
+      </div>
+      <div class="sw-acc-step">
+        <div class="sw-acc-header">
+          <div class="sw-acc-num">5</div>
+          <div class="sw-acc-title">Education</div>
+          <div class="sw-acc-time">~1 min</div>
+        </div>
+      </div>
+      <div class="sw-acc-step">
+        <div class="sw-acc-header">
+          <div class="sw-acc-num">6</div>
+          <div class="sw-acc-title">Projects & Certs</div>
+          <div class="sw-acc-time">~2 min</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sw-actions">
+      <div class="sw-progress-wrap">
+        <div class="sw-prog-bar"><div class="sw-prog-fill" style="width:33%"></div></div>
+        <div class="sw-prog-text">2 of 6 complete</div>
+      </div>
+      <button class="sw-next-btn">Next →</button>
+    </div>
+
+    <div style="margin-top:48px">
+      <div class="sw-history-title">Previous Scans</div>
+      <table class="sw-table">
+        <thead>
+          <tr>
+            <th>File</th>
+            <th>Score</th>
+            <th>Date</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>resume_v3.pdf</td>
+            <td><span class="sw-score-pill g">82</span></td>
+            <td>Mar 11</td>
+            <td><span class="sw-view-link">View</span></td>
+          </tr>
+          <tr>
+            <td>resume_v2.pdf</td>
+            <td><span class="sw-score-pill a">61</span></td>
+            <td>Mar 8</td>
+            <td><span class="sw-view-link">View</span></td>
+          </tr>
+          <tr>
+            <td>resume_v1.pdf</td>
+            <td><span class="sw-score-pill r">38</span></td>
+            <td>Mar 1</td>
+            <td><span class="sw-view-link">View</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+  function show(n, btn) {
+    document.querySelectorAll('.frame').forEach(f => f.classList.remove('active'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('f' + n).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
+</body>
+</html>
